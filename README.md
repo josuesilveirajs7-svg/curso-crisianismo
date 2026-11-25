@@ -29,10 +29,26 @@ Cada aula tem objetivo, explicação em seções, caixas destacadas (conceito-ch
 
 Curso completo: 4 trilhas, 48 módulos e 144 aulas. Os temas centrais são tratados em profundidade; os complementares, de forma mais sintética. Informações revisadas em 25/11/2026 (dados de religião do Censo 2022 do IBGE, divulgados em junho de 2025, e relatórios do Pew Research Center de 2025 e 2026).
 
+## Instalar como app
+
+O curso é um app web instalável (PWA). No Chrome do Android, abra o site e toque em ⋮ → **Instalar app** (ou **Adicionar à tela inicial**). No iPhone, use Safari → Compartilhar → **Adicionar à Tela de Início**. Depois de aberto uma vez, funciona também sem internet.
+
+## Arquivos
+
+| Arquivo | Função |
+|---|---|
+| `index.html` | O curso inteiro (HTML, CSS, JS e conteúdo) |
+| `manifest.webmanifest` | Dados do app (nome, cores, ícones) |
+| `sw.js` | Service worker: instalação e uso offline |
+| `icone-192.png`, `icone-512.png`, `icone-maskable-512.png`, `apple-touch-icon.png` | Ícones do app |
+| `README.md` | Esta descrição |
+
+Todos os arquivos ficam na raiz do repositório.
+
 ## Publicar no GitHub Pages
 
 1. Crie um repositório no GitHub (por exemplo, `curso-cristianismo`).
-2. Envie os arquivos `index.html` e `README.md` para a raiz do repositório.
+2. Envie todos os arquivos para a raiz do repositório.
 3. Vá em **Settings → Pages**.
 4. Em **Build and deployment**, escolha **Deploy from a branch**, selecione a branch `main` e a pasta `/ (root)` e salve.
 5. Em alguns minutos o curso estará em `https://SEU-USUARIO.github.io/curso-cristianismo/`.
