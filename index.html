@@ -371,7 +371,8 @@ window.CURSO = {
   atualizado: '2026-11-25',
   trilhas: [], aulas: {}, modulos: {}, glossario: [], eventos: [], prompts: [], arvore: null, sobre: '',
   aula(id, d){ this.aulas[id] = d; },
-  modulo(id, d){ this.modulos[id] = d; }
+  modulo(id, d){ this.modulos[id] = d; },
+  complemento(id, d){ const a = this.aulas[id]; if (!a) return; if (d.quiz) a.quiz = d.quiz; if (d.criterio && a.exercicio) a.exercicio.criterio = d.criterio; }
 };
 </script>
 
@@ -1151,28 +1152,75 @@ CURSO.aula('t1-n1-m2-a2', {
 });
 
 CURSO.aula('t1-n1-m2-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar o que são as parábolas, como se interpretam os milagres em perspectiva de fé e de história, e os diferentes entendimentos do Reino de Deus.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender o que são as parábolas, como os milagres são vistos pela fé e pela história e o que Jesus queria dizer com "Reino de Deus" — o centro de sua pregação.',
   secoes: [
-{ t: 'Parábolas', h: `
-<p>Parábolas são histórias curtas tiradas do cotidiano — sementes, ovelhas, banquetes, patrões e empregados — que provocam o ouvinte a ver Deus e o mundo de outro modo. Os sinóticos trazem dezenas delas; João praticamente não tem. Entre as mais conhecidas estão o semeador, o bom samaritano, o filho pródigo e o grão de mostarda.</p>
-<p>Na Antiguidade e na Idade Média, era comum lê-las como alegorias em que cada detalhe tem um significado. No fim do século XIX, Adolf Jülicher defendeu que cada parábola tem um único ponto central; pesquisadores posteriores, como C. H. Dodd e Joachim Jeremias, as situaram no contexto da pregação do Reino. Hoje se reconhece que algumas têm, sim, traços alegóricos. <span data-tag="consenso"></span></p>
-<aside data-box="exemplo" data-t="O filho pródigo"><p>Em Lucas 15, um filho pede a herança, gasta tudo e volta; o pai corre ao seu encontro. Na Antiguidade, um patriarca correr era indigno — o gesto mostra um amor que rompe convenções. O irmão mais velho, ressentido, fica do lado de fora: a parábola termina sem dizer se ele entrou na festa.</p></aside>` },
-{ t: 'Milagres', h: `
+{ t: 'Parábolas: histórias que provocam', h: `
+<p>Parábolas são histórias curtas tiradas do cotidiano — sementes, ovelhas, moedas, banquetes, patrões e empregados — que levam o ouvinte a ver Deus e o mundo de outro modo. A palavra vem do grego <i>parabolē</i>, "comparação", e corresponde ao hebraico <i>mashal</i>, usado também para provérbios e enigmas. Mestres judeus da época, os <dfn data-g="rabino">rabinos</dfn>, também ensinavam assim; Jesus não inventou o gênero, mas o usou com uma força que marcou toda a literatura ocidental. <span data-tag="consenso"></span></p>
+<p>Os três evangelhos sinóticos trazem cerca de quarenta parábolas; o Evangelho de João praticamente não tem nenhuma, e prefere longos discursos e imagens ("eu sou o pão da vida", "eu sou o bom pastor"). Algumas estão em mais de um evangelho, como o semeador e o grão de mostarda; outras só em um — o bom samaritano e o filho pródigo, por exemplo, só aparecem em Lucas.</p>
+<div class="scroll"><table>
+<thead><tr><th>Parábola</th><th>Onde está</th><th>Tema principal</th></tr></thead>
+<tbody>
+<tr><td>O semeador</td><td>Marcos 4, Mateus 13, Lucas 8</td><td>Como a palavra é recebida</td></tr>
+<tr><td>O grão de mostarda</td><td>Marcos 4, Mateus 13, Lucas 13</td><td>Começo pequeno, crescimento grande do Reino</td></tr>
+<tr><td>O bom samaritano</td><td>Lucas 10</td><td>Quem é o próximo</td></tr>
+<tr><td>O filho pródigo</td><td>Lucas 15</td><td>Perdão e alegria pelo retorno</td></tr>
+<tr><td>Os trabalhadores da vinha</td><td>Mateus 20</td><td>Generosidade que rompe a lógica do mérito</td></tr>
+<tr><td>O juízo final (ovelhas e cabritos)</td><td>Mateus 25</td><td>Cristo presente nos famintos, presos e estrangeiros</td></tr>
+</tbody></table></div>
+<aside data-box="exemplo" data-t="O filho pródigo"><p>Em Lucas 15, um filho pede a herança ainda em vida do pai — gesto ofensivo na época —, gasta tudo e volta. O pai <i>corre</i> ao seu encontro; para um patriarca antigo, correr em público era indigno. O irmão mais velho, ressentido, fica do lado de fora, e a parábola termina sem dizer se ele entrou na festa. O final aberto obriga o ouvinte a se perguntar de que lado está.</p></aside>
+<aside data-box="exemplo" data-t="O bom samaritano"><p>Um homem é assaltado na estrada de Jerusalém a Jericó. Um sacerdote e um levita passam ao largo; quem socorre é um <dfn data-g="samaritanos">samaritano</dfn>, membro de um povo malvisto pelos judeus. A pergunta inicial era "quem é o meu próximo?"; Jesus a inverte: "quem se fez próximo?" (Lucas 10:25–37).</p></aside>` },
+
+{ t: 'Como as parábolas foram lidas', h: `
+<p>Durante séculos, predominou a leitura <b>alegórica</b>: cada detalhe teria um significado oculto. Agostinho, por exemplo, via no bom samaritano o próprio Cristo, na hospedaria a Igreja e nas duas moedas os dois mandamentos do amor. No fim do século XIX, o alemão Adolf Jülicher reagiu: cada parábola teria <b>um único ponto central</b>, e o resto seria cenário. No século XX, C. H. Dodd e Joachim Jeremias situaram as parábolas no contexto da pregação do Reino e da vida da Galileia. <span data-tag="consenso"></span></p>
+<p>Hoje, a maioria dos estudiosos reconhece que algumas parábolas têm, sim, traços alegóricos — a dos vinhateiros homicidas (Marcos 12), por exemplo — e que não há uma regra única. Também se discute quanto as parábolas foram adaptadas pelas comunidades cristãs antes de serem escritas. <span data-tag="debate"></span></p>
+<aside data-box="pratica" data-t="Ler uma parábola hoje"><p>Três perguntas ajudam: (1) quem ouvia Jesus e o que esperava ouvir? (2) onde está a surpresa da história? (3) com qual personagem o ouvinte é convidado a se identificar? Essas perguntas servem tanto para a leitura devocional quanto para o estudo acadêmico.</p></aside>` },
+
+{ t: 'Milagres: o que dizem os textos', h: `
+<p>Os Evangelhos narram cerca de trinta milagres de Jesus, que costumam ser agrupados em quatro tipos: <b>curas</b> (cegos, paralíticos, leprosos), <b>exorcismos</b> (expulsão de demônios), <b>ressurreições</b> (a filha de Jairo, o filho da viúva de Naim, Lázaro) e milagres sobre a <b>natureza</b> (tempestade acalmada, multiplicação dos pães, caminhar sobre as águas). João os chama de "sinais": não são exibições de poder, mas indicações de quem Jesus é.</p>
+<p>A multiplicação dos pães é o único milagre narrado pelos quatro evangelhos. Muitos relatos terminam com Jesus pedindo silêncio ao curado — o chamado "segredo messiânico" de Marcos, que os estudiosos interpretam de formas diferentes. <span data-tag="debate"></span></p>
 <div class="persp">
-<div><h4>Perspectiva de fé</h4><p>Para as igrejas, os milagres são sinais reais do poder de Deus e da chegada do Reino. Pentecostais e carismáticos enfatizam que curas e milagres continuam hoje; muitas igrejas protestantes históricas (cessacionistas) ensinam que certos dons cessaram após a era apostólica; católicos e ortodoxos reconhecem milagres atribuídos a santos, com processos de investigação. <span data-tag="igreja">varia por igreja</span></p></div>
-<div><h4>Perspectiva histórica</h4><p>Há consenso de que Jesus tinha fama de curador e exorcista — até adversários o reconheciam, atribuindo seu poder ao demônio (Marcos 3:22). Se os milagres aconteceram de fato está fora do alcance do método histórico, que não pode testar ações sobrenaturais. <span data-tag="consenso"></span></p></div>
-</div>` },
-{ t: 'O Reino de Deus: já ou ainda não?', h: `
-<p>Jesus falou do Reino como algo futuro ("venha o teu Reino") e, ao mesmo tempo, presente ("o Reino de Deus está entre vós", Lucas 17:21). Os estudiosos interpretaram isso de modos diferentes:</p>
+<div><h4>Perspectiva de fé</h4><p>Para as igrejas, os milagres foram sinais reais do poder de Deus e da chegada do Reino. Pentecostais e carismáticos enfatizam que curas e milagres continuam hoje; muitas igrejas protestantes históricas, chamadas <i>cessacionistas</i>, ensinam que certos dons extraordinários cessaram após a era apostólica; católicos e ortodoxos reconhecem milagres atribuídos à intercessão dos santos, com processos de investigação (no catolicismo, exigidos para beatificações e canonizações). <span data-tag="igreja">varia por igreja</span></p></div>
+<div><h4>Perspectiva histórica</h4><p>Há consenso de que Jesus tinha fama de curador e exorcista: até seus adversários o reconheciam, atribuindo seu poder ao demônio (Marcos 3:22), e o Talmude, séculos depois, o acusa de "feitiçaria". <span data-tag="consenso"></span> Se os milagres aconteceram de fato está fora do alcance do método histórico, que não pode testar ações sobrenaturais. Historiadores crentes e não crentes divergem sobre como explicar os relatos. <span data-tag="debate"></span></p></div>
+</div>
+<aside data-box="cuidado" data-t="Jesus não era o único"><p>Outras figuras da época tinham fama de milagreiros: Honi, "o traçador de círculos", e Hanina ben Dosa, na tradição judaica; Apolônio de Tiana, no mundo grego. Reconhecer isso não decide nada sobre a fé; mostra que os ouvintes de Jesus tinham categorias para entender curas e prodígios.</p></aside>` },
+
+{ t: 'O Reino de Deus: já, mas ainda não', h: `
+<aside data-box="conceito" data-t="Reino de Deus"><p>Não é um lugar no céu nem um território, mas o <b>governo de Deus</b> que chega e transforma o mundo: justiça para os pobres, perdão para os pecadores, cura para os doentes. Mateus, por respeito judaico ao nome divino, prefere "Reino dos céus" — o sentido é o mesmo.</p></aside>
+<p>Jesus falou do Reino como algo <b>futuro</b> ("venha o teu Reino") e, ao mesmo tempo, já <b>presente</b> ("o Reino de Deus está entre vós", Lucas 17:21). Os estudiosos interpretaram essa tensão de modos diferentes: <span data-tag="debate"></span></p>
 <ul>
-<li>Albert Schweitzer (1906): Jesus esperava o fim iminente do mundo — escatologia "consequente".</li>
-<li>C. H. Dodd: o Reino já havia chegado com Jesus — escatologia "realizada".</li>
-<li>A posição mais difundida hoje fala em "já, mas ainda não": o Reino começou e se completará no futuro. <span data-tag="opiniao"></span></li>
+<li><b>Albert Schweitzer</b> (1906): Jesus esperava o fim iminente do mundo — escatologia "consequente". Como o fim não veio, ele teria se enganado.</li>
+<li><b>C. H. Dodd</b> (1935): o Reino já havia chegado com Jesus — escatologia "realizada".</li>
+<li>A posição mais difundida hoje, associada a autores como George Ladd e Oscar Cullmann, fala em <b>"já, mas ainda não"</b>: o Reino começou com Jesus e se completará no futuro.</li>
 </ul>
-<p>Na teologia, as leituras também variam: a teologia da libertação enfatiza o Reino como justiça para os pobres já na história; correntes evangélicas enfatizam a conversão pessoal e a volta de Cristo. <span data-tag="opiniao"></span></p>` }
+<p>Nas igrejas, as ênfases também variam. A teologia da libertação, muito influente na América Latina, enfatiza o Reino como justiça para os pobres já na história; correntes evangélicas enfatizam a conversão pessoal e a volta de Cristo; a liturgia católica e a ortodoxa pedem a vinda do Reino em cada celebração. <span data-tag="igreja">ênfases diferentes</span></p>
+<aside data-box="biblia" data-t="O tesouro escondido"><blockquote>"Também o Reino dos céus é semelhante a um tesouro escondido num campo, que um homem achou e escondeu; e, pelo gozo dele, vai, vende tudo quanto tem e compra aquele campo."</blockquote><cite>Mateus 13:44 — Almeida Revista e Corrigida (texto clássico, domínio público)</cite></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li><b>Na língua:</b> "bom samaritano", "filho pródigo", "talento" (que era uma unidade de peso e dinheiro e virou "dom", por causa da parábola de Mateus 25), "separar o joio do trigo", "não acender uma candeia para pô-la debaixo do alqueire".</li>
+<li><b>Na lei e na ética:</b> leis do "bom samaritano", que protegem quem socorre alguém, existem em vários países; o dever de socorro está no Código Penal brasileiro (omissão de socorro, art. 135).</li>
+<li><b>Na arte:</b> <i>O retorno do filho pródigo</i>, de Rembrandt (c. 1668), é uma das pinturas mais comentadas da história; parábolas inspiram cordéis, sambas-enredo e músicas gospel.</li>
+<li><b>Na vida das igrejas:</b> a parábola do juízo final (Mateus 25) é base de obras sociais católicas, evangélicas e espíritas no Brasil, que repetem a frase "a mim o fizestes".</li>
+</ul>
+<aside data-box="conexao" data-t="Trilha 1 · Especialista"><p>O debate sobre se Jesus foi um profeta apocalíptico, um sábio ou um reformador social nasce justamente da leitura das parábolas e da pregação do Reino.</p></aside>` }
   ],
-  exercicio: { p: 'Escolha uma parábola e compare uma leitura alegórica, uma histórica e uma atual.', prompt: 'Explique a parábola [NOME, ex.: o semeador, Marcos 4] em três leituras: (1) alegórica, como na tradição antiga e medieval; (2) histórica, no contexto da Galileia do século I; (3) atual, como pregadores católicos e evangélicos costumam aplicá-la. Indique autores ou tradições representativos de cada leitura.' }
+  quiz: [
+    { p: 'Qual destas parábolas só aparece no Evangelho de Lucas?',
+      o: ['O semeador', 'O grão de mostarda', 'O filho pródigo', 'Os vinhateiros homicidas'], c: 2,
+      e: ['Está em Marcos, Mateus e Lucas.', 'Também está nos três sinóticos.', 'O filho pródigo (Lucas 15), assim como o bom samaritano, é exclusivo de Lucas.', 'Está nos três sinóticos (Marcos 12, Mateus 21, Lucas 20).'] },
+    { p: 'O que defendeu Adolf Jülicher no fim do século XIX?',
+      o: ['Que cada detalhe da parábola tem um sentido oculto', 'Que cada parábola tem um único ponto central', 'Que as parábolas foram inventadas por Paulo', 'Que o Reino de Deus já tinha chegado'], c: 1,
+      e: ['Essa é a leitura alegórica, contra a qual ele reagiu.', 'Correto: para Jülicher, o resto da história é cenário a serviço de um ponto.', 'Ele não defendeu isso.', 'Essa é a tese de C. H. Dodd (escatologia realizada).'] },
+    { p: 'Por que os historiadores consideram seguro que Jesus tinha fama de curador e exorcista?',
+      o: ['Porque os milagres podem ser testados', 'Porque até adversários reconheciam esse poder, atribuindo-o ao demônio', 'Porque nenhuma outra figura antiga fez curas', 'Porque o Evangelho de João tem mais milagres'], c: 1,
+      e: ['O método histórico não pode testar ações sobrenaturais.', 'A acusação em Marcos 3:22 pressupõe a fama — algo que nem críticos negavam.', 'Havia outras figuras com essa fama, como Hanina ben Dosa.', 'João tem poucos "sinais"; não é esse o argumento.'] },
+    { p: 'A expressão "já, mas ainda não" resume qual interpretação do Reino de Deus?',
+      o: ['O Reino começou com Jesus e se completará no futuro', 'O Reino é só um estado interior', 'O Reino é um território político', 'O Reino nunca foi pregado por Jesus'], c: 0,
+      e: ['É a posição mais difundida hoje entre estudiosos e igrejas.', 'Leituras puramente interiores existem, mas não são essa fórmula.', 'O Reino não é um território.', 'O Reino é o centro da pregação de Jesus nos sinóticos.'] }
+  ],
+  exercicio: { p: 'Escolha uma parábola e leia-a de três modos: alegórico, histórico e atual.', prompt: 'Analise a parábola [NOME, com referência bíblica] em três leituras: (1) uma leitura alegórica antiga (por exemplo, a de Agostinho ou de outro Pai da Igreja); (2) uma leitura histórica, explicando o contexto da Galileia do século I e o que soaria surpreendente para os ouvintes; (3) duas leituras atuais de tradições diferentes (católica, protestante, pentecostal ou da teologia da libertação). Marque o que é consenso, o que é debate e o que é interpretação de fé. Não invente citações.',
+    criterio: 'Uma boa resposta indica a referência exata da parábola, explica pelo menos um elemento do contexto social (agricultura, família, relação entre judeus e samaritanos etc.), identifica o ponto de surpresa da história e apresenta leituras diferentes sem dizer qual é a "certa".' }
 });
 
 CURSO.modulo('t1-n1-m3', {
@@ -1185,61 +1233,212 @@ CURSO.modulo('t1-n1-m3', {
 });
 
 CURSO.aula('t1-n1-m3-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar como foi a crucificação, por que Jesus foi condenado segundo fontes e historiadores, e como as igrejas interpretam sua morte.',
+  revisado: '2026-11-27',
+  objetivo: 'Descrever os acontecimentos da última semana de Jesus, explicar o que era a crucificação romana, discutir por que ele foi condenado e conhecer as principais interpretações cristãs de sua morte.',
   secoes: [
-{ t: 'Da entrada em Jerusalém à prisão', h: `
-<p>Os Evangelhos contam que Jesus entrou em Jerusalém montado num jumento, aclamado pela multidão (origem do Domingo de Ramos), expulsou cambistas e vendedores do Templo, fez uma última ceia com os discípulos, orou no Getsêmani e foi preso à noite, após a traição de Judas. Interrogado pelo sumo sacerdote Caifás, foi levado a Pilatos, açoitado e crucificado. <span data-tag="consenso"></span> para o núcleo prisão–Pilatos–crucificação; detalhes variam entre os Evangelhos.</p>
-<p>Os sinóticos situam a morte no dia da Páscoa judaica; João, na véspera, quando os cordeiros eram sacrificados. A diferença é antiga e sem solução consensual. <span data-tag="debate"></span></p>` },
+{ t: 'A última semana em Jerusalém', h: `
+<p>Os quatro Evangelhos dedicam uma parte desproporcional do texto aos últimos dias de Jesus — em Marcos, cerca de um terço. Por isso, já se disse que os Evangelhos são "narrativas da Paixão com uma longa introdução". O roteiro comum é este:</p>
+<ol>
+<li><b>Entrada em Jerusalém</b>, montado num jumento e aclamado pela multidão — origem do Domingo de Ramos.</li>
+<li><b>Incidente no Templo</b>: Jesus derruba as mesas dos cambistas e expulsa vendedores. Nos sinóticos, isso acontece na última semana; João o coloca no início do ministério.</li>
+<li><b>Última ceia</b> com os discípulos, em que Jesus parte o pão e passa o cálice — origem da <dfn data-g="eucaristia">eucaristia</dfn>.</li>
+<li><b>Oração no Getsêmani</b>, no monte das Oliveiras, e <b>prisão</b> à noite, após a traição de Judas.</li>
+<li><b>Interrogatório</b> diante do sumo sacerdote Caifás e de membros do <dfn data-g="sinedrio">Sinédrio</dfn>; Pedro nega conhecê-lo.</li>
+<li><b>Julgamento</b> diante de Pilatos (e, só em Lucas, também diante de Herodes Antipas), açoitamento e <b>crucificação</b> no Gólgota, fora dos muros da cidade.</li>
+<li><b>Sepultamento</b> num túmulo cedido por José de Arimateia.</li>
+</ol>
+<p>O núcleo — prisão, entrega a Pilatos, crucificação — é aceito pela grande maioria dos historiadores. <span data-tag="consenso"></span> Os detalhes variam entre os relatos. Um exemplo: os sinóticos situam a morte no dia da Páscoa judaica; João, na véspera, quando os cordeiros eram sacrificados no Templo. A diferença é antiga e não tem solução consensual. <span data-tag="debate"></span> A data mais provável é uma sexta-feira de abril do ano 30 ou do ano 33 d.C.</p>` },
+
+{ t: 'O que era a crucificação', h: `
+<p>A crucificação era uma pena romana — herdada de persas e cartagineses — reservada a escravos, rebeldes e provincianos sem cidadania romana. Cidadãos romanos, em regra, não podiam ser crucificados. Era uma morte lenta e pública, pensada para humilhar e servir de exemplo. O orador romano Cícero a chamou de "o mais cruel e terrível suplício". <span data-tag="consenso"></span></p>
+<p>O condenado era açoitado, carregava a trave horizontal (<i>patibulum</i>) até o local da execução e era preso com cordas ou cravos. A morte podia levar horas ou dias e vinha sobretudo por asfixia, choque e perda de sangue. Josefo relata crucificações em massa na Judeia, como as cerca de dois mil rebeldes crucificados pelo governador Varo em 4 a.C.</p>
+<aside data-box="dado" data-t="O calcanhar de Yehohanan"><p>Em 1968, em Givat ha-Mivtar, bairro de Jerusalém, arqueólogos acharam num ossuário o osso do calcanhar de um homem chamado Yehohanan, crucificado no século I, ainda atravessado por um prego de ferro. É a principal prova física de crucificação na região e mostra que um crucificado podia receber sepultamento em túmulo familiar — o que ajuda a avaliar o relato do sepultamento de Jesus. Em 2018, pesquisadores publicaram um segundo caso possível, achado em Gavello, no norte da Itália. <span data-tag="consenso"></span></p></aside>
+<p>A placa sobre a cruz, com a acusação "Rei dos Judeus", indica o motivo oficial: pretensão política, isto é, sedição contra Roma. Os Evangelhos dizem que ela foi escrita em hebraico (ou aramaico), grego e latim (João 19:20). As letras INRI, presentes em muitos crucifixos, são a sigla latina de <i>Iesus Nazarenus Rex Iudaeorum</i>.</p>` },
+
 { t: 'Por que foi condenado?', h: `
-<p>A crucificação era pena romana, reservada a escravos, rebeldes e provincianos sem cidadania — morte lenta e pública para servir de exemplo. A placa "Rei dos Judeus" indica a acusação: pretensão política, sedição. <span data-tag="consenso"></span></p>
-<p>Muitos historiadores veem o incidente no Templo como o estopim: em plena Páscoa, com a cidade lotada, um profeta popular que desafia o Templo era ameaça à ordem que sacerdotes e romanos queriam manter. O peso relativo das autoridades judaicas e de Pilatos é debatido. <span data-tag="debate"></span></p>
-<aside data-box="cuidado" data-t="Acusação coletiva aos judeus"><p>Durante séculos, cristãos acusaram "os judeus" de matar Jesus, o que alimentou perseguições. A Igreja Católica rejeitou oficialmente essa ideia na <i>Nostra Aetate</i> (1965), e muitas igrejas protestantes fizeram o mesmo. Historicamente, quem executou foi Roma; teologicamente, as igrejas ensinam que Cristo morreu pelos pecados de toda a humanidade. <span data-tag="consenso"></span></p></aside>
-<aside data-box="dado" data-t="Arqueologia"><p>Em 1968, em Givat ha-Mivtar (Jerusalém), achou-se o osso do calcanhar de um homem crucificado no século I, ainda com o prego — o de Yehohanan. Mostra que crucificados podiam receber sepultamento em túmulo familiar. <span data-tag="consenso"></span></p></aside>` },
+<p>Muitos historiadores veem o incidente no Templo como o estopim. Em plena Páscoa, com Jerusalém lotada de peregrinos e a memória da libertação do Egito no ar, um profeta popular que desafiava o Templo e falava de um novo Reino era uma ameaça à ordem que os sacerdotes e os romanos queriam manter. <span data-tag="consenso"></span></p>
+<p>O peso relativo de cada ator é debatido: <span data-tag="debate"></span></p>
+<div class="persp">
+<div><h4>Responsabilidade romana</h4><p>Só Roma podia crucificar, e a acusação era política. Pilatos, retratado por Josefo e Fílon como duro, não teria hesitado em eliminar um agitador. Para muitos estudiosos, os Evangelhos — escritos quando os cristãos viviam sob Roma — suavizam o papel de Pilatos.</p></div>
+<div><h4>Participação da elite do Templo</h4><p>Os quatro Evangelhos e uma passagem de Josefo (<i>Antiguidades</i> 18) dizem que líderes judeus entregaram Jesus a Pilatos. Muitos historiadores aceitam que parte da aristocracia sacerdotal, ligada a Caifás, participou da prisão — o que não envolve "o povo judeu" como um todo.</p></div>
+</div>
+<aside data-box="cuidado" data-t="A acusação de &quot;deicídio&quot;"><p>Durante séculos, cristãos acusaram "os judeus" de matar Jesus, ideia que alimentou pregações hostis, leis discriminatórias e massacres. A Igreja Católica rejeitou oficialmente essa acusação coletiva na declaração <i>Nostra Aetate</i> (1965), e muitas igrejas protestantes e ortodoxas fizeram declarações semelhantes. Historicamente, quem executou foi Roma; teologicamente, as igrejas ensinam que Cristo morreu pelos pecados de toda a humanidade. <span data-tag="igreja">católica e muitas protestantes</span></p></aside>` },
+
 { t: 'O que a morte de Jesus significa para as igrejas', h: `
-<p>Todas as igrejas ensinam que a morte de Jesus tem valor salvador, mas explicam esse valor com imagens diferentes — chamadas teorias da <b>expiação</b>:</p>
+<p>Todas as igrejas ensinam que a morte de Jesus tem valor salvador, mas explicam esse valor com imagens diferentes, chamadas <b>teorias da expiação</b>. Muitas tradições combinam várias delas: <span data-tag="igreja">ênfases diferentes por igreja</span></p>
+<div class="scroll"><table>
+<thead><tr><th>Imagem</th><th>Ideia central</th><th>Onde é mais forte</th></tr></thead>
+<tbody>
+<tr><td><b>Vitória (<i>Christus Victor</i>) ou resgate</b></td><td>Cristo vence o pecado, a morte e o diabo</td><td>Pais da Igreja; ortodoxia</td></tr>
+<tr><td><b>Satisfação</b></td><td>A morte de Cristo repara a honra de Deus ofendida pelo pecado (Anselmo de Cantuária, séc. XI)</td><td>Catolicismo medieval e moderno</td></tr>
+<tr><td><b>Substituição penal</b></td><td>Cristo recebe a pena no lugar do pecador</td><td>Muitas igrejas protestantes e evangélicas</td></tr>
+<tr><td><b>Influência moral</b></td><td>A cruz revela o amor de Deus e transforma quem a contempla (associada a Pedro Abelardo, séc. XII)</td><td>Correntes liberais</td></tr>
+</tbody></table></div>
+<aside data-box="biblia" data-t="A interpretação de Paulo"><blockquote>"Mas Deus prova o seu amor para conosco em que Cristo morreu por nós, sendo nós ainda pecadores."</blockquote><cite>Romanos 5:8 — Almeida Revista e Corrigida (texto clássico, domínio público)</cite></aside>
+<aside data-box="pratica" data-t="Como a cruz aparece nas igrejas"><p>No catolicismo, o <b>crucifixo</b>, com a imagem de Cristo, lembra o sofrimento; na Sexta-feira Santa há a Via-Sacra, a procissão do Senhor Morto e, tradicionalmente, jejum e abstinência de carne. Em muitas igrejas protestantes, a <b>cruz vazia</b> ressalta a ressurreição. Na ortodoxia predominam ícones da crucificação e, na Sexta-feira Santa, o <i>epitáfio</i>, um pano bordado com Cristo morto levado em procissão. Em igrejas evangélicas, a morte de Cristo é lembrada sobretudo na Santa Ceia.</p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
 <ul>
-<li><b>Resgate / vitória</b> (<i>Christus Victor</i>): Cristo vence o pecado, a morte e o diabo — muito presente na ortodoxia.</li>
-<li><b>Satisfação</b>: formulada por Anselmo de Cantuária (século XI), influente no catolicismo.</li>
-<li><b>Substituição penal</b>: Cristo recebe a pena no lugar do pecador — central em muitas igrejas protestantes e evangélicas.</li>
-<li><b>Influência moral</b>: a cruz revela o amor de Deus e transforma quem a contempla (associada a Abelardo e a correntes liberais).</li>
+<li><b>A cruz como símbolo:</b> instrumento de execução vergonhoso no século I, tornou-se o principal símbolo do cristianismo — mudança que só se consolidou a partir do século IV. Os primeiros cristãos preferiam outros símbolos, como o peixe e a âncora.</li>
+<li><b>Calendário e feriados:</b> a Sexta-feira Santa (Paixão de Cristo) é feriado nacional no Brasil.</li>
+<li><b>Arte e cultura:</b> as Paixões de Bach, a <i>Pietà</i> de Michelangelo, os passos de Aleijadinho em Congonhas (MG) e as encenações da Paixão, como a de Nova Jerusalém (PE).</li>
+<li><b>Expressões:</b> "carregar a sua cruz", "via-crúcis" (para qualquer sequência de sofrimentos), "Judas" como sinônimo de traidor e a malhação do Judas no Sábado de Aleluia.</li>
 </ul>
-<p><span data-tag="igreja">ênfases diferentes por igreja</span> Muitas tradições combinam várias dessas imagens.</p>
-<aside data-box="pratica" data-t="Sexta-feira Santa no Brasil"><p>Procissões do Senhor Morto, Via-Sacra, jejum e abstinência de carne entre católicos; cultos de Santa Ceia em igrejas evangélicas. Em muitas igrejas protestantes, a cruz aparece vazia (sem a imagem de Cristo), para ressaltar a ressurreição; no catolicismo, o crucifixo lembra o sofrimento; na ortodoxia, predominam os ícones.</p></aside>` }
+<aside data-box="conexao" data-t="Trilha 4 · Básico"><p>A Semana Santa e a Páscoa, com seus ritos em cada igreja, são tema da aula sobre o ano litúrgico.</p></aside>` }
   ],
-  exercicio: { p: 'Compare os quatro relatos da Paixão em um aspecto (por exemplo, as últimas palavras de Jesus).', prompt: 'Compare as últimas palavras de Jesus na cruz em Marcos, Mateus, Lucas e João. Mostre as diferenças, como as tradições cristãs as reúnem (as "Sete Palavras") e como a pesquisa explica as diferenças entre os relatos.' }
+  quiz: [
+    { p: 'Qual diferença cronológica há entre os sinóticos e João sobre a morte de Jesus?',
+      o: ['Os sinóticos a situam no dia da Páscoa; João, na véspera, quando os cordeiros eram sacrificados', 'João diz que Jesus morreu na Galileia', 'Os sinóticos dizem que Jesus foi apedrejado', 'Não há nenhuma diferença'], c: 0,
+      e: ['Correto: é uma diferença antiga, sem solução consensual.', 'Todos situam a morte em Jerusalém.', 'Todos falam em crucificação.', 'A diferença existe e é bem conhecida.'] },
+    { p: 'O que indica a acusação "Rei dos Judeus" na placa da cruz?',
+      o: ['Uma acusação religiosa de blasfêmia', 'Uma acusação política de sedição contra Roma', 'Uma homenagem de Pilatos', 'Um título dado pelos discípulos depois da Páscoa'], c: 1,
+      e: ['A blasfêmia aparece no interrogatório judaico, mas a placa traz uma acusação política.', 'Reivindicar realeza sem autorização de Roma era crime contra o Império, punido com cruz.', 'Os Evangelhos não a apresentam como homenagem.', 'A placa é descrita como parte da execução.'] },
+    { p: 'O que o achado de Yehohanan, em 1968, mostrou?',
+      o: ['Que a crucificação não existia na Judeia', 'Que um crucificado do século I podia ser sepultado em túmulo familiar', 'O túmulo de Jesus', 'Que os pregos nunca eram usados'], c: 1,
+      e: ['O achado comprova a prática na região.', 'O ossuário de família mostra que o sepultamento era possível — dado relevante para o relato de José de Arimateia.', 'Não tem relação com o túmulo de Jesus.', 'O calcanhar ainda tinha um prego de ferro.'] },
+    { p: 'Qual teoria da expiação foi formulada por Anselmo de Cantuária no século XI?',
+      o: ['Influência moral', '<i>Christus Victor</i>', 'Satisfação', 'Substituição penal'], c: 2,
+      e: ['É associada a Pedro Abelardo, no século XII.', 'É a visão predominante dos Pais da Igreja e da ortodoxia.', 'Em <i>Por que Deus se fez homem</i>, Anselmo explica a cruz como reparação da honra de Deus.', 'É desenvolvida sobretudo pelos reformadores protestantes, a partir de ideias anteriores.'] }
+  ],
+  exercicio: { p: 'Compare os quatro relatos da Paixão em um aspecto (por exemplo, as últimas palavras de Jesus).', prompt: 'Compare as últimas palavras de Jesus na cruz em Marcos, Mateus, Lucas e João, com as referências de capítulo e versículo. Mostre as diferenças, como as tradições cristãs as reúnem nas "Sete Palavras" (e onde esse sermão é feito no Brasil), e como a pesquisa explica as diferenças entre os relatos (fontes, objetivos teológicos de cada evangelista). Indique o que é consenso, debate e ensino de fé.',
+    criterio: 'Uma boa resposta lista as frases com referência correta (Marcos 15:34 e Mateus 27:46; três frases só em Lucas; três só em João), explica a ênfase de cada evangelista, apresenta a harmonização tradicional e a explicação histórico-crítica sem desqualificar nenhuma das duas.' }
 });
 
 CURSO.aula('t1-n1-m3-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar o que os textos dizem sobre a ressurreição, o que as igrejas ensinam e como historiadores de diferentes posições abordam o tema.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer os textos mais antigos sobre a ressurreição de Jesus, entender o que as igrejas ensinam sobre ela e como historiadores de diferentes posições abordam o tema.',
   secoes: [
-{ t: 'Os testemunhos', h: `
-<p>O texto mais antigo sobre a ressurreição é de Paulo, por volta de 54–55 d.C., citando uma tradição que ele diz ter recebido: Cristo morreu, foi sepultado, ressuscitou ao terceiro dia e apareceu a Pedro, aos Doze, a mais de quinhentos irmãos, a Tiago e a Paulo (1 Coríntios 15:3–8). <span data-tag="consenso"></span></p>
-<p>Os Evangelhos acrescentam o túmulo vazio, descoberto por mulheres — com Maria Madalena em todos os relatos — e aparições em Jerusalém e na Galileia. Os detalhes variam bastante (quantas mulheres, quantos anjos, onde as aparições ocorrem). O final original de Marcos parece terminar em 16:8, com as mulheres em silêncio e com medo; os versículos 9–20 são considerados acréscimo posterior. <span data-tag="consenso"></span></p>` },
+{ t: 'O testemunho mais antigo: 1 Coríntios 15', h: `
+<p>O texto mais antigo sobre a <dfn data-g="ressurreicao">ressurreição</dfn> de Jesus não é um Evangelho, mas uma carta de Paulo, escrita por volta de 54–55 d.C. Nela, Paulo cita uma fórmula que diz ter "recebido" — linguagem técnica para tradição transmitida de mestre a discípulo:</p>
+<aside data-box="biblia" data-t="A tradição recebida por Paulo"><blockquote>"Porque primeiramente vos entreguei o que também recebi: que Cristo morreu por nossos pecados, segundo as Escrituras, e que foi sepultado, e que ressuscitou ao terceiro dia, segundo as Escrituras."</blockquote><cite>1 Coríntios 15:3–4 — Almeida Revista e Corrigida (texto clássico, domínio público)</cite></aside>
+<p>A lista continua: Cristo apareceu a Pedro (Cefas), aos Doze, a mais de quinhentos irmãos de uma vez, a Tiago, a todos os apóstolos e, por último, ao próprio Paulo (15:5–8). A maioria dos estudiosos, inclusive céticos, data essa fórmula de poucos anos após a crucificação — talvez dos anos 30, quando Paulo visitou Pedro e Tiago em Jerusalém (Gálatas 1:18–19). <span data-tag="consenso"></span></p>
+<aside data-box="cuidado" data-t="As mulheres não estão na lista"><p>A fórmula de Paulo não menciona as mulheres, que nos Evangelhos são as primeiras testemunhas. Muitos estudiosos pensam que, numa lista "oficial" para ser usada em público, o testemunho feminino — que tinha pouco valor jurídico no mundo antigo — foi omitido. <span data-tag="debate"></span></p></aside>` },
+
+{ t: 'Os relatos dos Evangelhos', h: `
+<p>Os Evangelhos, escritos depois, acrescentam o <b>túmulo vazio</b>, descoberto por mulheres no domingo de manhã — Maria Madalena está em todos os relatos — e <b>aparições</b> em Jerusalém e na Galileia. Os detalhes variam bastante:</p>
+<div class="scroll"><table>
+<thead><tr><th>Evangelho</th><th>Quem vai ao túmulo</th><th>Quem anuncia</th><th>Aparições</th></tr></thead>
+<tbody>
+<tr><td>Marcos (16:1–8)</td><td>Maria Madalena, Maria (mãe de Tiago) e Salomé</td><td>Um jovem vestido de branco</td><td>Nenhuma no final original</td></tr>
+<tr><td>Mateus (28)</td><td>Maria Madalena e "a outra Maria"</td><td>Um anjo</td><td>Às mulheres e aos Onze, num monte da Galileia</td></tr>
+<tr><td>Lucas (24)</td><td>Várias mulheres, entre elas Maria Madalena e Joana</td><td>Dois homens com vestes resplandecentes</td><td>Aos discípulos de Emaús e aos Onze, em Jerusalém</td></tr>
+<tr><td>João (20–21)</td><td>Maria Madalena</td><td>Dois anjos e o próprio Jesus</td><td>A Maria Madalena, a Tomé e, no lago, a Pedro</td></tr>
+</tbody></table></div>
+<p>O final original de Marcos parece terminar em 16:8, com as mulheres em silêncio e com medo; os versículos 9–20 não estão nos manuscritos mais antigos e são considerados acréscimo posterior. <span data-tag="consenso"></span> Muitas Bíblias atuais os mantêm com uma nota.</p>
+<p>Os relatos insistem que o corpo de Jesus ressuscitado é real — ele come peixe (Lucas 24:42–43), Tomé pode tocar as feridas (João 20:27) — mas também diferente: atravessa portas fechadas e não é reconhecido de imediato. Paulo fala em "corpo espiritual" (1 Coríntios 15:44), expressão debatida até hoje.</p>` },
+
 { t: 'O que as igrejas ensinam', h: `
-<p>A ressurreição corporal de Jesus é o centro da fé cristã: "se Cristo não ressuscitou, é vã a nossa fé" (1 Coríntios 15:17, paráfrase). Católicos, ortodoxos, protestantes e pentecostais afirmam que Jesus ressuscitou de verdade, com corpo transformado, e que isso antecipa a ressurreição de todos. <span data-tag="igreja">comum às igrejas cristãs</span></p>
-<p>Na ortodoxia, a Páscoa é a festa das festas, com a saudação "Cristo ressuscitou!" — "Verdadeiramente ressuscitou!". Teólogos liberais, como Rudolf Bultmann, interpretaram a ressurreição como nascimento da fé dos discípulos, e não como evento físico — posição minoritária entre as igrejas. <span data-tag="opiniao"></span></p>` },
+<p>A ressurreição corporal de Jesus é o centro da fé cristã. Paulo é explícito: se Cristo não ressuscitou, a fé dos cristãos é vã (1 Coríntios 15:14–17). Católicos, ortodoxos, protestantes e pentecostais afirmam que Jesus ressuscitou de verdade, com corpo transformado, e que isso antecipa a ressurreição de todos os mortos no fim dos tempos. Os <dfn data-g="credo">Credos</dfn> dizem: "ao terceiro dia ressuscitou". <span data-tag="igreja">comum às igrejas cristãs</span></p>
+<ul>
+<li><b>Na ortodoxia</b>, a Páscoa é a "festa das festas". Na vigília pascal, os fiéis se saúdam: "Cristo ressuscitou!" — "Verdadeiramente ressuscitou!". O ícone da ressurreição mostra Cristo arrancando Adão e Eva do mundo dos mortos.</li>
+<li><b>No catolicismo</b>, a Vigília Pascal, com o círio aceso no escuro, é a celebração mais importante do ano, e cada domingo é chamado de "Páscoa semanal".</li>
+<li><b>No protestantismo</b> e entre evangélicos, a ressurreição é a base da esperança e um dos temas centrais da pregação; cultos ao nascer do sol no domingo de Páscoa são comuns em várias denominações.</li>
+</ul>
+<p>Teólogos liberais do século XX, como Rudolf Bultmann, interpretaram a ressurreição como o nascimento da fé dos discípulos, e não como evento físico. É uma posição minoritária entre as igrejas e rejeitada pelos documentos oficiais católicos, ortodoxos e da maioria das igrejas protestantes. <span data-tag="opiniao"></span></p>` },
+
 { t: 'O que historiadores dizem', h: `
-<p>Há amplo consenso sobre alguns pontos: os discípulos tiveram experiências que interpretaram como aparições de Jesus vivo; estavam convictos disso a ponto de arriscar a vida; e a fé na ressurreição surgiu muito cedo. <span data-tag="consenso"></span></p>
-<p>Como explicar essas experiências é onde as posições divergem: N. T. Wright e outros argumentam que a ressurreição real é a melhor explicação histórica; Gerd Lüdemann e outros propõem visões psicológicas ou experiências de luto; muitos historiadores dizem apenas que a questão ultrapassa o que a história pode decidir. O túmulo vazio também é debatido. <span data-tag="debate"></span></p>` }
+<p>Há amplo consenso sobre alguns pontos, entre estudiosos crentes e não crentes: <span data-tag="consenso"></span></p>
+<ul>
+<li>Jesus morreu crucificado.</li>
+<li>Pouco depois, vários discípulos — e também Paulo, antes perseguidor — tiveram experiências que interpretaram como aparições de Jesus vivo.</li>
+<li>Estavam convictos disso a ponto de mudar de vida e, em alguns casos, arriscar a morte.</li>
+<li>A fé na ressurreição surgiu muito cedo e está no centro da mais antiga pregação cristã.</li>
+</ul>
+<p>Como explicar essas experiências é onde as posições divergem: <span data-tag="debate"></span></p>
+<div class="persp">
+<div><h4>Ressurreição real</h4><p>N. T. Wright (<i>A ressurreição do Filho de Deus</i>, 2003) e outros argumentam que o túmulo vazio somado às aparições é a melhor explicação histórica para o surgimento da fé, já que a expectativa judaica era de ressurreição coletiva no fim dos tempos, e não de um só homem antes.</p></div>
+<div><h4>Explicações naturais</h4><p>Gerd Lüdemann, Bart Ehrman e outros propõem visões ou experiências de luto, comuns em pessoas que perdem alguém querido, interpretadas à luz das Escrituras. Para eles, o historiador não pode concluir por um milagre.</p></div>
+</div>
+<p>Muitos historiadores adotam uma terceira posição: dizem que o método histórico pode descrever as experiências e a fé dos discípulos, mas que a pergunta "Jesus ressuscitou?" ultrapassa o que a história pode decidir. O túmulo vazio também é debatido: alguns o consideram histórico (é atestado por fontes diferentes e tem as mulheres como testemunhas, algo embaraçoso na época); outros acham que é uma narrativa posterior. <span data-tag="debate"></span></p>
+<aside data-box="cuidado" data-t="Teorias populares"><p>Hipóteses como "Jesus não morreu, só desmaiou" ou "os discípulos roubaram o corpo" circulam desde a Antiguidade (Mateus 28:13 já menciona a segunda). Elas são rejeitadas pela grande maioria dos historiadores, crentes ou não, por não explicarem os dados — a crucificação romana era eficaz, e os discípulos estavam convictos do que afirmavam.</p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li><b>O domingo:</b> os primeiros cristãos passaram a se reunir no "primeiro dia da semana", dia da ressurreição — chamado "dia do Senhor" (<i>dies dominica</i>, de onde vem "domingo").</li>
+<li><b>A data da Páscoa:</b> é móvel, calculada a partir da lua cheia após o equinócio de março, regra fixada no século IV. Católicos e protestantes usam o calendário gregoriano; a maioria dos ortodoxos, o juliano — por isso as datas muitas vezes não coincidem. Em 2025 coincidiram, e o 1.700º aniversário de Niceia reavivou propostas de uma data comum.</li>
+<li><b>No Brasil:</b> ovos de chocolate, a colomba pascal e o coelho são costumes de origem europeia que se somaram às celebrações religiosas, como a Vigília Pascal e os cultos de Páscoa.</li>
+</ul>
+<aside data-box="conexao" data-t="Trilha 4 · Básico"><p>A esperança na ressurreição dos mortos e na vida eterna, e as diferenças entre as igrejas sobre o que acontece depois da morte, são tema da aula "Morte, ressurreição e vida eterna".</p></aside>` }
   ],
-  exercicio: { p: 'Liste o que é consenso histórico e o que é fé sobre a ressurreição.', prompt: 'Sobre a ressurreição de Jesus, separe em três colunas: (1) o que é consenso entre historiadores, cristãos ou não; (2) o que é debatido, com os argumentos principais e autores de cada lado; (3) o que é afirmação de fé. Cite 1 Coríntios 15 e os Evangelhos com referência.' }
+  quiz: [
+    { p: 'Qual é o texto mais antigo sobre a ressurreição de Jesus?',
+      o: ['O Evangelho de Marcos', 'O Evangelho de João', 'A fórmula citada por Paulo em 1 Coríntios 15', 'O Credo Niceno'], c: 2,
+      e: ['Marcos é de c. 65–75, posterior à carta de Paulo.', 'João é o último dos quatro, de c. 90–100.', 'Paulo escreve por volta de 54–55 e cita uma tradição ainda mais antiga.', 'O Credo Niceno é de 325.'] },
+    { p: 'Como termina o Evangelho de Marcos nos manuscritos mais antigos?',
+      o: ['Com a ascensão de Jesus', 'Em 16:8, com as mulheres em silêncio e com medo', 'Com a aparição a Tomé', 'Com Pentecostes'], c: 1,
+      e: ['A ascensão aparece no final longo (16:19), considerado acréscimo.', 'Os versículos 9–20 não estão nos manuscritos mais antigos.', 'A aparição a Tomé está em João.', 'Pentecostes é narrado em Atos.'] },
+    { p: 'Qual afirmação é consenso entre historiadores crentes e não crentes?',
+      o: ['O túmulo vazio está provado', 'Os discípulos tiveram experiências que interpretaram como aparições de Jesus vivo', 'Os discípulos roubaram o corpo', 'Jesus não morreu na cruz'], c: 1,
+      e: ['O túmulo vazio é debatido.', 'As experiências e a convicção dos discípulos são aceitas; a explicação delas é que diverge.', 'Essa hipótese é rejeitada pela grande maioria.', 'A morte na cruz é um dos fatos mais seguros sobre Jesus.'] },
+    { p: 'Por que católicos e ortodoxos muitas vezes celebram a Páscoa em datas diferentes?',
+      o: ['Porque os ortodoxos não celebram a Páscoa', 'Porque a maioria dos ortodoxos calcula a data pelo calendário juliano', 'Porque os católicos a celebram sempre em 25 de março', 'Porque os ortodoxos seguem o calendário judaico atual'], c: 1,
+      e: ['A Páscoa é a maior festa ortodoxa.', 'A regra é parecida, mas o calendário de base é diferente.', 'A data católica é móvel.', 'Não é essa a explicação.'] }
+  ],
+  exercicio: { p: 'Liste o que é consenso histórico e o que é fé sobre a ressurreição.', prompt: 'Sobre a ressurreição de Jesus, separe em três colunas: (1) o que é consenso entre historiadores, cristãos ou não; (2) o que é debatido, com os argumentos principais e autores de cada lado (por exemplo, N. T. Wright, Bart Ehrman, Gerd Lüdemann, Dale Allison); (3) o que é afirmação de fé. Cite 1 Coríntios 15 e os Evangelhos com referência. Não invente citações: se não tiver certeza de uma obra ou passagem, diga isso.',
+    criterio: 'Uma boa resposta coloca na coluna de consenso só o que é aceito por estudiosos de várias posições, apresenta pelo menos dois argumentos de cada lado no debate, cita corretamente 1 Coríntios 15:3–8 e evita tanto "a história prova a ressurreição" quanto "a ciência provou que é mentira".' }
 });
 
 CURSO.aula('t1-n1-m3-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Descrever Pentecostes e a primeira comunidade de Jerusalém segundo Atos, e o que a pesquisa diz sobre esses primeiros anos.',
+  revisado: '2026-11-27',
+  objetivo: 'Descrever Pentecostes e a primeira comunidade de Jerusalém segundo o livro dos Atos, e entender o que a pesquisa histórica diz sobre esses primeiros anos do movimento de Jesus.',
   secoes: [
+{ t: 'Atos dos Apóstolos: a fonte principal', h: `
+<p>Quase tudo o que sabemos sobre os primeiros anos depois da morte de Jesus vem do livro dos <b>Atos dos Apóstolos</b>, escrito pelo mesmo autor do Evangelho de Lucas — os dois livros são dedicados a um certo Teófilo e formam uma obra em duas partes. A maioria dos estudiosos data Atos por volta de 80–90 d.C.; alguns propõem uma data anterior (c. 62), outros, o início do século II. <span data-tag="debate"></span></p>
+<p>Atos segue um plano geográfico anunciado logo no começo: o evangelho irá "em Jerusalém, e em toda a Judeia e Samaria, e até aos confins da terra" (Atos 1:8). Os capítulos 1–12 giram em torno de Pedro e de Jerusalém; os capítulos 13–28, em torno de Paulo, terminando com ele preso em Roma.</p>
+<aside data-box="cuidado" data-t="Como ler Atos"><p>Atos é ao mesmo tempo história e teologia. Seu autor conhece bem o mundo romano — títulos de autoridades, rotas e cidades costumam estar corretos —, mas também organiza os fatos para mostrar a ação do Espírito Santo e a unidade da Igreja. Os discursos, como era costume entre historiadores antigos (Tucídides o admite), foram compostos pelo autor para resumir o que considerava adequado a cada ocasião. <span data-tag="consenso"></span></p></aside>` },
+
 { t: 'Pentecostes', h: `
-<p>O livro dos Atos dos Apóstolos, escrito pelo mesmo autor de Lucas, conta que, cinquenta dias após a Páscoa, na festa judaica de Shavuot (Pentecostes), o Espírito Santo desceu sobre os discípulos como "línguas de fogo"; eles falaram em várias línguas e Pedro pregou à multidão (Atos 2). Para as igrejas, é o "nascimento da Igreja". <span data-tag="igreja">comum às igrejas</span></p>
+<p>Pentecostes (do grego "quinquagésimo") era o nome grego da festa judaica de <b>Shavuot</b>, a festa das Semanas, celebrada cinquenta dias depois da Páscoa. Era uma festa de peregrinação ligada à colheita do trigo e, em parte da tradição judaica, à entrega da <dfn data-g="tora">Torá</dfn> no Sinai.</p>
+<p>Atos 2 conta que, nesse dia, os discípulos estavam reunidos quando veio um som como de vento forte e apareceram "línguas repartidas, como que de fogo" sobre cada um. Cheios do Espírito Santo, começaram a falar em outras línguas, e peregrinos judeus vindos de toda a <dfn data-g="diaspora">diáspora</dfn> — partos, medos, egípcios, romanos, árabes — os ouviam cada um em sua própria língua. Pedro então fez o primeiro discurso público, e Atos diz que cerca de três mil pessoas foram batizadas.</p>
+<aside data-box="biblia" data-t="O relato de Atos"><blockquote>"E todos foram cheios do Espírito Santo e começaram a falar noutras línguas, conforme o Espírito Santo lhes concedia que falassem."</blockquote><cite>Atos 2:4 — Almeida Revista e Corrigida (texto clássico, domínio público)</cite></aside>
+<p>Para as igrejas, Pentecostes é o <b>"nascimento da Igreja"</b>: o Espírito prometido por Jesus é derramado e a comunidade passa a anunciar publicamente a ressurreição. Muitos intérpretes cristãos veem no episódio o inverso da torre de Babel (Gênesis 11): lá, as línguas dividem; aqui, a mensagem une povos diferentes. <span data-tag="igreja">comum às igrejas</span></p>
+<p>Historiadores aceitam que os seguidores de Jesus viveram, pouco depois da Páscoa, experiências religiosas intensas que interpretaram como dom do Espírito — Paulo também fala de "falar em línguas" nas comunidades (1 Coríntios 12–14). Os detalhes da cena de Atos, como o número de convertidos, são vistos por muitos como construção literária. <span data-tag="debate"></span></p>
 <aside data-box="conexao" data-t="Trilha 3 · Intermediário"><p>O pentecostalismo moderno tira seu nome desse episódio e ensina que o "batismo no Espírito Santo", com o falar em línguas, é para os cristãos de hoje.</p></aside>` },
+
 { t: 'A comunidade de Jerusalém', h: `
-<p>Atos descreve uma comunidade judaica que continuava indo ao Templo, partia o pão nas casas, praticava a partilha de bens e era liderada por Pedro, João e, depois, Tiago, irmão de Jesus. Logo surgiram tensões entre judeus de língua aramaica ("hebreus") e de língua grega ("helenistas"), e sete homens foram escolhidos para servir — tradição associada à origem dos diáconos. Estêvão, um deles, é lembrado como o primeiro mártir. <span data-tag="tradicao"></span> para a ligação direta com o diaconato posterior.</p>
-<p>Historiadores aceitam o quadro geral — um grupo judeu messiânico em Jerusalém, liderado por Pedro e Tiago, que se expande para cidades vizinhas —, mas observam que Atos idealiza a unidade e organiza a história segundo o seu objetivo teológico: o evangelho indo "de Jerusalém até os confins da terra". <span data-tag="debate"></span></p>
-<aside data-box="pratica" data-t="Hoje"><p>Pentecostes é celebrado por católicos, ortodoxos e protestantes no 50º dia da Páscoa; nas igrejas católicas, com paramentos vermelhos. No Brasil, a Festa do Divino Espírito Santo, de origem portuguesa, é celebrada nesse período em cidades como Pirenópolis (GO) e Paraty (RJ).</p></aside>` }
+<p>Atos descreve uma comunidade de judeus que reconheciam Jesus como Messias e continuavam judeus: iam ao Templo todos os dias, observavam a Torá, "partiam o pão" nas casas, oravam juntos e seguiam o ensino dos apóstolos (Atos 2:42–47). Seus líderes eram Pedro e João e, a partir dos anos 40, sobretudo <b>Tiago, irmão de Jesus</b>, que Paulo chama de uma das "colunas" da igreja (Gálatas 2:9).</p>
+<ul>
+<li><b>Partilha de bens:</b> Atos diz que "tinham tudo em comum" e que quem tinha terras as vendia e entregava o valor aos apóstolos (Atos 4:32–35). O episódio de Ananias e Safira (Atos 5) mostra que nem todos aderiam sem conflito.</li>
+<li><b>Hebreus e helenistas:</b> logo surgiram tensões entre judeus de língua aramaica ("hebreus") e de língua grega ("helenistas") sobre a assistência às viúvas. Sete homens, todos com nomes gregos, foram escolhidos para servir (Atos 6) — episódio tradicionalmente ligado à origem dos diáconos. <span data-tag="tradicao"></span></li>
+<li><b>Estêvão:</b> um dos sete, foi apedrejado após um discurso crítico ao Templo, e é lembrado como o primeiro <dfn data-g="martir">mártir</dfn> cristão (Atos 7). Atos diz que um jovem chamado Saulo — o futuro Paulo — aprovou sua morte.</li>
+<li><b>Dispersão:</b> após a morte de Estêvão, os helenistas se espalharam pela Judeia, Samaria e até Antioquia, levando a mensagem a novos lugares.</li>
+</ul>
+<aside data-box="dado" data-t="Tiago, o Justo"><p>Flávio Josefo (<i>Antiguidades</i> 20.200) relata que, em 62 d.C., o sumo sacerdote Anano mandou apedrejar "Tiago, irmão de Jesus, chamado Cristo", e que judeus respeitados protestaram contra a execução. É uma das referências não cristãs mais antigas a Jesus e à comunidade de Jerusalém, aceita como autêntica pela maioria dos estudiosos. <span data-tag="consenso"></span></p></aside>` },
+
+{ t: 'O que diz a pesquisa', h: `
+<p>Historiadores aceitam o quadro geral: um grupo judeu messiânico em Jerusalém, liderado por Pedro e depois por Tiago, que proclamava a ressurreição de Jesus, mantinha a prática judaica e se expandiu para cidades vizinhas. <span data-tag="consenso"></span> Mas observam que:</p>
+<ul>
+<li>Atos <b>idealiza a unidade</b>: as cartas de Paulo mostram conflitos fortes, como o choque entre Paulo e Pedro em Antioquia (Gálatas 2:11–14), que Atos não narra.</li>
+<li>A <b>partilha de bens</b> lembra ideais da filosofia grega ("entre amigos, tudo é comum") e práticas dos <dfn data-g="essenios">essênios</dfn>; muitos estudiosos pensam que era real, mas parcial e voluntária. <span data-tag="debate"></span></li>
+<li>Os números (três mil, depois cinco mil convertidos) são provavelmente simbólicos ou exagerados, como era comum na historiografia antiga. <span data-tag="debate"></span></li>
+<li>Os <b>títulos de Jesus</b> nos discursos de Atos ("Senhor", "Cristo", "Servo") podem preservar fórmulas muito antigas da pregação cristã. <span data-tag="debate"></span></li>
+</ul>
+<p>A comunidade de Jerusalém sofreu com perseguições (a de Herodes Agripa I, em Atos 12) e com a guerra contra Roma. Segundo uma tradição registrada por Eusébio (século IV), seus membros fugiram para Pela, do outro lado do Jordão, antes da destruição de 70 d.C. <span data-tag="tradicao"></span> Depois disso, o centro do cristianismo se deslocou para cidades como Antioquia, Éfeso e Roma.</p>` },
+
+{ t: 'Impacto até hoje', h: `
+<aside data-box="pratica" data-t="Pentecostes nas igrejas"><p>Pentecostes é celebrado por católicos, ortodoxos e protestantes no 50º dia a partir da Páscoa (contando o domingo de Páscoa). Nas igrejas católicas, anglicanas e luteranas, os paramentos são vermelhos, cor do fogo do Espírito. Na ortodoxia, as igrejas são decoradas com ramos verdes. Para pentecostais, a festa tem sentido especial, com cultos de "derramamento" do Espírito.</p></aside>
+<ul>
+<li><b>Festa do Divino:</b> no Brasil, a Festa do Divino Espírito Santo, trazida pelos portugueses (de tradição associada à rainha Isabel de Aragão, no século XIV), é celebrada nesse período em cidades como Pirenópolis (GO), Paraty (RJ), São Luiz do Paraitinga (SP) e Alcântara (MA), com coroação do "imperador", folia, bandeiras e cavalhadas.</li>
+<li><b>Comunidades de partilha:</b> Atos 2 e 4 inspiraram mosteiros, movimentos de vida comunitária, comunidades eclesiais de base e projetos sociais de igrejas evangélicas.</li>
+<li><b>Diáconos:</b> o diaconato existe hoje no catolicismo (diáconos permanentes, que podem ser casados), na ortodoxia, no anglicanismo e em várias igrejas protestantes, com funções diferentes.</li>
+</ul>` }
   ],
-  exercicio: { p: 'Leia Atos 2–5 e separe o que parece descrição histórica e o que parece ideal teológico.', prompt: 'Analise Atos 2 a 5 sobre a primeira comunidade de Jerusalém. O que historiadores consideram plausível, o que veem como idealização e por quê? Como as igrejas usam esses capítulos hoje (por exemplo, sobre partilha de bens, dons do Espírito e liderança)?' }
+  quiz: [
+    { p: 'Qual festa judaica era celebrada no dia de Pentecostes narrado em Atos 2?',
+      o: ['Páscoa (Pessach)', 'Shavuot, a festa das Semanas', 'Hanucá', 'Yom Kippur'], c: 1,
+      e: ['A Páscoa vem cinquenta dias antes.', 'Pentecostes é o nome grego de Shavuot, festa de peregrinação cinquenta dias após a Páscoa.', 'Hanucá lembra a rededicação do Templo pelos Macabeus, no inverno.', 'Yom Kippur é o Dia da Expiação, no outono.'] },
+    { p: 'Quem liderava a comunidade de Jerusalém a partir dos anos 40, segundo Paulo e Atos?',
+      o: ['Paulo', 'Tiago, irmão de Jesus', 'Estêvão', 'Barnabé'], c: 1,
+      e: ['Paulo atuava sobretudo entre gentios, fora de Jerusalém.', 'Tiago é chamado de "coluna" (Gálatas 2:9) e preside a reunião de Atos 15.', 'Estêvão foi um dos sete e morreu cedo.', 'Barnabé atuou em Antioquia e com Paulo.'] },
+    { p: 'O que a pesquisa observa sobre a unidade da primeira Igreja descrita em Atos?',
+      o: ['Que é confirmada em todos os detalhes pelas cartas de Paulo', 'Que Atos a idealiza; as cartas de Paulo mostram conflitos, como o de Antioquia', 'Que nunca houve comunidade em Jerusalém', 'Que Atos foi escrito por Pedro'], c: 1,
+      e: ['As cartas mostram tensões que Atos suaviza.', 'O choque entre Paulo e Pedro (Gálatas 2:11–14) é um exemplo.', 'A comunidade é atestada por Paulo e por Josefo.', 'Atos é atribuído ao autor de Lucas.'] },
+    { p: 'Que fonte não cristã menciona a execução de "Tiago, irmão de Jesus, chamado Cristo"?',
+      o: ['Tácito', 'Plínio, o Jovem', 'Flávio Josefo', 'Fílon de Alexandria'], c: 2,
+      e: ['Tácito menciona Cristo e a perseguição de Nero, não Tiago.', 'Plínio fala dos cristãos da Bitínia.', 'Josefo, em <i>Antiguidades</i> 20.200, narra a morte de Tiago em 62 d.C.', 'Fílon morreu por volta de 50 d.C. e não menciona os cristãos.'] }
+  ],
+  exercicio: { p: 'Leia Atos 2–5 e separe o que parece descrição histórica e o que parece ideal teológico.', prompt: 'Analise Atos 2 a 5 sobre a primeira comunidade de Jerusalém. O que historiadores consideram plausível, o que veem como idealização e por quê? Compare com o que Paulo diz em Gálatas 1–2. Depois, mostre como diferentes igrejas usam esses capítulos hoje (por exemplo, sobre partilha de bens, dons do Espírito e liderança). Indique o que é consenso, debate e ensino de fé.',
+    criterio: 'Uma boa resposta cita trechos específicos de Atos com referência, compara com pelo menos uma passagem de Gálatas, explica um motivo literário ou teológico para a idealização e apresenta usos atuais de pelo menos duas tradições sem julgá-las.' }
 });
 </script>
 
@@ -1255,63 +1454,215 @@ CURSO.modulo('t1-n2-m1', {
 });
 
 CURSO.aula('t1-n2-m1-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar como se organiza o Antigo Testamento, quais são seus gêneros literários e como a pesquisa entende sua formação.',
+  revisado: '2026-11-27',
+  objetivo: 'Explicar como se organiza o Antigo Testamento, quais são seus gêneros literários, como judeus e cristãos o ordenam de modos diferentes e o que a pesquisa diz sobre sua formação.',
   secoes: [
-{ t: 'Uma biblioteca em três partes', h: `
-<p>A Bíblia judaica se chama <b>Tanakh</b>, sigla de suas três partes: <b>Torá</b> (Lei/Instrução), <b>Neviim</b> (Profetas) e <b>Ketuvim</b> (Escritos). Os cristãos chamam esse conjunto de <dfn data-g="antigo-testamento">Antigo Testamento</dfn> e o organizam de outro modo: Pentateuco, livros históricos, sapienciais e proféticos — terminando nos profetas, como uma ponte para o Novo Testamento.</p>
+{ t: 'Uma biblioteca, não um livro', h: `
+<p>A palavra "Bíblia" vem do grego <i>ta biblia</i>, "os livros" — no plural. O <dfn data-g="antigo-testamento">Antigo Testamento</dfn> é uma biblioteca escrita ao longo de muitos séculos, por muitos autores, em contextos muito diferentes: reinos, exílio, domínio persa e grego. Ele é a Escritura do judaísmo e, para os cristãos, a primeira parte da Bíblia.</p>
+<p>A Bíblia judaica se chama <b>Tanakh</b>, sigla de suas três partes: <b>Torá</b> (Instrução: Gênesis a Deuteronômio), <b>Neviim</b> (Profetas: inclui livros "históricos" como Josué, Juízes, Samuel e Reis, e os profetas propriamente ditos) e <b>Ketuvim</b> (Escritos: Salmos, Provérbios, Jó, Rute, Ester, Daniel, Crônicas e outros). A ordem termina com Crônicas, que fecha com o convite para voltar a Jerusalém.</p>
+<p>Os cristãos herdaram a ordem da tradução grega, a <dfn data-g="septuaginta">Septuaginta</dfn>: Pentateuco, livros históricos, poéticos e sapienciais, e proféticos. Terminar com os profetas — Malaquias, que anuncia a volta de Elias — funciona como ponte para o Novo Testamento, que começa com João Batista. A ordem, portanto, também é uma interpretação. <span data-tag="consenso"></span></p>
 <div class="scroll"><table><thead><tr><th>Tradição</th><th>Livros do Antigo Testamento</th></tr></thead><tbody>
-<tr><td>Judaica (Tanakh)</td><td>24 livros (o mesmo conteúdo dos 39 protestantes, contados de outro modo)</td></tr>
+<tr><td>Judaica (Tanakh)</td><td>24 livros (o mesmo conteúdo dos 39 protestantes, contados de outro modo: os 12 profetas menores, por exemplo, são um só livro)</td></tr>
 <tr><td>Protestante</td><td>39</td></tr>
-<tr><td>Católica</td><td>46 (inclui os deuterocanônicos)</td></tr>
+<tr><td>Católica</td><td>46 (inclui os <dfn data-g="deuterocanonico">deuterocanônicos</dfn>)</td></tr>
 <tr><td>Ortodoxa</td><td>Em geral, mais de 46 (varia entre as igrejas)</td></tr>
-</tbody></table></div>` },
+</tbody></table></div>
+<aside data-box="cuidado" data-t="&quot;Antigo&quot; ou &quot;Primeiro&quot; Testamento?"><p>"Antigo" não significa "ultrapassado" para as igrejas, que o leem como Palavra de Deus. Ainda assim, alguns estudiosos e cristãos preferem "Primeiro Testamento" ou "Bíblia Hebraica", para evitar a ideia de que ele foi substituído e por respeito ao judaísmo, para quem ele é a Bíblia inteira.</p></aside>` },
+
 { t: 'Gêneros literários', h: `
-<p>Há narrativas de origem (Gênesis 1–11), sagas familiares (Abraão, Jacó, José), leis, crônicas de reis, oráculos proféticos, poesia (Salmos, Cântico dos Cânticos), sabedoria (Provérbios, Jó, Eclesiastes) e apocalíptica (Daniel). Ler cada texto segundo seu gênero é um princípio aceito tanto por estudiosos quanto, cada vez mais, pelas próprias igrejas — a Igreja Católica o afirma na constituição <i>Dei Verbum</i> (1965). <span data-tag="consenso"></span></p>` },
-{ t: 'Como foi escrito', h: `
+<p>Ler cada texto segundo seu gênero é um princípio aceito tanto por estudiosos quanto, cada vez mais, pelas próprias igrejas. A Igreja Católica o afirma na constituição <i>Dei Verbum</i> (1965), do Concílio Vaticano II; muitas igrejas protestantes o ensinam em seus seminários. <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th>Gênero</th><th>Exemplos</th><th>Como ler</th></tr></thead><tbody>
+<tr><td>Narrativas de origem</td><td>Gênesis 1–11 (criação, dilúvio, Babel)</td><td>Textos que respondem a "por que o mundo é assim?"; dialogam com mitos mesopotâmicos</td></tr>
+<tr><td>Sagas familiares</td><td>Abraão, Isaque, Jacó, José</td><td>Histórias de ancestrais que explicam a identidade de Israel</td></tr>
+<tr><td>Leis</td><td>Êxodo 20–23, Levítico, Deuteronômio</td><td>Códigos que lembram outros do Oriente antigo, como o de Hamurabi</td></tr>
+<tr><td>Historiografia</td><td>Samuel, Reis, Crônicas</td><td>História escrita com olhar teológico: a fidelidade ou infidelidade dos reis</td></tr>
+<tr><td>Profecia</td><td>Isaías, Jeremias, Amós</td><td>Oráculos que denunciam injustiças e anunciam juízo e esperança</td></tr>
+<tr><td>Poesia e oração</td><td>Salmos, Lamentações, Cântico dos Cânticos</td><td>Paralelismo, imagens e ritmo; louvor, súplica e amor</td></tr>
+<tr><td>Sabedoria</td><td>Provérbios, Jó, Eclesiastes</td><td>Reflexão sobre a vida, o sofrimento e o sentido</td></tr>
+<tr><td>Apocalíptica</td><td>Daniel 7–12</td><td>Visões simbólicas sobre o fim da opressão</td></tr>
+</tbody></table></div>
+<aside data-box="exemplo" data-t="O paralelismo dos Salmos"><p>A poesia hebraica não rima: ela repete e varia a ideia em duas linhas. "Os céus manifestam a glória de Deus / e o firmamento anuncia a obra das suas mãos" (Salmos 19:1). Saber isso evita ler cada linha como uma afirmação separada.</p></aside>` },
+
+{ t: 'Como foi escrito: tradição e pesquisa', h: `
 <div class="persp">
-<div><h4>Visão tradicional</h4><p>Moisés escreveu o Pentateuco; Davi, muitos Salmos; Salomão, Provérbios; cada profeta, seu livro. Algumas igrejas e muitos fiéis mantêm essa visão. <span data-tag="tradicao"></span></p></div>
-<div><h4>Visão da pesquisa</h4><p>Os textos nasceram de tradições orais e foram escritos, reunidos e editados por várias gerações, sobretudo entre a monarquia (séculos X–VI a.C.) e os períodos persa e helenístico. A "hipótese documental" de Wellhausen (1878), com quatro fontes no Pentateuco, foi muito revista; hoje há vários modelos. <span data-tag="debate"></span> O livro de Daniel, por exemplo, é datado pela maioria dos estudiosos por volta de 165 a.C. <span data-tag="consenso"></span></p></div>
+<div><h4>Visão tradicional</h4><p>Moisés escreveu o Pentateuco; Josué, o livro de Josué; Davi, muitos Salmos; Salomão, Provérbios, Eclesiastes e Cântico dos Cânticos; cada profeta, seu livro. Essa visão vem do judaísmo antigo (o Talmude já a registra) e foi aceita por séculos. Muitos fiéis e algumas igrejas a mantêm. <span data-tag="tradicao"></span></p></div>
+<div><h4>Visão da pesquisa</h4><p>Os textos nasceram de tradições orais e foram escritos, reunidos e editados por várias gerações, sobretudo entre a monarquia (séculos X–VI a.C.) e os períodos persa e helenístico (séculos VI–II a.C.). O exílio na Babilônia (587–539 a.C.) teria sido decisivo para reunir e reinterpretar as tradições. <span data-tag="consenso"></span></p></div>
 </div>
-<aside data-box="cuidado" data-t="Gênesis e ciência"><p>Igrejas leem Gênesis 1–2 de formas diferentes: muitos evangélicos fundamentalistas defendem uma criação literal em seis dias; a Igreja Católica, as ortodoxas e muitas protestantes não veem conflito entre o texto, lido teologicamente, e a evolução. Esse tema volta na Trilha 4 (fé e ciência).</p></aside>` }
+<p>A <b>hipótese documental</b>, sistematizada por Julius Wellhausen em 1878, propunha quatro fontes no Pentateuco — J (javista), E (eloísta), D (deuteronomista) e P (sacerdotal). Ela foi muito revista: hoje muitos estudiosos, sobretudo europeus, falam em blocos de tradições e camadas de redação, e o debate sobre datas continua. <span data-tag="debate"></span> Alguns pontos têm amplo consenso: o livro de Daniel, na forma atual, é datado por volta de 165 a.C., durante a perseguição de Antíoco IV; o livro de Isaías reúne textos de épocas diferentes (capítulos 40–55 falam do fim do exílio, mais de 150 anos depois do profeta Isaías). <span data-tag="consenso"></span></p>
+<aside data-box="dado" data-t="A Bíblia e a arqueologia"><p>A arqueologia confirma muitos nomes e lugares da história de Israel a partir do século IX a.C. — a Estela de Mesa menciona o rei Omri; a Estela de Tel Dan (achada em 1993–94) cita a "casa de Davi". Já para os patriarcas e o êxodo não há confirmação arqueológica direta, e o tema é muito debatido entre "minimalistas" e "maximalistas". <span data-tag="debate"></span></p></aside>` },
+
+{ t: 'O que as igrejas ensinam', h: `
+<p>Todas as igrejas cristãs consideram o Antigo Testamento Escritura inspirada e o leem à luz de Cristo. Jesus e os apóstolos citam constantemente a Lei, os Profetas e os Salmos. Mas as tradições divergem em pontos importantes: <span data-tag="igreja">varia por igreja</span></p>
+<ul>
+<li><b>Quais livros</b> fazem parte (tema do módulo sobre o <dfn data-g="canon">cânon</dfn>).</li>
+<li><b>Como ler as leis</b>: a maioria das igrejas distingue leis morais (como os Dez Mandamentos), que continuariam válidas, de leis rituais (sacrifícios, alimentos), cumpridas em Cristo. Adventistas guardam o sábado como mandamento permanente.</li>
+<li><b>Gênese e ciência</b>: muitos evangélicos fundamentalistas defendem uma criação literal em seis dias; a Igreja Católica, as ortodoxas e muitas protestantes não veem conflito entre o texto, lido teologicamente, e a ciência.</li>
+</ul>
+<aside data-box="conceito" data-t="Tipologia"><p>Desde o Novo Testamento, cristãos leem personagens e fatos do Antigo Testamento como "tipos" (prefigurações) de Cristo: o cordeiro pascal, a serpente de bronze, Jonas três dias no peixe. É uma leitura de fé; o judaísmo lê os mesmos textos de outro modo, com sua própria tradição interpretativa.</p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li><b>Nomes</b>: Abraão, Davi, Daniel, Débora, Raquel, Isaías, Samuel e muitos outros nomes brasileiros vêm do Antigo Testamento.</li>
+<li><b>Expressões</b>: "velho como Matusalém", "paciência de Jó", "sabedoria de Salomão", "olho por olho", "vaidade das vaidades", "Davi contra Golias".</li>
+<li><b>Os Dez Mandamentos</b> estão em escolas, tribunais e templos e inspiraram filmes e novelas — a novela <i>Os Dez Mandamentos</i> (Record, 2015–2016) e seu filme bateram recordes de audiência e bilheteria no Brasil.</li>
+<li><b>Os Salmos</b> são a base da oração diária de monges, de liturgias e de muitas músicas gospel; o Salmo 23 ("O Senhor é o meu pastor") é provavelmente o texto bíblico mais memorizado no país.</li>
+</ul>
+<aside data-box="conexao" data-t="Trilha 4 · Especialista"><p>A relação entre Gênesis e a ciência é retomada na aula "Fé e ciência".</p></aside>` }
   ],
-  exercicio: { p: 'Escolha um livro do Antigo Testamento e descubra seu gênero, data provável e uso nas igrejas.', prompt: 'Sobre o livro bíblico [LIVRO], explique: gênero literário, como a tradição judaica e cristã atribui sua autoria, o que a pesquisa diz sobre data e formação (com grau de consenso) e como ele é usado na liturgia judaica, católica e protestante.' }
+  quiz: [
+    { p: 'O que significa a sigla Tanakh?',
+      o: ['Torá, Neviim (Profetas) e Ketuvim (Escritos)', 'Talmude, Mishná e Cabala', 'Templo, Arca e Aliança', 'Os nomes de três patriarcas'], c: 0,
+      e: ['Correto: são as três partes da Bíblia judaica.', 'Talmude e Mishná são obras rabínicas posteriores, fora da Bíblia.', 'Não é essa a origem da sigla.', 'Não tem relação com os patriarcas.'] },
+    { p: 'Por que o Antigo Testamento cristão termina com os profetas?',
+      o: ['Porque foram os últimos livros escritos', 'Porque a ordem da Septuaginta, herdada pelos cristãos, faz dos profetas uma ponte para o Novo Testamento', 'Porque o judaísmo também os coloca no fim', 'Por decisão do Concílio de Trento'], c: 1,
+      e: ['Daniel e outros textos são mais tardios que vários profetas.', 'A ordem expressa uma leitura: Malaquias anuncia Elias, e o Novo Testamento começa com João Batista.', 'A Bíblia judaica termina com Crônicas.', 'A ordem é muito anterior a Trento.'] },
+    { p: 'Qual é a datação mais aceita pela pesquisa para o livro de Daniel na forma atual?',
+      o: ['Século X a.C., no tempo de Davi', 'Por volta de 165 a.C., durante a perseguição de Antíoco IV', 'Século I d.C.', 'Século IV d.C.'], c: 1,
+      e: ['Não há sustentação para essa data.', 'Os detalhes das visões correspondem à crise dos Macabeus.', 'Daniel já está nos Manuscritos do Mar Morto, anteriores.', 'Muito tardio; contradiz os manuscritos.'] },
+    { p: 'O que a Estela de Tel Dan, achada em 1993–94, tem de importante?',
+      o: ['Prova o êxodo do Egito', 'Menciona a "casa de Davi", primeira referência extrabíblica a Davi', 'Contém o texto completo do Gênesis', 'Mostra o rosto de Moisés'], c: 1,
+      e: ['Não trata do êxodo.', 'É uma inscrição aramaica do século IX a.C. que cita a dinastia davídica.', 'É uma inscrição curta, não um texto bíblico.', 'Não há imagem de Moisés.'] }
+  ],
+  exercicio: { p: 'Escolha um livro do Antigo Testamento e descubra seu gênero, data provável e uso nas igrejas.', prompt: 'Sobre o livro bíblico [LIVRO], explique: (1) gênero literário e principais características do texto; (2) como a tradição judaica e cristã atribui sua autoria; (3) o que a pesquisa diz sobre data e formação, com grau de consenso; (4) como ele é usado na liturgia judaica, católica, ortodoxa e protestante. Marque o que é consenso, debate e tradição.',
+    criterio: 'Uma boa resposta identifica o gênero com exemplos do texto, separa a autoria tradicional das hipóteses acadêmicas (indicando quais são debatidas) e dá pelo menos um exemplo concreto de uso litúrgico ou devocional atual.' }
 });
 
 CURSO.aula('t1-n2-m1-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Descrever os 27 livros do Novo Testamento, quando e por que foram escritos e quais têm autoria debatida.',
+  revisado: '2026-11-27',
+  objetivo: 'Descrever os 27 livros do Novo Testamento, quando e por que foram escritos, quais têm autoria debatida e como o Apocalipse é lido de formas diferentes.',
   secoes: [
 { t: 'Os 27 livros', h: `
-<p>O Novo Testamento, comum a todas as grandes igrejas, tem 27 livros: <b>4 Evangelhos</b>, <b>Atos dos Apóstolos</b>, <b>21 cartas</b> (14 tradicionalmente atribuídas a Paulo, incluindo Hebreus, e 7 "católicas", isto é, universais: Tiago, 1–2 Pedro, 1–3 João e Judas) e o <b>Apocalipse</b>. A ordem não é cronológica: as cartas de Paulo, que vêm depois dos Evangelhos, foram escritas antes deles. <span data-tag="consenso"></span></p>` },
+<p>O Novo Testamento, comum a todas as grandes igrejas, tem 27 livros, escritos em grego por seguidores de Jesus no século I e, talvez, no início do século II:</p>
+<ul>
+<li><b>4 Evangelhos</b>: Mateus, Marcos, Lucas e João.</li>
+<li><b>Atos dos Apóstolos</b>: continuação de Lucas, sobre a expansão do movimento.</li>
+<li><b>21 cartas</b>: 13 levam o nome de Paulo; Hebreus, anônima, foi atribuída a ele por parte da tradição; e 7 cartas chamadas "católicas", isto é, universais (Tiago, 1–2 Pedro, 1–3 João e Judas).</li>
+<li><b>Apocalipse</b>: o único livro inteiramente profético-apocalíptico.</li>
+</ul>
+<p>A ordem não é cronológica. As cartas de Paulo, que vêm depois dos Evangelhos, foram escritas antes deles: 1 Tessalonicenses, de cerca de 50 d.C., é provavelmente o texto cristão mais antigo que temos. As cartas de Paulo estão organizadas mais ou menos por tamanho, da maior (Romanos) à menor (Filêmon). <span data-tag="consenso"></span></p>
+<aside data-box="conceito" data-t="Evangelho e evangelhos"><p><dfn data-g="evangelho">Evangelho</dfn> significa "boa notícia". Para Paulo, é a mensagem sobre a morte e ressurreição de Jesus; só no século II a palavra passou a designar os livros que narram sua vida.</p></aside>` },
+
 { t: 'Datas e autoria', h: `
-<p>Os livros foram escritos aproximadamente entre 50 e 120 d.C., em grego. Há consenso de que sete cartas são de Paulo: Romanos, 1 e 2 Coríntios, Gálatas, Filipenses, 1 Tessalonicenses e Filêmon. Para Efésios, Colossenses, 2 Tessalonicenses e as Pastorais (1–2 Timóteo, Tito), muitos estudiosos falam em autores discípulos que escreveram em nome de Paulo, prática comum na Antiguidade; outros defendem a autoria paulina. Hebreus é anônima. <span data-tag="debate"></span></p>
-<p>As igrejas, em geral, mantêm as atribuições tradicionais em sua liturgia, mas muitas — inclusive a católica — aceitam a discussão acadêmica sobre autoria, desde que não se negue a inspiração dos textos. <span data-tag="igreja">varia por igreja</span></p>` },
-{ t: 'O Apocalipse', h: `
-<p>O último livro, escrito por um João exilado na ilha de Patmos (c. 95 d.C., data mais aceita), usa a linguagem simbólica da literatura apocalíptica: números, animais, cidades. Para a maioria dos estudiosos, falava primeiro às igrejas da Ásia Menor sob pressão do Império Romano — "Babilônia" seria Roma. <span data-tag="consenso"></span></p>
-<p>Leituras religiosas variam: futurista (profecia do fim dos tempos, comum entre evangélicos, com correntes como o dispensacionalismo e o "arrebatamento"), histórica, preterista (já cumprido no século I) e espiritual/litúrgica (comum em católicos e ortodoxos). A Igreja Ortodoxa não lê o Apocalipse na liturgia. <span data-tag="igreja">varia por igreja</span></p>` }
+<div class="scroll"><table>
+<thead><tr><th>Livro(s)</th><th>Data mais aceita</th><th>Autoria</th></tr></thead>
+<tbody>
+<tr><td>1 Tessalonicenses, Gálatas, 1–2 Coríntios, Filipenses, Filêmon, Romanos</td><td class="y">c. 50–58</td><td>Paulo (consenso)</td></tr>
+<tr><td>Marcos</td><td class="y">c. 65–75</td><td>Anônimo; tradição: Marcos, discípulo de Pedro</td></tr>
+<tr><td>Mateus e Lucas–Atos</td><td class="y">c. 80–90</td><td>Anônimos; tradição: o apóstolo Mateus e Lucas, companheiro de Paulo</td></tr>
+<tr><td>Colossenses, Efésios, 2 Tessalonicenses</td><td class="y">c. 60–90</td><td>Debatida</td></tr>
+<tr><td>João</td><td class="y">c. 90–100</td><td>Anônimo; tradição: o apóstolo João ou o "discípulo amado"</td></tr>
+<tr><td>Apocalipse</td><td class="y">c. 95</td><td>Um João exilado em Patmos; identidade debatida</td></tr>
+<tr><td>1–2 Timóteo, Tito (Pastorais), 2 Pedro</td><td class="y">c. 90–130</td><td>A maioria dos estudiosos as vê como pseudoepígrafas</td></tr>
+</tbody></table></div>
+<p>Há consenso de que sete cartas são de Paulo. Para as demais, muitos estudiosos falam em discípulos que escreveram em nome do mestre — prática chamada <b>pseudoepigrafia</b>, comum na Antiguidade judaica e grega. Outros, sobretudo conservadores, defendem a autoria tradicional e datas mais antigas. Hebreus é anônima: já no século III, Orígenes dizia que "só Deus sabe" quem a escreveu. <span data-tag="debate"></span></p>
+<p>As igrejas, em geral, mantêm as atribuições tradicionais na liturgia ("leitura da carta de São Paulo a Timóteo"), mas muitas — inclusive a católica, em suas Bíblias de estudo — aceitam a discussão acadêmica sobre autoria, desde que não se negue a inspiração dos textos. <span data-tag="igreja">varia por igreja</span></p>` },
+
+{ t: 'Por que foram escritos', h: `
+<p>Nenhum autor do Novo Testamento sabia que estava escrevendo "a Bíblia". Os textos responderam a necessidades concretas:</p>
+<ul>
+<li><b>Cartas</b>: Paulo escrevia para resolver problemas de comunidades que fundara — divisões em Corinto, a questão da circuncisão na Galácia, a morte de fiéis em Tessalônica.</li>
+<li><b>Evangelhos</b>: com a morte das testemunhas e a destruição de Jerusalém (70 d.C.), era preciso fixar a memória de Jesus para o ensino e a liturgia.</li>
+<li><b>Apocalipse</b>: encorajar comunidades da Ásia Menor pressionadas pelo culto ao imperador.</li>
+</ul>
+<p>Os textos eram lidos em voz alta nas assembleias — a maioria das pessoas não sabia ler — e copiados para outras comunidades (Colossenses 4:16 pede que as cartas circulem). <span data-tag="consenso"></span></p>` },
+
+{ t: 'O Apocalipse e suas leituras', h: `
+<p>O último livro usa a linguagem simbólica da <dfn data-g="apocaliptica">literatura apocalíptica</dfn>: números (7, 12, 666), animais, cidades, cores. Para a maioria dos estudiosos, falava primeiro às sete igrejas da Ásia Menor sob pressão do Império Romano; "Babilônia" seria Roma, a cidade das sete colinas (Apocalipse 17:9), e o número 666 corresponderia, pela gematria, ao nome "Nero César" escrito em letras hebraicas. <span data-tag="consenso"></span></p>
+<p>As leituras religiosas variam muito: <span data-tag="igreja">varia por igreja</span></p>
+<ul>
+<li><b>Futurista</b>: profecia do fim dos tempos, ainda a se cumprir. É comum entre evangélicos, com correntes como o <b>dispensacionalismo</b> e a crença no "arrebatamento" da Igreja antes de uma grande tribulação.</li>
+<li><b>Historicista</b>: o livro descreveria toda a história da Igreja; foi popular entre reformadores e é central para os adventistas.</li>
+<li><b>Preterista</b>: as profecias se cumpriram em grande parte no século I.</li>
+<li><b>Espiritual ou litúrgica</b>: o livro revela a vitória de Cristo e a liturgia celeste; comum entre católicos e ortodoxos.</li>
+</ul>
+<aside data-box="cuidado" data-t="Previsões de data"><p>Ao longo da história, muitos grupos usaram o Apocalipse para anunciar datas para o fim do mundo — todas falharam. A maioria das igrejas lembra que, segundo os Evangelhos, "daquele dia e hora ninguém sabe" (Mateus 24:36). A Igreja Ortodoxa nem lê o Apocalipse na liturgia.</p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li><b>Expressões:</b> "apocalipse" como sinônimo de catástrofe; "o alfa e o ômega"; "a letra mata"; "fé que move montanhas"; "o salário do pecado".</li>
+<li><b>Ética:</b> o "hino ao amor" de 1 Coríntios 13 é lido em casamentos de todas as tradições; a carta de Tiago ("a fé sem obras é morta") inspira debates sobre fé e ação social.</li>
+<li><b>Cultura:</b> o Apocalipse alimenta filmes, séries, livros e pregações sobre o fim dos tempos — da série <i>Deixados para trás</i> a canções populares.</li>
+</ul>
+<aside data-box="conexao" data-t="Trilha 1 · Avançado"><p>As cartas de Paulo e sua teologia são estudadas em detalhe no módulo sobre os apóstolos.</p></aside>` }
   ],
-  exercicio: { p: 'Monte uma linha do tempo dos livros do Novo Testamento por data provável.', prompt: 'Organize os 27 livros do Novo Testamento por data provável de composição, indicando para cada um a faixa de datas mais aceita, a autoria tradicional, o grau de consenso acadêmico sobre a autoria e uma frase sobre seu tema.' }
+  quiz: [
+    { p: 'Qual é provavelmente o texto cristão mais antigo que temos?',
+      o: ['O Evangelho de Mateus', '1 Tessalonicenses', 'O Apocalipse', 'O Evangelho de João'], c: 1,
+      e: ['Mateus é de c. 80–90.', 'Escrita por Paulo por volta de 50 d.C.', 'O Apocalipse é de c. 95.', 'João é o último Evangelho.'] },
+    { p: 'O que é pseudoepigrafia?',
+      o: ['Uma tradução falsa da Bíblia', 'A prática antiga de escrever em nome de um mestre ou figura venerada', 'Um tipo de manuscrito em papiro', 'A divisão em capítulos'], c: 1,
+      e: ['Não se refere a traduções.', 'Muitos estudiosos explicam assim as cartas Pastorais e 2 Pedro.', 'Não é um suporte material.', 'A divisão em capítulos é medieval e não tem esse nome.'] },
+    { p: 'Segundo a maioria dos estudiosos, a "Babilônia" do Apocalipse representa…',
+      o: ['A Babilônia da Mesopotâmia, reconstruída no século I', 'Roma', 'Jerusalém celeste', 'A Igreja Católica medieval'], c: 1,
+      e: ['A Babilônia antiga já não tinha importância política no século I.', 'A cidade "das sete colinas" (Ap 17:9) aponta para Roma.', 'A Jerusalém celeste é o contrário da Babilônia no livro.', 'Essa leitura polêmica surgiu na Reforma; não é a interpretação histórica.'] },
+    { p: 'Qual leitura do Apocalipse é central para os adventistas?',
+      o: ['Historicista', 'Preterista', 'Só litúrgica', 'Nenhuma: eles não leem o Apocalipse'], c: 0,
+      e: ['Os adventistas leem Daniel e Apocalipse como profecias que percorrem toda a história.', 'O preterismo vê o cumprimento no século I.', 'A leitura litúrgica é mais típica de católicos e ortodoxos.', 'O Apocalipse é central para os adventistas.'] }
+  ],
+  exercicio: { p: 'Monte uma linha do tempo dos livros do Novo Testamento por data provável.', prompt: 'Organize os 27 livros do Novo Testamento por data provável de composição, indicando para cada um: faixa de datas mais aceita, autoria tradicional, grau de consenso acadêmico sobre a autoria (consenso, debate, minoria) e uma frase sobre seu tema. Ao final, explique por que a ordem nas Bíblias não é cronológica.',
+    criterio: 'Uma boa resposta começa pelas cartas autênticas de Paulo, situa Marcos antes de Mateus e Lucas, distingue claramente autoria tradicional de autoria debatida e reconhece que estudiosos conservadores propõem datas mais antigas.' }
 });
 
 CURSO.aula('t1-n2-m1-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar em que línguas a Bíblia foi escrita, que manuscritos existem e como se estabelece o texto que lemos hoje.',
+  revisado: '2026-11-27',
+  objetivo: 'Explicar em que línguas a Bíblia foi escrita, que manuscritos existem, como a crítica textual reconstrói o texto e como surgiram os capítulos e versículos.',
   secoes: [
 { t: 'Três línguas', h: `
-<p>O Antigo Testamento foi escrito em <b>hebraico</b>, com trechos em <b>aramaico</b> (partes de Daniel e Esdras). Alguns deuterocanônicos chegaram em <b>grego</b>. O Novo Testamento foi escrito em <b>grego koiné</b>. <span data-tag="consenso"></span></p>` },
-{ t: 'Os manuscritos', h: `
-<p>Não temos os originais (os "autógrafos") de nenhum livro bíblico — como não temos de quase nenhum texto antigo. Temos cópias:</p>
+<p>A Bíblia foi escrita em três línguas: <span data-tag="consenso"></span></p>
 <ul>
-<li><b>Antigo Testamento:</b> o texto hebraico padrão é o <b>Massorético</b>, fixado por escribas judeus (massoretas) que acrescentaram vogais; seus códices completos mais antigos são o de Alepo (c. 930) e o de Leningrado (1008). Os Manuscritos do Mar Morto são cerca de mil anos mais antigos.</li>
-<li><b>Novo Testamento:</b> mais de 5.000 manuscritos gregos, além de traduções antigas. O fragmento mais antigo, o papiro P52 (trecho de João 18), é datado em geral no século II (a data exata é debatida). Os códices Sinaítico e Vaticano, do século IV, trazem a Bíblia quase completa.</li>
+<li><b>Hebraico</b>: a quase totalidade do Antigo Testamento. É uma língua semítica escrita da direita para a esquerda, originalmente só com consoantes.</li>
+<li><b>Aramaico</b>: trechos de Daniel (2:4–7:28) e Esdras, um versículo de Jeremias (10:11) e palavras isoladas no Novo Testamento, como <i>talitha cumi</i> ("menina, levanta-te", Marcos 5:41) e <i>Abba</i> ("pai"). Era a língua do dia a dia de Jesus.</li>
+<li><b>Grego</b>: todo o Novo Testamento, em <b>grego koiné</b> ("comum"), a língua franca do Mediterrâneo oriental, e alguns livros deuterocanônicos, como Sabedoria e 2 Macabeus.</li>
 </ul>
-<p><span data-tag="consenso"></span></p>` },
+<aside data-box="exemplo" data-t="Uma palavra, muitos sentidos"><p>O hebraico <i>ruach</i> pode significar "vento", "sopro" ou "espírito". Em Gênesis 1:2, o "espírito de Deus" que paira sobre as águas pode ser traduzido como "vento de Deus" — e as traduções divergem. O grego tem o mesmo jogo com <i>pneuma</i> (João 3:8).</p></aside>` },
+
+{ t: 'Os manuscritos do Antigo Testamento', h: `
+<p>Não temos os originais (os "autógrafos") de nenhum livro bíblico — como não temos de quase nenhum texto antigo. Temos cópias. O texto hebraico padrão é o <b>Texto Massorético</b>, fixado entre os séculos VI e X por escribas judeus chamados <b>massoretas</b>, que acrescentaram sinais de vogais, acentos e notas de controle (contavam letras e palavras para evitar erros). Seus códices completos mais antigos são o de <b>Alepo</b> (c. 930) e o de <b>Leningrado</b> (1008), base das edições acadêmicas atuais. <span data-tag="consenso"></span></p>
+<p>Os <b>Manuscritos do Mar Morto</b>, achados em <dfn data-g="qumran">Qumran</dfn> a partir de 1947, são cerca de mil anos mais antigos. O Grande Rolo de Isaías (1QIsa<sup>a</sup>) mostra que o texto foi copiado com grande fidelidade ao longo de um milênio — mas os manuscritos também revelam que, antes da era cristã, circulavam versões diferentes de alguns livros, como Jeremias, que na Septuaginta é cerca de um oitavo mais curto. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Os manuscritos do Novo Testamento', h: `
+<p>O Novo Testamento é, de longe, o texto antigo com mais cópias: cerca de <b>5.800 manuscritos gregos</b>, além de milhares de traduções antigas (latinas, siríacas, coptas) e citações de autores cristãos. Para comparar: de muitas obras clássicas gregas e latinas restam poucas dezenas de cópias, às vezes copiadas mais de mil anos depois do original. <span data-tag="consenso"></span></p>
+<div class="scroll"><table>
+<thead><tr><th>Manuscrito</th><th>Data</th><th>Conteúdo</th></tr></thead>
+<tbody>
+<tr><td>Papiro P52 (Manchester)</td><td class="y">séc. II (data exata debatida)</td><td>Fragmento de João 18; o mais antigo conhecido</td></tr>
+<tr><td>Papiros Chester Beatty e Bodmer (P45, P46, P66, P75)</td><td class="y">c. 200–250</td><td>Evangelhos e cartas de Paulo em grande parte</td></tr>
+<tr><td>Códice Vaticano</td><td class="y">séc. IV</td><td>Bíblia grega quase completa</td></tr>
+<tr><td>Códice Sinaítico</td><td class="y">séc. IV</td><td>Novo Testamento completo, mais a Carta de Barnabé e parte do Pastor de Hermas</td></tr>
+<tr><td>Códice Alexandrino</td><td class="y">séc. V</td><td>Bíblia grega quase completa</td></tr>
+</tbody></table></div>
+<aside data-box="dado" data-t="O Códice Sinaítico on-line"><p>O Códice Sinaítico, descoberto no Mosteiro de Santa Catarina, no Sinai, no século XIX, hoje está dividido entre Londres, Leipzig, São Petersburgo e o próprio mosteiro. Desde 2009, pode ser visto inteiro, digitalizado, no site codexsinaiticus.org.</p></aside>` },
+
 { t: 'Crítica textual', h: `
-<p>As cópias têm variações — na maioria, erros de ortografia ou ordem de palavras. A <b>crítica textual</b> compara manuscritos para reconstruir o texto mais antigo possível. Algumas variações são significativas, como o final longo de Marcos (16:9–20) e o episódio da mulher adúltera (João 7:53–8:11), ausentes dos manuscritos mais antigos. Muitas Bíblias atuais as mantêm entre colchetes ou com nota. <span data-tag="consenso"></span></p>
-<aside data-box="dado" data-t="Capítulos e versículos"><p>Os autores bíblicos não dividiram os textos em capítulos e versículos. A divisão em capítulos é atribuída a Stephen Langton, arcebispo de Cantuária, no início do século XIII; a numeração dos versículos do Novo Testamento, ao impressor Robert Estienne, em 1551. <span data-tag="consenso"></span></p></aside>` }
+<p>As cópias têm variações — centenas de milhares, somando todos os manuscritos. A grande maioria é insignificante: erros de ortografia, palavras repetidas, ordem diferente. A <b>crítica textual</b> compara os manuscritos, estuda como os erros surgem e se propagam e procura reconstruir o texto mais antigo possível. As edições acadêmicas mais usadas são a <b>Nestle-Aland</b> (28ª edição, 2012) e a das Sociedades Bíblicas Unidas. <span data-tag="consenso"></span></p>
+<p>Algumas variações são significativas:</p>
+<ul>
+<li>O <b>final longo de Marcos</b> (16:9–20) e o episódio da <b>mulher adúltera</b> (João 7:53–8:11) não estão nos manuscritos mais antigos.</li>
+<li>O <b><i>Comma Johanneum</i></b> — a frase trinitária de 1 João 5:7–8 ("o Pai, a Palavra e o Espírito Santo") — só aparece em manuscritos latinos tardios; entrou no texto grego impresso por Erasmo no século XVI e foi mantida no <i>Textus Receptus</i> e em traduções como a Almeida Revista e Corrigida.</li>
+</ul>
+<p>Muitas Bíblias atuais mantêm essas passagens entre colchetes ou com nota. Há debate sobre qual tradição textual preferir: a maioria dos estudiosos privilegia os manuscritos mais antigos; uma minoria, e algumas igrejas, defende o <i>Textus Receptus</i> ou o "Texto Majoritário" (bizantino). <span data-tag="debate"></span></p>
+<aside data-box="cuidado" data-t="Nem &quot;tudo foi alterado&quot;, nem &quot;nada mudou&quot;"><p>Dizer que "a Bíblia foi totalmente adulterada" contradiz a enorme quantidade de manuscritos. Dizer que "não há nenhuma variação" também é falso. Estudiosos de posições diferentes, como Bruce Metzger e Bart Ehrman, concordam sobre os dados e divergem sobre o peso teológico das variantes.</p></aside>` },
+
+{ t: 'Capítulos e versículos', h: `
+<p>Os autores bíblicos não dividiram os textos em capítulos e versículos. A divisão em capítulos usada hoje é atribuída a <b>Stephen Langton</b>, professor em Paris e depois arcebispo de Cantuária, no início do século XIII. A numeração dos versículos do Novo Testamento foi feita pelo impressor <b>Robert Estienne</b> (Stephanus), em 1551; a primeira Bíblia inglesa inteiramente dividida em versículos foi a de Genebra (1560). <span data-tag="consenso"></span></p>
+<aside data-box="pratica" data-t="Como citar"><p>Este curso usa o padrão livro capítulo:versículo (João 3:16). Bíblias católicas costumam usar vírgula (Jo 3,16). As divisões às vezes cortam frases no meio, e a numeração dos Salmos varia entre Bíblias que seguem o hebraico e as que seguem a Septuaginta/Vulgata: o Salmo 23 ("O Senhor é o meu pastor") é o 22 em edições católicas antigas.</p></aside>` }
   ],
-  exercicio: { p: 'Escolha uma variante textual famosa e veja como sua Bíblia a apresenta.', prompt: 'Explique a variante textual de [João 7:53–8:11 / Marcos 16:9–20 / 1 João 5:7–8 (Comma Johanneum)]: quais manuscritos a contêm ou não, o que os críticos textuais concluem e como Bíblias católicas e protestantes em português a apresentam hoje.' }
+  quiz: [
+    { p: 'Em que língua foi escrito o Novo Testamento?',
+      o: ['Hebraico', 'Aramaico', 'Grego koiné', 'Latim'], c: 2,
+      e: ['O hebraico é a língua da maior parte do Antigo Testamento.', 'Há palavras aramaicas, mas os livros foram escritos em grego.', 'Correto: a língua franca do Mediterrâneo oriental.', 'O latim é a língua da Vulgata, uma tradução.'] },
+    { p: 'O que os Manuscritos do Mar Morto revelaram sobre o texto do Antigo Testamento?',
+      o: ['Que ele foi totalmente reescrito na Idade Média', 'Grande fidelidade de cópia ao longo de mil anos, mas também versões diferentes de alguns livros antes da era cristã', 'Que o hebraico só surgiu depois de Cristo', 'Que não existia o livro de Isaías'], c: 1,
+      e: ['O Grande Rolo de Isaías mostra o contrário.', 'As duas coisas são verdadeiras; Jeremias, por exemplo, circulava em duas formas.', 'O hebraico é muito anterior.', 'Isaías está entre os manuscritos mais bem preservados.'] },
+    { p: 'O que é o <i>Comma Johanneum</i>?',
+      o: ['O fragmento mais antigo de João', 'Uma frase trinitária em 1 João 5:7–8 ausente dos manuscritos gregos antigos', 'O final longo de Marcos', 'Um concílio do século IV'], c: 1,
+      e: ['Esse é o papiro P52.', 'Correto: entrou no texto grego impresso no século XVI e está em traduções como a Revista e Corrigida.', 'O final longo de Marcos é outra variante.', 'Não é um concílio.'] },
+    { p: 'Quem numerou os versículos do Novo Testamento, em 1551?',
+      o: ['Stephen Langton', 'Robert Estienne', 'Jerônimo', 'Martinho Lutero'], c: 1,
+      e: ['Langton é associado à divisão em capítulos, no século XIII.', 'O impressor Estienne (Stephanus) introduziu a numeração.', 'Jerônimo traduziu a Vulgata no século IV.', 'Lutero não fez a numeração.'] }
+  ],
+  exercicio: { p: 'Escolha uma variante textual famosa e veja como sua Bíblia a apresenta.', prompt: 'Explique a variante textual de [João 7:53–8:11 / Marcos 16:9–20 / 1 João 5:7–8 (Comma Johanneum)]: quais manuscritos a contêm ou não, o que os críticos textuais concluem e por quê, e como Bíblias católicas e protestantes em português (por exemplo, Almeida Revista e Corrigida, Almeida Revista e Atualizada, Bíblia de Jerusalém, NVI) a apresentam hoje. Indique o que é consenso e o que é debate.',
+    criterio: 'Uma boa resposta cita pelo menos dois manuscritos ou grupos de manuscritos, explica o critério de preferir leituras mais antigas, mostra como pelo menos duas traduções tratam o trecho (colchetes, nota, omissão) e não conclui que a variante "prova" ou "destrói" a fé.' }
 });
 
 CURSO.modulo('t1-n2-m2', {
@@ -1324,63 +1675,183 @@ CURSO.modulo('t1-n2-m2', {
 });
 
 CURSO.aula('t1-n2-m2-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar o que é cânon e como as listas de livros sagrados se formaram entre judeus e cristãos.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender o que é o cânon bíblico, como ele se formou ao longo dos séculos, que critérios as comunidades antigas usaram e quais mitos circulam sobre o tema.',
   secoes: [
-{ t: 'Um processo, não um decreto', h: `
-<p>"Cânon" vem do grego "régua": a medida da fé. Os livros não foram escolhidos de uma vez por uma autoridade; ganharam reconhecimento pelo uso nas comunidades, especialmente na leitura litúrgica, ao longo de séculos. Os concílios e bispos depois confirmaram listas que, em grande parte, já circulavam. <span data-tag="consenso"></span></p>` },
-{ t: 'O cânon do Novo Testamento', h: `
-<div class="scroll"><table><thead><tr><th class="y">Data</th><th>Marco</th></tr></thead><tbody>
-<tr><td class="y">c. 140</td><td>Marcião propõe um cânon reduzido (só Lucas editado e cartas de Paulo); é rejeitado, e a reação acelera a definição de uma lista mais ampla.</td></tr>
-<tr><td class="y">c. 180</td><td>Ireneu de Lião defende que os Evangelhos são exatamente quatro.</td></tr>
-<tr><td class="y">367</td><td>Atanásio lista os 27 livros atuais.</td></tr>
-<tr><td class="y">393 e 397</td><td>Sínodos de Hipona e Cartago (norte da África) confirmam a lista no Ocidente.</td></tr>
-</tbody></table></div>
-<p>Critérios usados pelos antigos: origem apostólica (real ou atribuída), conformidade com a fé recebida e uso amplo nas igrejas. Livros como Hebreus, Tiago, 2 Pedro e Apocalipse demoraram a ser aceitos em algumas regiões. <span data-tag="consenso"></span></p>
-<aside data-box="cuidado" data-t="O mito de Niceia"><p>É falso que o Concílio de Niceia (325) tenha escolhido os livros da Bíblia — o tema não estava em pauta. O mito se popularizou com romances e vídeos na internet. <span data-tag="consenso"></span></p></aside>` },
+{ t: 'O que é cânon', h: `
+<aside data-box="conceito" data-t="Cânon"><p><dfn data-g="canon">Cânon</dfn> vem do grego <i>kanōn</i>, "vara de medir, régua". Aplicado à Bíblia, designa a lista de livros que uma comunidade reconhece como Escritura com autoridade — a "medida" da fé.</p></aside>
+<p>O ponto mais importante sobre o cânon é que ele <b>não foi escolhido de uma vez</b> por uma autoridade. Os livros ganharam reconhecimento pelo uso nas comunidades, especialmente na leitura durante o culto, ao longo de séculos. Os bispos e sínodos depois confirmaram listas que, em grande parte, já circulavam. <span data-tag="consenso"></span></p>
+<p>Isso vale para o judaísmo e para o cristianismo. Por isso mesmo há cânones diferentes: comunidades que viviam em lugares e línguas diferentes chegaram a listas parecidas, mas não idênticas.</p>` },
+
 { t: 'O cânon judaico', h: `
-<p>Por muito tempo se disse que um "Concílio de Jâmnia" (c. 90 d.C.) fechou o cânon judaico. Hoje a maioria dos estudiosos rejeita essa ideia: houve debates rabínicos sobre alguns livros, mas o cânon se estabilizou gradualmente, sem um concílio decisório. <span data-tag="consenso"></span></p>` }
+<p>No tempo de Jesus, a Torá tinha autoridade indiscutível e os Profetas eram amplamente aceitos. A terceira parte, os Escritos, ainda estava aberta: Jesus fala de "a Lei de Moisés, os Profetas e os Salmos" (Lucas 24:44). Grupos diferentes tinham posições diferentes — os saduceus, segundo alguns autores antigos, davam primazia à Torá; em Qumran, liam-se também livros como 1 Enoque e Jubileus. <span data-tag="debate"></span></p>
+<p>Por muito tempo se disse que um "Concílio de Jâmnia" (Yavne), por volta de 90 d.C., teria fechado o cânon judaico. A ideia foi proposta no século XIX e hoje a maioria dos estudiosos a rejeita: houve debates rabínicos sobre alguns livros (como Eclesiastes e o Cântico dos Cânticos), mas o cânon se estabilizou gradualmente, sem um concílio decisório. No fim do século I, Josefo já fala em 22 livros (o mesmo conteúdo dos 24 atuais, contados de outro modo). <span data-tag="consenso"></span></p>` },
+
+{ t: 'O cânon do Novo Testamento: uma linha do tempo', h: `
+<div class="scroll"><table><thead><tr><th class="y">Data</th><th>Marco</th></tr></thead><tbody>
+<tr><td class="y">c. 50–120</td><td>Os textos são escritos e circulam; cartas de Paulo já são reunidas em coleções (2 Pedro 3:16 as chama de "Escrituras").</td></tr>
+<tr><td class="y">c. 140</td><td><b>Marcião</b> propõe um cânon reduzido — uma versão editada de Lucas e dez cartas de Paulo — e rejeita o Antigo Testamento. É excomungado em Roma, e a reação acelera a definição de uma lista mais ampla.</td></tr>
+<tr><td class="y">c. 180</td><td><b>Ireneu de Lião</b> defende que os Evangelhos são exatamente quatro, "como os quatro ventos".</td></tr>
+<tr><td class="y">séc. II ou IV</td><td>O <b>Fragmento Muratoriano</b>, lista latina de livros aceitos; sua data é debatida.</td></tr>
+<tr><td class="y">c. 325</td><td><b>Eusébio de Cesareia</b> classifica os livros em aceitos, disputados (Tiago, Judas, 2 Pedro, 2–3 João) e rejeitados.</td></tr>
+<tr><td class="y">367</td><td><b>Atanásio de Alexandria</b>, em sua 39ª carta festal, lista exatamente os 27 livros atuais — a primeira lista idêntica à de hoje.</td></tr>
+<tr><td class="y">393 e 397</td><td>Sínodos de <b>Hipona</b> e <b>Cartago</b>, no norte da África, com Agostinho, confirmam a lista no Ocidente.</td></tr>
+</tbody></table></div>
+<p>Livros como Hebreus, Tiago, 2 Pedro, Judas e o Apocalipse demoraram a ser aceitos em algumas regiões; o Apocalipse foi contestado no Oriente por muito tempo. Outros textos, como o Pastor de Hermas e a Didaquê, foram lidos com respeito em algumas igrejas e acabaram fora da lista. A Igreja Siríaca (Peshitta) tradicionalmente reconhece só 22 livros, sem 2 Pedro, 2–3 João, Judas e Apocalipse. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Critérios e mitos', h: `
+<p>Os autores antigos usaram, de forma combinada, três critérios principais: <span data-tag="consenso"></span></p>
+<ol>
+<li><b>Apostolicidade</b>: origem ligada a um apóstolo ou ao seu círculo (real ou atribuída).</li>
+<li><b>Ortodoxia</b>: conformidade com a "regra de fé" recebida das igrejas.</li>
+<li><b>Catolicidade</b>: uso amplo e antigo nas igrejas, sobretudo na liturgia.</li>
+</ol>
+<div class="persp">
+<div><h4>O que as igrejas ensinam</h4><p>Para católicos, ortodoxos e protestantes, o Espírito Santo guiou a Igreja no reconhecimento dos livros inspirados. Católicos e ortodoxos enfatizam o papel da Igreja e da Tradição nesse discernimento; protestantes costumam dizer que a Igreja <i>reconheceu</i> uma autoridade que os livros já tinham. <span data-tag="igreja">varia por igreja</span></p></div>
+<div><h4>O que a pesquisa observa</h4><p>A formação do cânon envolveu fatores teológicos, litúrgicos e também práticos — como a adoção do códice (livro de folhas costuradas), que permitia reunir vários textos num só volume. <span data-tag="consenso"></span></p></div>
+</div>
+<aside data-box="cuidado" data-t="Niceia não escolheu os livros da Bíblia"><p>É falso que o Concílio de Niceia (325) tenha escolhido os livros da Bíblia ou "excluído evangelhos". O tema não estava em pauta: o concílio tratou da divindade de Cristo e da data da Páscoa. O mito se popularizou com o romance <i>O Código Da Vinci</i> (2003) e com vídeos na internet. <span data-tag="consenso"></span></p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li>O cânon é a base do <b>lecionário</b> — a seleção de leituras para o culto — de católicos, ortodoxos, anglicanos e luteranos.</li>
+<li>A pergunta "por que esses livros?" volta sempre que surgem descobertas como os evangelhos apócrifos, tema do nível Especialista desta trilha.</li>
+<li>Diferenças de cânon explicam por que Bíblias católicas e protestantes têm tamanhos diferentes — tema da próxima aula.</li>
+</ul>
+<aside data-box="conexao" data-t="Trilha 1 · Especialista"><p>Os textos que ficaram de fora — Tomé, Pedro, Maria — são estudados no módulo sobre os apócrifos.</p></aside>` }
   ],
-  exercicio: { p: 'Investigue por que um livro "demorou" a entrar no cânon.', prompt: 'Explique a história da aceitação do livro [Hebreus / Apocalipse / 2 Pedro / Tiago] no cânon cristão: quem o aceitava ou rejeitava nos primeiros séculos, por quê, e quando houve consenso. Cite autores antigos com referência e indique incertezas.' }
+  quiz: [
+    { p: 'Como o cânon bíblico se formou, segundo o consenso dos historiadores?',
+      o: ['Foi decidido de uma vez no Concílio de Niceia', 'Por uso gradual nas comunidades, depois confirmado por listas e sínodos', 'Foi escolhido pelo imperador Constantino', 'Foi definido pelos apóstolos no ano 50'], c: 1,
+      e: ['Niceia não tratou do cânon.', 'Correto: o reconhecimento foi gradual, sobretudo pelo uso litúrgico.', 'Constantino não definiu o cânon.', 'No ano 50, a maioria dos livros nem tinha sido escrita.'] },
+    { p: 'Quem listou pela primeira vez exatamente os 27 livros do Novo Testamento?',
+      o: ['Marcião, em 140', 'Atanásio de Alexandria, em 367', 'Lutero, em 1522', 'Eusébio, em 325'], c: 1,
+      e: ['Marcião propôs um cânon reduzido.', 'Sua 39ª carta festal traz os 27 livros.', 'Lutero questionou alguns livros, como Tiago.', 'Eusébio ainda classificava vários livros como disputados.'] },
+    { p: 'O que a maioria dos estudiosos pensa hoje sobre o "Concílio de Jâmnia"?',
+      o: ['Que fechou definitivamente o cânon judaico em 90 d.C.', 'Que não houve um concílio decisório; o cânon judaico se estabilizou gradualmente', 'Que foi um concílio cristão', 'Que definiu os deuterocanônicos'], c: 1,
+      e: ['Essa era a hipótese do século XIX, hoje rejeitada pela maioria.', 'Houve debates rabínicos, mas não uma decisão formal.', 'Jâmnia (Yavne) foi um centro rabínico.', 'Não teve esse papel.'] },
+    { p: 'Qual destes NÃO era um critério antigo para aceitar um livro?',
+      o: ['Apostolicidade', 'Ortodoxia (conformidade com a regra de fé)', 'Uso amplo nas igrejas', 'Ter sido escrito originalmente em latim'], c: 3,
+      e: ['Era um critério central.', 'Era um critério central.', 'Era um critério central.', 'Correto: o Novo Testamento foi escrito em grego; a língua original não era critério.'] }
+  ],
+  exercicio: { p: 'Investigue por que um livro do Novo Testamento demorou a ser aceito.', prompt: 'Escolha um livro do Novo Testamento que foi disputado na Igreja antiga (Hebreus, Tiago, 2 Pedro, Judas ou Apocalipse). Explique: quem o questionou e por quê, quando e onde ele foi aceito, que critérios pesaram na decisão e como as igrejas atuais o veem (inclusive a posição de Lutero sobre Tiago, se for o caso). Cite as fontes antigas (Eusébio, Atanásio, sínodos) com cuidado e diga quando não tiver certeza.',
+    criterio: 'Uma boa resposta identifica as dúvidas antigas com fontes (por exemplo, Eusébio, História Eclesiástica 3.25), mostra que a aceitação variou por região, relaciona a decisão aos critérios de apostolicidade, ortodoxia e uso, e não reduz o processo a uma decisão política única.' }
 });
 
 CURSO.aula('t1-n2-m2-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar por que as Bíblias católica, ortodoxa e protestante têm números diferentes de livros.',
+  revisado: '2026-11-27',
+  objetivo: 'Explicar por que as Bíblias católica, ortodoxa e protestante têm número diferente de livros, como essa diferença surgiu historicamente e o que ela tem a ver com a questão da autoridade.',
   secoes: [
-{ t: 'A origem da diferença', h: `
-<p>Os primeiros cristãos usavam a Septuaginta grega, que incluía livros ausentes do cânon hebraico que se estabilizou entre os judeus. Jerônimo, ao traduzir a Vulgata, preferiu o hebraico e chamou esses livros de "apócrifos", mas a Igreja latina continuou a usá-los. <span data-tag="consenso"></span></p>
-<p>Na Reforma, Lutero voltou ao cânon hebraico para o Antigo Testamento: em sua Bíblia de 1534, reuniu esses livros entre os Testamentos, como "úteis e bons de ler", mas não iguais à Escritura. O Concílio de Trento respondeu, em 1546, definindo como canônicos os 73 livros. Confissões reformadas, como a de Westminster (1646), os excluíram. A King James (1611) ainda os trazia; sociedades bíblicas protestantes deixaram de imprimi-los no século XIX. <span data-tag="consenso"></span></p>
+{ t: 'Uma diferença no Antigo Testamento', h: `
+<p>As Bíblias cristãs têm o mesmo Novo Testamento, de 27 livros. A diferença está no Antigo Testamento:</p>
 <div class="scroll"><table><thead><tr><th>Igreja</th><th>Total de livros</th><th>Posição sobre os deuterocanônicos</th></tr></thead><tbody>
-<tr><td>Católica</td><td>73</td><td>Canônicos, inspirados (Trento, 1546).</td></tr>
-<tr><td>Ortodoxa</td><td>Variável, mais de 73</td><td>Aceitos (chamados <i>anaginoskomena</i>, "lidos"), mais alguns livros adicionais.</td></tr>
+<tr><td>Católica</td><td>73</td><td>Canônicos e inspirados (Concílio de Trento, 1546).</td></tr>
+<tr><td>Ortodoxa</td><td>Variável, mais de 73</td><td>Aceitos e chamados <i>anaginoskomena</i> ("os que são lidos"), mais alguns livros como 3 Macabeus, 1 Esdras, a Oração de Manassés e o Salmo 151.</td></tr>
 <tr><td>Protestante</td><td>66</td><td>Não canônicos; anglicanos e luteranos os consideram leitura edificante.</td></tr>
-<tr><td>Etíope Tewahedo</td><td>O maior cânon (cerca de 81)</td><td>Inclui livros como 1 Enoque e Jubileus.</td></tr>
-</tbody></table></div>` },
+<tr><td>Ortodoxa Etíope (Tewahedo)</td><td>Cerca de 81</td><td>O maior cânon cristão: inclui 1 Enoque e Jubileus.</td></tr>
+</tbody></table></div>
+<p>Os livros em disputa são sete — Tobias, Judite, 1 e 2 Macabeus, Sabedoria, Eclesiástico e Baruc — mais trechos gregos de Ester e Daniel. Católicos os chamam de <dfn data-g="deuterocanonico">deuterocanônicos</dfn> ("do segundo cânon"); protestantes, de <dfn data-g="apocrifo">apócrifos</dfn>. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Da Septuaginta a Jerônimo', h: `
+<p>Os primeiros cristãos, que falavam grego, usavam a <dfn data-g="septuaginta">Septuaginta</dfn>, tradução grega das Escrituras judaicas que incluía livros ausentes do cânon hebraico que se estabilizou entre os judeus. Os autores cristãos dos primeiros séculos citam esses livros com frequência, e muitos os tratam como Escritura. <span data-tag="consenso"></span></p>
+<p>Alguns autores, porém, notaram a diferença. No século IV, <b>Jerônimo</b>, ao traduzir a Vulgata, preferiu o texto hebraico e chamou esses livros de "apócrifos", dizendo que a Igreja os lia para edificação, mas não para fundamentar doutrinas. Agostinho, seu contemporâneo, defendia seu valor de Escritura, e os sínodos africanos de Hipona e Cartago os incluíram na lista. A Igreja latina continuou a usá-los durante toda a Idade Média. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Reforma e Trento', h: `
+<p>Na Reforma, os protestantes voltaram ao cânon hebraico para o Antigo Testamento, seguindo o princípio de que a Igreja recebeu dos judeus as Escrituras "confiadas" a eles (Romanos 3:2) e a posição de Jerônimo. <span data-tag="consenso"></span></p>
+<ul>
+<li><b>Lutero</b>, em sua Bíblia de 1534, reuniu esses livros entre os Testamentos, como "úteis e bons de ler", mas não iguais à Escritura.</li>
+<li>O <b>Concílio de Trento</b> respondeu, em abril de 1546, definindo como canônica a lista completa, com os deuterocanônicos — 73 livros.</li>
+<li>Os <b>39 Artigos</b> anglicanos (1563) dizem que esses livros são lidos "como exemplo de vida e instrução de costumes", mas não para estabelecer doutrina.</li>
+<li>A <b>Confissão de Westminster</b> (1646), reformada, afirmou que não são inspirados e não têm mais autoridade que outros escritos humanos.</li>
+<li>A <b>King James</b> inglesa (1611) ainda os trazia; no século XIX, sociedades bíblicas protestantes, como a Britânica (a partir de 1826), deixaram de imprimi-los em suas edições.</li>
+</ul>
+<p>Os ortodoxos, que não participaram dessas disputas, confirmaram a leitura desses livros no Sínodo de Jerusalém (1672), sem uma definição tão estrita quanto a de Trento. <span data-tag="igreja">ortodoxa</span></p>` },
+
 { t: 'Por que isso importa', h: `
-<p>Algumas doutrinas se apoiam em textos deuterocanônicos — por exemplo, a oração pelos mortos (2 Macabeus 12:43–46), usada na argumentação católica sobre o purgatório. A divergência sobre o cânon, portanto, está ligada a divergências sobre autoridade e tradição. <span data-tag="igreja">católica × protestantes</span></p>
-<aside data-box="pratica" data-t="Na estante"><p>Bíblias "ecumênicas", como a TEB, e muitas edições de estudo trazem os deuterocanônicos com explicações. Se você tem uma Bíblia protestante, procure por "Tobias" no índice: se não estiver lá, é uma edição de 66 livros.</p></aside>` }
+<p>A divergência sobre o cânon está ligada a divergências sobre autoridade e tradição. Algumas doutrinas são argumentadas a partir de textos deuterocanônicos — por exemplo, a oração pelos mortos (2 Macabeus 12:43–46), usada na argumentação católica sobre o purgatório. Protestantes respondem que doutrinas não devem se basear em livros fora do cânon hebraico. <span data-tag="igreja">católica × protestantes</span></p>
+<div class="persp">
+<div><h4>Argumentos católicos e ortodoxos</h4><p>Os livros estavam na Bíblia usada pelos apóstolos e pela Igreja antiga, foram lidos na liturgia por séculos e confirmados por sínodos antigos. A Igreja, guiada pelo Espírito, é quem reconhece o cânon.</p></div>
+<div><h4>Argumentos protestantes</h4><p>Não estavam no cânon hebraico, o Novo Testamento não os cita explicitamente como Escritura e Jerônimo e outros os distinguiam dos demais. A Escritura deve ser a norma da Igreja, e não o contrário.</p></div>
+</div>
+<aside data-box="pratica" data-t="Como saber qual Bíblia você tem"><p>Procure "Tobias" no índice. Se não estiver lá, é uma edição protestante de 66 livros. Bíblias "ecumênicas", como a TEB (Tradução Ecumênica da Bíblia), e muitas edições de estudo trazem os deuterocanônicos com explicações sobre o seu estatuto em cada igreja.</p></aside>` }
   ],
-  exercicio: { p: 'Compare os índices de uma Bíblia católica e de uma protestante.', prompt: 'Compare o Antigo Testamento das Bíblias católica e protestante: liste os livros e acréscimos (Ester e Daniel) presentes apenas na católica, explique a origem histórica da diferença e apresente os argumentos de católicos e protestantes de forma equilibrada.' }
+  quiz: [
+    { p: 'Quantos livros tem a Bíblia católica?',
+      o: ['66', '73', '81', '27'], c: 1,
+      e: ['É o número da Bíblia protestante.', 'Correto: 46 no Antigo Testamento e 27 no Novo.', 'É aproximadamente o cânon etíope.', 'É o número do Novo Testamento.'] },
+    { p: 'Qual concílio definiu, em 1546, a lista católica com os deuterocanônicos?',
+      o: ['Niceia', 'Trento', 'Vaticano II', 'Calcedônia'], c: 1,
+      e: ['Niceia (325) não tratou do cânon.', 'Trento respondeu à Reforma com uma definição formal.', 'O Vaticano II (1962–65) não alterou o cânon.', 'Calcedônia (451) tratou da natureza de Cristo.'] },
+    { p: 'Onde Lutero colocou os deuterocanônicos em sua Bíblia de 1534?',
+      o: ['Excluiu-os totalmente', 'Entre os Testamentos, como livros "úteis e bons de ler"', 'No início do Antigo Testamento', 'No fim do Novo Testamento, como Escritura'], c: 1,
+      e: ['Ele não os excluiu; manteve-os em seção à parte.', 'Correto: separados, mas recomendados para leitura.', 'Não é essa a posição.', 'Não os considerou Escritura igual às demais.'] },
+    { p: 'Qual livro é usado na argumentação católica sobre a oração pelos mortos?',
+      o: ['Tobias', '2 Macabeus', 'Sabedoria', 'Judite'], c: 1,
+      e: ['Tobias trata da fidelidade e da caridade, inclusive no sepultamento dos mortos, mas não é a passagem clássica.', '2 Macabeus 12:43–46 narra uma oferta pelos mortos.', 'Sabedoria fala da imortalidade, mas não é o texto usado nesse ponto.', 'Judite é uma narrativa sobre libertação.'] }
+  ],
+  exercicio: { p: 'Compare duas Bíblias reais.', prompt: 'Tenho uma Bíblia [católica / protestante / ortodoxa] da edição [NOME]. Ajude-me a comparar seu índice com o de uma Bíblia de outra tradição: quais livros e trechos mudam, de onde vem cada diferença (Septuaginta, Jerônimo, Reforma, Trento) e como cada igreja justifica sua posição. Mostre os argumentos de cada lado de forma equilibrada.',
+    criterio: 'Uma boa resposta lista os sete livros e os acréscimos de Ester e Daniel, explica o papel da Septuaginta, de Jerônimo, de Lutero e de Trento, e apresenta os argumentos católicos e protestantes sem declarar um lado vencedor.' }
 });
 
 CURSO.aula('t1-n2-m2-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer o conteúdo dos livros deuterocanônicos e o debate sobre eles.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer o conteúdo, a origem e o uso dos livros deuterocanônicos e entender os argumentos do debate sobre seu valor.',
   secoes: [
-{ t: 'Os livros', h: `
-<p>São sete livros — <b>Tobias, Judite, 1 e 2 Macabeus, Sabedoria, Eclesiástico (Sirácida) e Baruc</b> (com a Carta de Jeremias) — além de acréscimos gregos a Ester e a Daniel (como a história de Susana). Foram escritos aproximadamente entre os séculos III e I a.C., alguns em hebraico ou aramaico, outros em grego. <span data-tag="consenso"></span></p>
+{ t: 'Quais são e quando foram escritos', h: `
+<p>São sete livros — Tobias, Judite, 1 e 2 Macabeus, Sabedoria, Eclesiástico (ou Sirácida) e Baruc (com a Carta de Jeremias como capítulo 6) — além de acréscimos gregos a <b>Ester</b> (orações de Mardoqueu e Ester) e a <b>Daniel</b> (o Cântico dos três jovens na fornalha, a história de Susana e a de Bel e o Dragão). Foram escritos aproximadamente entre os séculos III e I a.C., alguns em hebraico ou aramaico, outros diretamente em grego. <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th>Livro</th><th>Gênero</th><th>Conteúdo</th><th>Data e língua</th></tr></thead><tbody>
+<tr><td>Tobias</td><td>Narrativa edificante</td><td>Um judeu fiel no exílio e a viagem de seu filho com o anjo Rafael</td><td>c. séc. III–II a.C.; fragmentos em aramaico e hebraico em Qumran</td></tr>
+<tr><td>Judite</td><td>Narrativa edificante</td><td>Uma viúva salva sua cidade do general Holofernes</td><td>c. séc. II a.C.</td></tr>
+<tr><td>1 Macabeus</td><td>Historiografia</td><td>A revolta contra Antíoco IV e a dinastia asmoneia</td><td>c. 100 a.C.; original hebraico perdido</td></tr>
+<tr><td>2 Macabeus</td><td>Historiografia teológica</td><td>Resumo grego da obra de Jasão de Cirene; martírios e fé na ressurreição</td><td>c. séc. II–I a.C.; grego</td></tr>
+<tr><td>Sabedoria</td><td>Sapiencial</td><td>Sabedoria divina, imortalidade da alma, crítica à idolatria</td><td>séc. I a.C., Alexandria; grego</td></tr>
+<tr><td>Eclesiástico (Sirácida)</td><td>Sapiencial</td><td>Conselhos de Jesus Ben Sirá; elogio dos antepassados</td><td>c. 180 a.C. em hebraico; traduzido pelo neto c. 132 a.C.</td></tr>
+<tr><td>Baruc</td><td>Profético e sapiencial</td><td>Atribuído ao secretário de Jeremias; confissão e consolo</td><td>séc. II–I a.C.</td></tr>
+</tbody></table></div>
+<aside data-box="dado" data-t="O hebraico de Ben Sirá reapareceu"><p>Por séculos, o Eclesiástico só era conhecido em grego. Em 1896, fragmentos em hebraico foram identificados na <i>Genizá</i> (depósito de manuscritos) de uma sinagoga do Cairo; depois, outros surgiram em Qumran e em Massada. Cerca de dois terços do texto hebraico já foram recuperados. <span data-tag="consenso"></span></p></aside>` },
+
+{ t: 'O que eles acrescentam', h: `
+<p>Esses livros são uma janela para o judaísmo entre o fim do Antigo Testamento e a época de Jesus. Neles aparecem com clareza ideias que serão importantes no Novo Testamento: <span data-tag="consenso"></span></p>
 <ul>
-<li><b>Tobias</b> e <b>Judite</b>: narrativas edificantes sobre fidelidade a Deus.</li>
-<li><b>Macabeus</b>: a revolta contra Antíoco IV (167–164 a.C.).</li>
-<li><b>Sabedoria</b> e <b>Eclesiástico</b>: literatura sapiencial, com reflexões sobre a imortalidade e a ética.</li>
-</ul>` },
-{ t: 'O debate, em síntese', h: `
-<div class="persp"><div><h4>Argumentos católicos e ortodoxos</h4><p>Faziam parte da Bíblia usada pela Igreja antiga e pelos apóstolos (Septuaginta), foram lidos na liturgia por séculos e confirmados por sínodos antigos. <span data-tag="igreja">católica e ortodoxa</span></p></div>
-<div><h4>Argumentos protestantes</h4><p>Não estavam no cânon hebraico, não são citados diretamente como Escritura no Novo Testamento e Jerônimo os distinguia dos demais. <span data-tag="igreja">protestantes</span></p></div></div>
-<p>Historiadores observam que, nos primeiros séculos, as fronteiras do cânon do Antigo Testamento eram fluidas, o que explica as diferentes posições. <span data-tag="consenso"></span></p>` }
+<li><b>Ressurreição dos mortos</b>: em 2 Macabeus 7, sete irmãos e sua mãe enfrentam o martírio esperando ressuscitar.</li>
+<li><b>Anjos com nome e função</b>: Rafael, em Tobias.</li>
+<li><b>A Sabedoria personificada</b>, que inspirou a linguagem do Novo Testamento sobre Cristo como Palavra (João 1) e "imagem" de Deus (Sabedoria 7:26; Colossenses 1:15).</li>
+<li><b>A festa de Hanucá</b>: a rededicação do Templo, narrada em 1 Macabeus 4, é a "festa da Dedicação" de que Jesus participa em João 10:22.</li>
+</ul>
+<p>Hebreus 11:35, ao falar de pessoas que foram torturadas "para alcançarem uma melhor ressurreição", é lido pela maioria dos comentadores como alusão a 2 Macabeus 7. <span data-tag="debate"></span></p>` },
+
+{ t: 'O debate', h: `
+<div class="persp">
+<div><h4>Argumentos católicos e ortodoxos</h4><p>Faziam parte da Bíblia usada pela Igreja antiga e pelos apóstolos (a Septuaginta), foram lidos na liturgia por séculos, aparecem nos grandes códices (Vaticano, Sinaítico, Alexandrino) e foram confirmados por sínodos antigos. Sua ausência do cânon judaico posterior não deveria obrigar a Igreja. <span data-tag="igreja">católica e ortodoxa</span></p></div>
+<div><h4>Argumentos protestantes</h4><p>Não estavam no cânon hebraico, o Novo Testamento não os cita explicitamente como Escritura, Jerônimo e outros Pais os distinguiam dos demais, e alguns contêm imprecisões históricas — Judite, por exemplo, chama Nabucodonosor de rei dos assírios. <span data-tag="igreja">protestantes</span></p></div>
+</div>
+<p>Historiadores observam que, nos primeiros séculos, as fronteiras do cânon do Antigo Testamento eram fluidas, e que listas diferentes coexistiram por muito tempo. Isso explica por que as duas posições conseguem apontar apoio na Antiguidade. <span data-tag="consenso"></span> Muitos estudiosos católicos reconhecem que Judite e Tobias são narrativas didáticas, não crônicas históricas — gênero que a Igreja Católica aceita desde a <i>Dei Verbum</i>.</p>
+<aside data-box="cuidado" data-t="Não confundir com os apócrifos do Novo Testamento"><p>Os deuterocanônicos são textos judaicos anteriores a Jesus. Os evangelhos apócrifos (de Tomé, de Pedro etc.) são textos cristãos posteriores, que nenhuma das grandes igrejas aceita como Escritura. O fato de protestantes chamarem os dois grupos de "apócrifos" causa muita confusão.</p></aside>` },
+
+{ t: 'Uso e impacto', h: `
+<ul>
+<li><b>Na liturgia católica e ortodoxa</b>, há leituras desses livros ao longo do ano; trechos de Sabedoria são lidos em missas de funeral ("as almas dos justos estão nas mãos de Deus", Sabedoria 3:1).</li>
+<li><b>Na arte</b>, Judite decapitando Holofernes é tema de Caravaggio e Artemisia Gentileschi; Susana e os anciãos, de Rembrandt e Tintoretto.</li>
+<li><b>No judaísmo</b>, os livros dos Macabeus explicam a origem de Hanucá, embora não façam parte da Bíblia judaica.</li>
+<li><b>Nomes</b>: "Tobias" e "Judite" são nomes comuns no Brasil por influência católica.</li>
+</ul>` }
   ],
-  exercicio: { p: 'Leia um capítulo de Sabedoria ou Eclesiástico e compare com Provérbios.', prompt: 'Compare os temas e o estilo de [Sabedoria / Eclesiástico] com o livro de Provérbios. Mostre as semelhanças, as novidades (por exemplo, sobre imortalidade) e por que alguns autores do Novo Testamento parecem ecoar esses livros, segundo os estudiosos.' }
+  quiz: [
+    { p: 'Qual destes livros é deuterocanônico?',
+      o: ['Eclesiastes', 'Eclesiástico (Sirácida)', 'Ester (texto hebraico)', 'Rute'], c: 1,
+      e: ['Eclesiastes está em todas as Bíblias.', 'Correto; não confundir com Eclesiastes.', 'O texto hebraico de Ester está em todas as Bíblias; só os acréscimos gregos são deuterocanônicos.', 'Rute está em todas as Bíblias.'] },
+    { p: 'Que ideia aparece com força em 2 Macabeus 7?',
+      o: ['A reencarnação', 'A fé na ressurreição dos mortos', 'A rejeição do Templo', 'O culto ao imperador'], c: 1,
+      e: ['A reencarnação não aparece no texto.', 'Os irmãos mártires esperam ressuscitar.', 'O livro defende o Templo.', 'O livro é contra a imposição de cultos pagãos.'] },
+    { p: 'Onde foram achados fragmentos hebraicos do Eclesiástico em 1896?',
+      o: ['Na Genizá de uma sinagoga do Cairo', 'Em Nag Hammadi', 'Em Roma', 'Em Belém'], c: 0,
+      e: ['Correto; depois surgiram outros em Qumran e Massada.', 'Nag Hammadi guardava textos cristãos em copta.', 'Não há essa descoberta em Roma.', 'Não há essa descoberta em Belém.'] },
+    { p: 'Qual festa judaica, narrada em 1 Macabeus, aparece em João 10:22?',
+      o: ['Pentecostes', 'Tabernáculos', 'A Dedicação (Hanucá)', 'Purim'], c: 2,
+      e: ['Pentecostes é Shavuot.', 'Tabernáculos aparece em João 7.', 'Correto: a rededicação do Templo pelos Macabeus.', 'Purim vem do livro de Ester.'] }
+  ],
+  exercicio: { p: 'Leia um deuterocanônico e avalie-o com as duas lentes.', prompt: 'Vou ler o livro de [TOBIAS / JUDITE / SABEDORIA / 1 MACABEUS]. Faça um guia de leitura com: (1) resumo e estrutura; (2) contexto histórico de composição; (3) temas teológicos e ligações com o Novo Testamento; (4) como católicos, ortodoxos e protestantes o veem; (5) três perguntas de reflexão. Marque o que é consenso, debate e ensino de fé.',
+    criterio: 'Uma boa resposta situa o livro no período helenístico, reconhece seu gênero (narrativa didática, história ou sabedoria), aponta pelo menos uma ligação concreta com o Novo Testamento e apresenta as posições das igrejas com equilíbrio.' }
 });
 
 CURSO.modulo('t1-n2-m3', {
@@ -1393,59 +1864,190 @@ CURSO.modulo('t1-n2-m3', {
 });
 
 CURSO.aula('t1-n2-m3-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar as grandes traduções antigas da Bíblia, especialmente a Septuaginta e a Vulgata.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer as primeiras traduções da Bíblia — da Septuaginta às versões antigas — e a história da Vulgata de Jerônimo, a Bíblia do Ocidente por mais de mil anos.',
   secoes: [
-{ t: 'Traduções antigas', h: `
-<p>Antes mesmo de Jesus, judeus de Alexandria traduziram as Escrituras para o grego (Septuaginta). Com a expansão cristã surgiram traduções latinas antigas (<i>Vetus Latina</i>), siríacas (a <i>Peshitta</i>), coptas, armênias, etíopes e góticas — esta última feita por Úlfilas no século IV, que criou um alfabeto para isso. Traduzir a Bíblia foi, muitas vezes, o primeiro registro escrito de uma língua. <span data-tag="consenso"></span></p>` },
-{ t: 'A Vulgata', h: `
-<p>O papa Dâmaso encarregou Jerônimo de revisar as traduções latinas. Jerônimo trabalhou entre cerca de 382 e 405, traduzindo boa parte do Antigo Testamento diretamente do hebraico. A obra, chamada <b>Vulgata</b> ("popular"), tornou-se a Bíblia da Igreja ocidental por mais de mil anos; Trento a declarou "autêntica" para uso oficial. Hoje a Igreja Católica usa a <i>Nova Vulgata</i> (1979) como referência latina. <span data-tag="consenso"></span></p>
-<aside data-box="exemplo" data-t="Os 'chifres' de Moisés"><p>Em Êxodo 34:29, o hebraico diz que o rosto de Moisés "irradiava" luz; a palavra pode também ser lida como "ter chifres", e a Vulgata traduziu assim. Por isso a famosa estátua de Michelangelo representa Moisés com chifres. <span data-tag="consenso"></span></p></aside>` }
+{ t: 'A Septuaginta', h: `
+<p>A Bíblia foi traduzida desde muito cedo. A primeira grande tradução foi feita por judeus de Alexandria, no Egito, que falavam grego e já não entendiam bem o hebraico: a <dfn data-g="septuaginta">Septuaginta</dfn>, iniciada com o Pentateuco no século III a.C. e completada ao longo dos dois séculos seguintes. <span data-tag="consenso"></span></p>
+<p>O nome ("setenta", abreviado LXX) vem da <b>Carta de Aristeias</b>, que conta que o rei Ptolomeu II encomendou a tradução para a biblioteca de Alexandria e que 72 sábios — seis de cada tribo — a fizeram em 72 dias. Versões posteriores, como a de Fílon, dizem que os tradutores trabalharam separados e chegaram ao mesmo texto, sinal de inspiração. Os historiadores veem nisso uma lenda que dava autoridade à tradução. <span data-tag="tradicao"></span></p>
+<p>A Septuaginta foi a Bíblia da maioria dos primeiros cristãos: a maior parte das citações do Antigo Testamento no Novo segue seu texto. Um exemplo famoso: Isaías 7:14 diz em hebraico <i>almah</i> ("jovem mulher"); a Septuaginta traduziu por <i>parthenos</i> ("virgem"), e é essa forma que Mateus 1:23 cita. O sentido do termo hebraico é debatido há séculos entre judeus e cristãos. <span data-tag="debate"></span></p>
+<p>Justamente por isso, os judeus passaram a preferir outras traduções gregas (Áquila, Símaco, Teodocião, no século II d.C.) e, depois, o texto hebraico. No século III, o cristão <b>Orígenes</b> montou a <b>Héxapla</b>, uma obra gigantesca com seis colunas paralelas: o hebraico, a transliteração em letras gregas e quatro versões gregas.</p>` },
+
+{ t: 'As traduções antigas', h: `
+<p>Com a expansão cristã, a Bíblia foi traduzida para as línguas dos povos convertidos. Muitas vezes, traduzir a Bíblia foi o primeiro registro escrito de uma língua: <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th>Tradução</th><th>Data</th><th>Observação</th></tr></thead><tbody>
+<tr><td><i>Vetus Latina</i> (Antiga Latina)</td><td class="y">séc. II–IV</td><td>Várias traduções latinas, de qualidade desigual, usadas no norte da África e na Itália</td></tr>
+<tr><td>Peshitta (siríaco)</td><td class="y">séc. II–V</td><td>Bíblia das igrejas de língua siríaca até hoje</td></tr>
+<tr><td>Coptas</td><td class="y">séc. III–IV</td><td>Para o Egito; uso litúrgico na Igreja Copta</td></tr>
+<tr><td>Gótica</td><td class="y">séc. IV</td><td>O bispo Úlfilas criou um alfabeto para traduzir a Bíblia aos godos</td></tr>
+<tr><td>Armênia</td><td class="y">séc. V</td><td>Mesrop Mashtots criou o alfabeto armênio (c. 405) para isso</td></tr>
+<tr><td>Etíope (ge'ez)</td><td class="y">séc. V–VI</td><td>Inclui livros como 1 Enoque</td></tr>
+<tr><td>Eslava</td><td class="y">séc. IX</td><td>Cirilo e Metódio criaram o alfabeto glagolítico; dele derivou o cirílico</td></tr>
+</tbody></table></div>
+<aside data-box="exemplo" data-t="Uma Bíblia que salvou uma língua"><p>A Bíblia gótica de Úlfilas é praticamente o único texto extenso que sobreviveu dessa língua germânica. O mais famoso manuscrito, o <i>Codex Argenteus</i> (século VI), escrito com tinta prateada sobre pergaminho púrpura, está hoje em Uppsala, na Suécia.</p></aside>` },
+
+{ t: 'Jerônimo e a Vulgata', h: `
+<p>No fim do século IV, as traduções latinas estavam tão variadas que, segundo Jerônimo, havia "quase tantas versões quanto manuscritos". Por volta de 382, o papa <b>Dâmaso</b> encarregou <b>Jerônimo</b>, grande conhecedor de línguas, de revisar os Evangelhos latinos. Jerônimo foi além: mudou-se para Belém e trabalhou até cerca de 405, traduzindo boa parte do Antigo Testamento diretamente do hebraico, com ajuda de mestres judeus — o que lhe rendeu críticas, inclusive de Agostinho, que temia o abandono da Septuaginta. <span data-tag="consenso"></span></p>
+<p>A obra, mais tarde chamada <b>Vulgata</b> ("divulgada, popular"), demorou séculos para substituir as traduções antigas, mas tornou-se a Bíblia da Igreja ocidental por mais de mil anos. A Vulgata que se impôs não é toda de Jerônimo: alguns livros vêm da <i>Vetus Latina</i> revisada. <span data-tag="consenso"></span></p>
+<ul>
+<li>O <b>Concílio de Trento</b> (1546) declarou a Vulgata "autêntica" para uso oficial — isto é, livre de erros em matéria de fé e moral, sem proibir o estudo das línguas originais. <span data-tag="igreja">católica</span></li>
+<li>Seguiram-se edições oficiais: a Sistina (1590) e a Clementina (1592).</li>
+<li>Hoje, a Igreja Católica usa como referência latina a <b>Nova Vulgata</b> (1979), revista a partir dos textos originais.</li>
+</ul>
+<aside data-box="exemplo" data-t="Por que o Moisés de Michelangelo tem chifres"><p>Em Êxodo 34:29, o hebraico diz que o rosto de Moisés "irradiava" (<i>qaran</i>) depois de falar com Deus. A raiz da palavra também está em <i>qeren</i>, "chifre", e a Vulgata traduziu que seu rosto era "cornuta" (com chifres). Por isso, a famosa estátua de Michelangelo (c. 1515), em Roma, e muitas imagens medievais representam Moisés com dois chifres. <span data-tag="consenso"></span></p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li><b>Na língua portuguesa</b>: palavras como "Gênesis", "Êxodo", "Salmo", "evangelho", "anjo" e "batismo" chegaram até nós pelo grego da Septuaginta e do Novo Testamento, via latim.</li>
+<li><b>Na liturgia</b>: a Igreja Ortodoxa Grega continua usando a Septuaginta como texto do Antigo Testamento; o latim da Vulgata marcou a liturgia católica até os anos 1960 e ainda é usado em celebrações em latim.</li>
+<li><b>Dia da Bíblia e dos tradutores</b>: o dia de São Jerônimo, 30 de setembro, é o Dia Internacional da Tradução; no Brasil, setembro é o "mês da Bíblia" para os católicos.</li>
+</ul>` }
   ],
-  exercicio: { p: 'Investigue uma escolha de tradução que mudou a história da arte ou da teologia.', prompt: 'Dê três exemplos de escolhas de tradução da Bíblia (Septuaginta, Vulgata ou traduções modernas) que influenciaram a teologia, a arte ou a cultura. Para cada um, mostre o texto original, as traduções e o impacto, citando fontes.' }
+  quiz: [
+    { p: 'De onde vem o nome "Septuaginta"?',
+      o: ['Do número de livros que ela contém', 'Da lenda de 72 tradutores narrada na Carta de Aristeias', 'Do ano 70 d.C.', 'De um concílio de 70 bispos'], c: 1,
+      e: ['Não se refere ao número de livros.', 'Correto: "setenta" arredonda os 72 sábios da lenda.', 'A tradução é anterior à era cristã.', 'Não houve tal concílio.'] },
+    { p: 'Por que Mateus 1:23 fala em "virgem" citando Isaías 7:14?',
+      o: ['Porque segue a Septuaginta, que traduziu o hebraico <i>almah</i> por <i>parthenos</i>', 'Porque o hebraico diz claramente "virgem"', 'Porque Jerônimo alterou Mateus', 'Porque Isaías foi escrito em grego'], c: 0,
+      e: ['Correto; o sentido de <i>almah</i> é debatido entre judeus e cristãos.', 'O termo hebraico significa "jovem mulher"; se implica virgindade é debatido.', 'Mateus foi escrito séculos antes de Jerônimo.', 'Isaías foi escrito em hebraico.'] },
+    { p: 'Quem criou o alfabeto armênio para traduzir a Bíblia?',
+      o: ['Úlfilas', 'Mesrop Mashtots', 'Cirilo', 'Orígenes'], c: 1,
+      e: ['Úlfilas fez o alfabeto gótico.', 'Por volta de 405.', 'Cirilo e Metódio trabalharam com os eslavos.', 'Orígenes fez a Héxapla.'] },
+    { p: 'O que o Concílio de Trento declarou sobre a Vulgata?',
+      o: ['Que era a única tradução permitida no mundo', 'Que era "autêntica" para uso oficial na Igreja', 'Que deveria ser substituída pelo grego', 'Que era obra exclusiva de Jerônimo'], c: 1,
+      e: ['O decreto tratava do uso oficial na Igreja latina.', 'Correto: confiável em matéria de fé e moral, sem proibir o estudo das línguas originais.', 'Trento manteve a Vulgata como texto oficial.', 'Trento não tratou da autoria de cada livro.'] }
+  ],
+  exercicio: { p: 'Compare um versículo em três versões antigas.', prompt: 'Compare Isaías 7:14 (ou Gênesis 1:2) no texto hebraico, na Septuaginta e na Vulgata, com tradução literal de cada um para o português. Explique as diferenças de vocabulário, como judeus e cristãos interpretaram cada versão e como as Bíblias atuais em português traduzem o versículo. Não invente formas gregas ou hebraicas: indique se tiver dúvida.',
+    criterio: 'Uma boa resposta identifica a palavra-chave em cada língua, explica por que a tradução muda o sentido, apresenta as leituras judaica e cristã com respeito e mostra pelo menos duas traduções portuguesas atuais.' }
 });
 
 CURSO.aula('t1-n2-m3-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar como a imprensa e a Reforma levaram a Bíblia às línguas do povo, e como a Igreja Católica respondeu.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender como a imprensa e a Reforma mudaram a circulação da Bíblia, conhecer as grandes traduções do século XVI e avaliar com equilíbrio a posição da Igreja Católica sobre a leitura da Bíblia pelos leigos.',
   secoes: [
-{ t: 'Antes e depois de Gutenberg', h: `
-<p>Na Idade Média já existiam traduções parciais em línguas vernáculas, mas eram caras e, em alguns lugares, controladas. John Wycliffe inspirou uma tradução inglesa nos anos 1380. A imprensa de Gutenberg (Bíblia latina, c. 1455) barateou os livros e mudou tudo. <span data-tag="consenso"></span></p>
+{ t: 'Antes da imprensa', h: `
+<p>Na Idade Média já existiam traduções parciais ou completas da Bíblia em línguas vernáculas — em francês, alemão, italiano, catalão, tcheco, inglês. Mas eram manuscritas, caras e raras, e a maioria da população não sabia ler. O contato com a Bíblia vinha sobretudo pela liturgia, pela pregação, pelos vitrais e pinturas das igrejas, pelo teatro religioso e por resumos ilustrados, como a <i>Biblia pauperum</i> ("Bíblia dos pobres"). <span data-tag="consenso"></span></p>
+<p>Em algumas regiões, as traduções passaram a ser controladas quando ligadas a movimentos considerados heréticos:</p>
 <ul>
-<li><b>Lutero</b>: Novo Testamento em alemão (1522) e Bíblia completa (1534), decisiva para a formação do alemão moderno.</li>
-<li><b>William Tyndale</b>: Novo Testamento inglês (1526), traduzido do grego; foi executado em 1536.</li>
-<li><b>King James Version</b> (1611): a Bíblia inglesa de maior influência cultural.</li>
+<li>O inglês <b>John Wycliffe</b> inspirou uma tradução completa da Vulgata para o inglês nos anos 1380. Seus seguidores, os <i>lolardos</i>, foram perseguidos, e as Constituições de Oxford (1409) proibiram novas traduções inglesas sem aprovação do bispo.</li>
+<li>Em Praga, <b>Jan Hus</b>, influenciado por Wycliffe, defendeu a pregação em tcheco; foi condenado e queimado no Concílio de Constança, em 1415.</li>
 </ul>` },
-{ t: 'A resposta católica', h: `
-<p>A Igreja Católica não proibiu em geral as traduções, mas, após a Reforma, passou a exigir aprovação eclesiástica e notas explicativas, temendo interpretações individuais. Surgiram traduções católicas como a Douay-Rheims inglesa (1582–1610). Com o Concílio Vaticano II (<i>Dei Verbum</i>, 1965), a Igreja passou a incentivar fortemente traduções a partir das línguas originais e a leitura da Bíblia pelos fiéis. <span data-tag="igreja">católica</span></p>
-<aside data-box="cuidado"><p>É exagerado dizer que "a Igreja proibia a Bíblia" na Idade Média — e também é exagero dizer que o acesso era livre. Havia variações enormes por época e região. <span data-tag="consenso"></span></p></aside>` }
+
+{ t: 'Gutenberg e a revolução do livro', h: `
+<p>Por volta de 1455, em Mainz, <b>Johannes Gutenberg</b> concluiu a impressão de uma Bíblia latina com tipos móveis de metal — a "Bíblia de 42 linhas". Foram cerca de 180 exemplares; restam menos de 50. A imprensa barateou os livros, multiplicou as cópias e padronizou os textos. <span data-tag="consenso"></span></p>
+<aside data-box="dado" data-t="Bíblias alemãs antes de Lutero"><p>É comum ouvir que Lutero fez a primeira Bíblia em alemão. Não é verdade: entre 1466 (a de Johannes Mentelin, em Estrasburgo) e 1518, foram impressas cerca de 18 Bíblias completas em alemão, traduzidas da Vulgata. A de Lutero foi inovadora por traduzir das línguas originais e por sua qualidade literária. <span data-tag="consenso"></span></p></aside>` },
+
+{ t: 'As grandes traduções da Reforma', h: `
+<p>A Reforma fez da Bíblia na língua do povo uma bandeira: se a Escritura é a autoridade suprema, todos devem poder lê-la. <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th class="y">Ano</th><th>Tradução</th><th>Destaque</th></tr></thead><tbody>
+<tr><td class="y">1516</td><td>Novo Testamento grego de Erasmo</td><td>Primeira edição impressa e publicada do texto grego, base de muitas traduções</td></tr>
+<tr><td class="y">1522 / 1534</td><td>Lutero: Novo Testamento ("de Setembro") e Bíblia completa</td><td>Decisiva para a formação do alemão moderno</td></tr>
+<tr><td class="y">1526</td><td>Novo Testamento de William Tyndale</td><td>Traduzido do grego; Tyndale foi executado perto de Bruxelas em 1536</td></tr>
+<tr><td class="y">1535</td><td>Bíblia de Miles Coverdale</td><td>Primeira Bíblia completa impressa em inglês</td></tr>
+<tr><td class="y">1560</td><td>Bíblia de Genebra</td><td>Com notas calvinistas e versículos numerados; a Bíblia de Shakespeare</td></tr>
+<tr><td class="y">1569 / 1602</td><td>Casiodoro de Reina e Cipriano de Valera</td><td>A "Reina-Valera", Bíblia protestante clássica em espanhol</td></tr>
+<tr><td class="y">1611</td><td>King James Version</td><td>A Bíblia inglesa de maior influência cultural; cerca de 80% do Novo Testamento segue Tyndale</td></tr>
+</tbody></table></div>
+<aside data-box="biblia" data-t="O desejo de Tyndale"><p>Tyndale teria dito a um clérigo que, se Deus lhe poupasse a vida, faria com que "o menino que guia o arado" soubesse mais Escritura do que ele. A frase é transmitida por John Foxe, autor protestante do século XVI. <span data-tag="tradicao"></span></p></aside>` },
+
+{ t: 'A Igreja Católica proibia a Bíblia?', h: `
+<p>A resposta exige nuance. A Igreja Católica não proibiu em geral as traduções. Mas, após a Reforma, passou a exigir aprovação eclesiástica e notas explicativas, temendo interpretações individuais que levassem a novas divisões. <span data-tag="consenso"></span></p>
+<ul>
+<li>O <b>Índice dos Livros Proibidos</b> de 1564 (regra IV) determinava que a leitura de Bíblias em vernáculo exigia licença do bispo ou do inquisidor. Na Espanha e em Portugal, a Inquisição foi especialmente restritiva.</li>
+<li>Ao mesmo tempo, surgiram traduções católicas aprovadas: a <b>Douay-Rheims</b> inglesa (Novo Testamento em 1582, Antigo em 1609–1610), Bíblias em francês, italiano e alemão.</li>
+<li>No século XVIII, Bento XIV (1757) permitiu traduções aprovadas e com notas, e as restrições foram se afrouxando.</li>
+<li>O <b>Concílio Vaticano II</b>, na <i>Dei Verbum</i> (1965), pediu que os fiéis tivessem "amplo acesso" à Escritura e incentivou traduções a partir das línguas originais, inclusive em cooperação com outras igrejas. <span data-tag="igreja">católica</span></li>
+</ul>
+<aside data-box="cuidado" data-t="Dois exageros"><p>É exagerado dizer que "a Igreja proibia a Bíblia" na Idade Média e acorrentava Bíblias para que ninguém as lesse — as correntes protegiam livros caríssimos contra furto, prática comum em bibliotecas. E também é exagero dizer que o acesso era livre: houve proibições reais, sobretudo na Inglaterra medieval e na Península Ibérica após a Reforma. Havia enormes variações por época e região.</p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li><b>Alfabetização</b>: a ênfase protestante na leitura da Bíblia contribuiu para a difusão de escolas e da alfabetização na Europa do Norte — relação estudada por historiadores e economistas, com debates sobre o tamanho do efeito. <span data-tag="debate"></span></li>
+<li><b>Línguas nacionais</b>: a Bíblia de Lutero e a King James ajudaram a padronizar o alemão e o inglês modernos.</li>
+<li><b>Hoje</b>: a Bíblia completa já foi traduzida para mais de 700 línguas e partes dela para mais de 3.700, segundo levantamentos de organizações como a Wycliffe Global Alliance.</li>
+</ul>` }
   ],
-  exercicio: { p: 'Compare o mesmo versículo em três traduções antigas para o inglês ou alemão.', prompt: 'Mostre como João 3:16 aparece na Vulgata, na Bíblia de Lutero (1534) e na King James (1611), explique as escolhas de cada tradutor e o contexto religioso de cada tradução.' }
+  quiz: [
+    { p: 'Lutero fez a primeira Bíblia impressa em alemão?',
+      o: ['Sim, em 1534', 'Não: houve cerca de 18 Bíblias alemãs impressas antes dele, traduzidas da Vulgata', 'Não: a primeira foi a de Tyndale', 'Sim, em 1455, com Gutenberg'], c: 1,
+      e: ['1534 é a data da Bíblia completa de Lutero, mas não foi a primeira em alemão.', 'Correto: a de Mentelin é de 1466. A de Lutero inovou ao partir do hebraico e do grego.', 'Tyndale traduziu para o inglês.', 'A Bíblia de Gutenberg era em latim.'] },
+    { p: 'Qual tradução foi a primeira Bíblia completa impressa em inglês?',
+      o: ['King James (1611)', 'Coverdale (1535)', 'Wycliffe (1380s)', 'Douay-Rheims (1582)'], c: 1,
+      e: ['A King James veio depois.', 'Correto.', 'A de Wycliffe era manuscrita.', 'A Douay-Rheims é católica e posterior.'] },
+    { p: 'O que o Índice de 1564 determinava sobre Bíblias em língua vernácula?',
+      o: ['Que eram proibidas em qualquer circunstância', 'Que sua leitura exigia licença do bispo ou do inquisidor', 'Que eram obrigatórias em todas as casas', 'Nada: o Índice não tratava da Bíblia'], c: 1,
+      e: ['A regra previa licenças, não proibição absoluta.', 'Correto; a aplicação variou muito por região.', 'Não havia obrigação.', 'A regra IV tratava justamente disso.'] },
+    { p: 'Qual documento do Vaticano II incentivou o amplo acesso dos fiéis à Bíblia?',
+      o: ['<i>Nostra Aetate</i>', '<i>Dei Verbum</i>', '<i>Rerum Novarum</i>', '<i>Lumen Gentium</i>'], c: 1,
+      e: ['<i>Nostra Aetate</i> trata das religiões não cristãs.', 'Correto: a constituição sobre a Revelação (1965).', '<i>Rerum Novarum</i> é de 1891, sobre a questão operária.', '<i>Lumen Gentium</i> trata da Igreja.'] }
+  ],
+  exercicio: { p: 'Investigue a história de uma tradução e seu tradutor.', prompt: 'Conte a história de [William Tyndale / Casiodoro de Reina / a Bíblia de Genebra / a Douay-Rheims]: contexto religioso e político, de quais textos partiu, que escolhas de tradução geraram polêmica (dê exemplos de palavras), como foi recebida por católicos e protestantes e qual seu legado. Separe fatos documentados de tradições e diga quando não tiver certeza.',
+    criterio: 'Uma boa resposta situa a tradução no conflito entre Reforma e Contrarreforma, dá pelo menos um exemplo concreto de escolha de tradução polêmica (como "congregação" em vez de "igreja" em Tyndale), e trata com equilíbrio as posições católica e protestante.' }
 });
 
 CURSO.aula('t1-n2-m3-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer a história da Bíblia em português e as principais traduções usadas no Brasil.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer a história da Bíblia em português — de Almeida e Figueiredo às traduções atuais — e saber escolher e comparar traduções de forma consciente.',
   secoes: [
-{ t: 'Almeida e Figueiredo', h: `
-<p><b>João Ferreira de Almeida</b> (1628–1691), português convertido ao protestantismo reformado, viveu nas Índias Orientais holandesas e traduziu o Novo Testamento a partir do grego, publicado em Amsterdã em 1681. O Antigo Testamento foi concluído por outros tradutores; a Bíblia completa saiu no século XVIII. Revisões de Almeida são até hoje as mais usadas pelos evangélicos brasileiros. <span data-tag="consenso"></span></p>
-<p>O padre <b>Antônio Pereira de Figueiredo</b> traduziu a Bíblia completa a partir da Vulgata, publicada em Lisboa entre 1778 e 1790 — por muito tempo a principal Bíblia católica em português. <span data-tag="consenso"></span></p>` },
-{ t: 'Traduções no Brasil', h: `
+{ t: 'As primeiras traduções', h: `
+<p>Na Idade Média portuguesa houve traduções parciais — trechos dos Evangelhos, dos Atos e de livros históricos —, mas nenhuma Bíblia completa circulou. Depois da Reforma, a Inquisição portuguesa restringiu as traduções em vernáculo. Por isso, as duas primeiras Bíblias completas em português foram feitas tarde e por caminhos muito diferentes. <span data-tag="consenso"></span></p>
+<h3>João Ferreira de Almeida (1628–1691)</h3>
+<p>Nascido em Torre de Tavares, Portugal, Almeida foi para a Ásia ainda jovem e, aos 14 anos, em Malaca, converteu-se ao protestantismo reformado. Viveu nas Índias Orientais holandesas (Batávia, atual Jacarta), onde foi pastor e trabalhou numa tradução a partir do grego. Seu Novo Testamento foi publicado em <b>Amsterdã, em 1681</b>, com muitos erros introduzidos por revisores holandeses, que ele mesmo denunciou. Almeida morreu traduzindo o Antigo Testamento (parou em Ezequiel 48); outros missionários o concluíram, e a Bíblia completa saiu em 1753, em Tranquebar, na Índia. <span data-tag="consenso"></span></p>
+<h3>Antônio Pereira de Figueiredo (1725–1797)</h3>
+<p>Padre oratoriano e erudito português, Figueiredo traduziu a Bíblia completa a partir da <b>Vulgata</b>, com notas, publicada em Lisboa entre 1778 e 1790, no contexto das reformas do marquês de Pombal. Foi por muito tempo a principal Bíblia católica em português — e, curiosamente, também foi impressa por sociedades bíblicas protestantes, sem os deuterocanônicos e sem as notas. <span data-tag="consenso"></span></p>` },
+
+{ t: 'As Almeidas', h: `
+<p>A tradução de Almeida foi revista muitas vezes, e hoje "Almeida" é quase uma família de traduções — as mais usadas pelos evangélicos brasileiros. A ARC, citada neste curso, é a forma clássica: <span data-tag="consenso"></span></p>
+<ul>
+<li><b>Almeida Revista e Corrigida (ARC)</b>: revisão do fim do século XIX, com linguagem clássica; muito usada em igrejas pentecostais, como a Assembleia de Deus.</li>
+<li><b>Almeida Revista e Atualizada (ARA)</b>, 1959, Sociedade Bíblica do Brasil: linguagem atualizada, comum em igrejas históricas.</li>
+<li><b>Almeida Corrigida Fiel (ACF)</b>, 1994, Sociedade Bíblica Trinitariana: mantém o <i>Textus Receptus</i>.</li>
+<li><b>Almeida Século 21</b> (2008) e <b>Nova Almeida Atualizada (NAA)</b> (2017).</li>
+</ul>` },
+
+{ t: 'As traduções no Brasil', h: `
 <div class="scroll"><table><thead><tr><th class="y">Ano</th><th>Tradução</th><th>Perfil</th></tr></thead><tbody>
-<tr><td class="y">1917</td><td>Tradução Brasileira</td><td>Primeira feita no Brasil, protestante.</td></tr>
-<tr><td class="y">1959</td><td>Almeida Revista e Atualizada (SBB)</td><td>Protestante, linguagem atualizada.</td></tr>
-<tr><td class="y">1959</td><td>Bíblia Ave-Maria</td><td>Católica, muito popular.</td></tr>
-<tr><td class="y">1981</td><td>Bíblia de Jerusalém (Paulus)</td><td>Católica, de estudo, com notas acadêmicas.</td></tr>
-<tr><td class="y">1990</td><td>Bíblia Pastoral</td><td>Católica, linguagem popular, notas pastorais.</td></tr>
-<tr><td class="y">2000</td><td>Nova Tradução na Linguagem de Hoje</td><td>SBB, linguagem simples.</td></tr>
-<tr><td class="y">2001</td><td>Nova Versão Internacional</td><td>Evangélica.</td></tr>
-<tr><td class="y">2001</td><td>Tradução da CNBB</td><td>Católica, editada pela Conferência Nacional dos Bispos do Brasil.</td></tr>
-<tr><td class="y">2017</td><td>Nova Almeida Atualizada</td><td>Revisão da Almeida (SBB).</td></tr>
+<tr><td class="y">1917</td><td>Tradução Brasileira</td><td>Primeira feita no Brasil, protestante, com participação de Rui Barbosa e outros consultores</td></tr>
+<tr><td class="y">1959</td><td>Bíblia Ave-Maria</td><td>Católica, muito popular nas paróquias</td></tr>
+<tr><td class="y">1981</td><td>Bíblia de Jerusalém</td><td>Católica, de estudo, com notas acadêmicas da Escola Bíblica de Jerusalém</td></tr>
+<tr><td class="y">1990</td><td>Bíblia Pastoral</td><td>Católica, linguagem popular, notas pastorais ligadas às comunidades</td></tr>
+<tr><td class="y">1994</td><td>Tradução Ecumênica da Bíblia (TEB)</td><td>Edição brasileira da tradução francesa feita por católicos e protestantes</td></tr>
+<tr><td class="y">2000</td><td>Nova Tradução na Linguagem de Hoje (NTLH)</td><td>SBB, linguagem simples, tradução por equivalência de sentido</td></tr>
+<tr><td class="y">2001</td><td>Nova Versão Internacional (NVI)</td><td>Evangélica, linguagem contemporânea</td></tr>
+<tr><td class="y">2001</td><td>Tradução da CNBB</td><td>Católica, editada pela Conferência Nacional dos Bispos do Brasil</td></tr>
+<tr><td class="y">2016</td><td>Nova Versão Transformadora (NVT)</td><td>Evangélica, linguagem fluente</td></tr>
+<tr><td class="y">2017</td><td>Nova Almeida Atualizada (NAA)</td><td>Revisão da Almeida pela SBB</td></tr>
 </tbody></table></div>
-<p>A Sociedade Bíblica do Brasil, fundada em 1948, é uma das maiores produtoras de Bíblias do mundo. <span data-tag="consenso"></span></p>
-<aside data-box="pratica" data-t="Qual escolher?"><p>Para estudo, compare uma tradução mais literal (como Almeida Revista e Atualizada ou Bíblia de Jerusalém) com uma mais livre (NTLH, Bíblia Pastoral). Observe se a edição é católica (73 livros) ou protestante (66) e leia as notas sabendo que elas refletem a visão da editora.</p></aside>` }
+<aside data-box="dado" data-t="Um grande produtor de Bíblias"><p>A Sociedade Bíblica do Brasil, fundada em 1948, é uma das maiores produtoras de Bíblias do mundo; seu parque gráfico em Barueri (SP) imprime milhões de exemplares por ano para o Brasil e dezenas de países. Testemunhas de Jeová usam a sua própria tradução, a <i>Tradução do Novo Mundo</i>, cujas escolhas são criticadas por estudiosos de outras igrejas.</p></aside>` },
+
+{ t: 'Como escolher e comparar traduções', h: `
+<aside data-box="conceito" data-t="Duas filosofias de tradução"><p><b>Equivalência formal</b>: segue de perto a estrutura e as palavras do original (ARC, ARA, ACF, Bíblia de Jerusalém). <b>Equivalência dinâmica ou funcional</b>: procura transmitir o sentido em linguagem natural (NTLH, Bíblia Pastoral, NVT). Nenhuma é "neutra": toda tradução interpreta.</p></aside>
+<aside data-box="exemplo" data-t="O mesmo versículo"><p>João 1:1 é traduzido, em quase todas as Bíblias, como "No princípio era o Verbo" (ou "a Palavra"), "e o Verbo estava com Deus, e o Verbo era Deus". A <i>Tradução do Novo Mundo</i> traduz "a Palavra era um deus" — escolha que reflete a teologia das Testemunhas de Jeová e é rejeitada pela grande maioria dos especialistas em grego.</p></aside>
+<aside data-box="pratica" data-t="Dicas para estudo"><p>Compare uma tradução mais literal com uma mais livre. Veja se a edição é católica (73 livros) ou protestante (66). Leia as notas sabendo que elas refletem a visão da editora. Para ler on-line, há sites e aplicativos das sociedades bíblicas e das editoras.</p></aside>` },
+
+{ t: 'Impacto até hoje', h: `
+<ul>
+<li>O português da Almeida, com seu "vós" e formas clássicas ("bem-aventurados", "aleluia", "graça e paz"), marca a linguagem dos cultos evangélicos brasileiros.</li>
+<li>A Bíblia é, há décadas, o livro mais vendido e distribuído no Brasil.</li>
+<li>Desde 2001, o Dia da Bíblia é comemorado no segundo domingo de dezembro por lei federal (Lei 10.335/2001); católicos celebram o mês da Bíblia em setembro.</li>
+</ul>` }
   ],
-  exercicio: { p: 'Compare um versículo em quatro traduções brasileiras.', prompt: 'Compare como [VERSÍCULO, ex.: Salmo 23:1 ou João 1:1] aparece em quatro traduções brasileiras (por exemplo, Almeida Revista e Corrigida, Almeida Revista e Atualizada, Bíblia de Jerusalém e NTLH). Explique as diferenças de estilo, de método (equivalência formal ou dinâmica) e de público.' }
+  quiz: [
+    { p: 'De que texto Almeida traduziu o Novo Testamento?',
+      o: ['Da Vulgata latina', 'Do grego', 'Do aramaico', 'Do espanhol da Reina-Valera'], c: 1,
+      e: ['Quem traduziu da Vulgata foi Figueiredo.', 'Correto, publicado em Amsterdã em 1681.', 'O Novo Testamento não foi escrito em aramaico.', 'Almeida usou o grego, embora tenha consultado outras versões.'] },
+    { p: 'Qual foi a primeira Bíblia traduzida no Brasil?',
+      o: ['Bíblia Ave-Maria (1959)', 'Tradução Brasileira (1917)', 'Bíblia de Jerusalém (1981)', 'NVI (2001)'], c: 1,
+      e: ['Veio depois.', 'Correto: protestante, com consultores como Rui Barbosa.', 'É uma tradução da francesa, posterior.', 'Muito posterior.'] },
+    { p: 'O que caracteriza uma tradução de "equivalência dinâmica"?',
+      o: ['Segue palavra por palavra o original', 'Procura transmitir o sentido em linguagem natural', 'É feita por computador', 'Só existe em inglês'], c: 1,
+      e: ['Isso é equivalência formal.', 'Correto: é o caso da NTLH e da Bíblia Pastoral.', 'Não tem relação com computadores.', 'Há várias em português.'] },
+    { p: 'Por que a Bíblia de Figueiredo era católica e a de Almeida protestante?',
+      o: ['Porque Figueiredo era padre e traduziu da Vulgata; Almeida era reformado e traduziu das línguas originais', 'Porque Almeida usou só o Antigo Testamento', 'Porque Figueiredo não incluiu os Evangelhos', 'Não há diferença entre elas'], c: 0,
+      e: ['Correto: origem, texto-base e cânon diferentes.', 'Almeida começou justamente pelo Novo Testamento.', 'Figueiredo traduziu a Bíblia inteira.', 'Há diferenças de cânon, texto-base e notas.'] }
+  ],
+  exercicio: { p: 'Compare um mesmo trecho em quatro traduções brasileiras.', prompt: 'Compare [Salmo 23 / João 1:1–5 / 1 Coríntios 13:4–7] em quatro traduções em português: Almeida Revista e Corrigida, NVI, Bíblia de Jerusalém e NTLH (se não tiver o texto exato de alguma, diga e não invente). Explique as diferenças de vocabulário, a filosofia de tradução de cada uma e em que igrejas cada uma é mais usada.',
+    criterio: 'Uma boa resposta identifica diferenças concretas de palavras, relaciona-as à equivalência formal ou dinâmica, indica o perfil (católico, evangélico, ecumênico) de cada edição e não inventa textos que não conhece.' }
 });
 </script>
 
@@ -3822,6 +4424,99 @@ CURSO.aula('t4-n4-m3-a3', {
 <!-- ============================================================
      MOTOR DA PÁGINA — não precisa ser alterado nas próximas entregas
      ============================================================ -->
+<script id="complementos-t1-n1">
+/* Quizzes e critérios das aulas longas do Básico da Trilha 1 (o texto das aulas não muda). */
+CURSO.complemento('t1-n1-m1-a1', {
+  quiz: [
+    { p: 'Que título Pôncio Pilatos tinha na Judeia, segundo a inscrição achada em Cesareia Marítima em 1961?',
+      o: ['Procurador', 'Prefeito (<i>praefectus</i>)', 'Tetrarca', 'Etnarca'], c: 1,
+      e: ['Tácito o chama assim, mas o título "procurador" só passou a ser usado para os governadores da Judeia depois de 44 d.C.', 'A pedra de Cesareia traz o título <i>praefectus</i>, que corrigiu o anacronismo de Tácito.', 'Tetrarca era o título de Herodes Antipas e de Filipe, filhos de Herodes, não de um governador romano.', 'Etnarca foi o título de Arquelau, filho de Herodes, deposto em 6 d.C.'] },
+    { p: 'Qual "Herodes" mandou executar João Batista?',
+      o: ['Herodes, o Grande', 'Herodes Agripa I', 'Herodes Antipas', 'Herodes Agripa II'], c: 2,
+      e: ['Herodes, o Grande, morreu em 4 a.C., muito antes da pregação de João.', 'Agripa I aparece em Atos 12, perseguindo a comunidade de Jerusalém, e morreu em 44 d.C.', 'Antipas, tetrarca da Galileia e da Pereia, prendeu e executou João — fato narrado pelos Evangelhos e por Josefo.', 'Agripa II é o rei diante de quem Paulo fala em Atos 25–26.'] },
+    { p: 'Por que o calendário Anno Domini "erra" o nascimento de Jesus?',
+      o: ['Porque Dionísio, o Exíguo, fez o cálculo no século VI e Herodes, que segundo Mateus estava vivo quando Jesus nasceu, morreu em 4 a.C.', 'Porque os Evangelhos dão uma data exata que foi ignorada', 'Porque o calendário juliano foi criado depois do nascimento de Jesus', 'Não há erro: Jesus nasceu no ano 1 d.C., segundo o consenso dos historiadores'], c: 0,
+      e: ['Correto: o cálculo de Dionísio ficou alguns anos adiantado, e Jesus provavelmente nasceu entre 6 e 4 a.C.', 'Os Evangelhos não dão a data do nascimento.', 'O calendário juliano é de 46 a.C., anterior a Jesus; ele não explica o erro.', 'Os historiadores situam o nascimento antes da morte de Herodes, em 4 a.C. ou antes.'] },
+    { p: 'Qual afirmação descreve melhor a relação entre os Evangelhos e as fontes não cristãs sobre o cenário político do século I?',
+      o: ['As fontes não cristãs contradizem os Evangelhos em quase tudo', 'O quadro geral (Herodes, Pilatos, Caifás, impostos) é confirmado por fontes independentes, mas há pontos de atrito, como o censo de Lucas', 'As fontes não cristãs provam as afirmações de fé dos Evangelhos', 'Não existem fontes não cristãs sobre esse período'], c: 1,
+      e: ['Josefo, Fílon, Tácito, moedas e inscrições confirmam o quadro geral.', 'É a posição da aula: confirmação do cenário, com tensões pontuais, como a data do censo de Quirino.', 'Confirmar o cenário não prova afirmações de fé, que estão fora do alcance da história.', 'Há várias: Josefo, Fílon, Tácito, além de moedas, inscrições e escavações.'] }
+  ],
+  criterio: null
+});
+
+CURSO.complemento('t1-n1-m1-a2', {
+  quiz: [
+    { p: 'Qual oração, iniciada por "Ouve, Israel", resume a fé judaica num só Deus?',
+      o: ['Kadish', 'Shemá (Deuteronômio 6:4)', 'Pai-Nosso', 'Amidá'], c: 1,
+      e: ['O Kadish é uma oração de santificação do nome de Deus, recitada também pelos enlutados, mas não é a profissão de fé central.', 'O Shemá, recitado diariamente, afirma que o Senhor é um só.', 'O Pai-Nosso é a oração que os Evangelhos atribuem a Jesus.', 'A Amidá é a grande oração de bênçãos da liturgia judaica, mas não começa com "Ouve, Israel".'] },
+    { p: 'Que grupo judaico rejeitava a ressurreição e estava ligado à aristocracia do Templo?',
+      o: ['Fariseus', 'Essênios', 'Saduceus', 'Samaritanos'], c: 2,
+      e: ['Os fariseus criam na ressurreição e valorizavam a tradição oral.', 'Os essênios tinham vida comunitária rigorosa e são associados por muitos a Qumran.', 'Os saduceus, ligados às famílias sacerdotais, rejeitavam a ressurreição e desapareceram após 70 d.C.', 'Os samaritanos são outro povo, com templo no monte Garizim.'] },
+    { p: 'Por que os Manuscritos do Mar Morto são tão importantes?',
+      o: ['Trazem cópias de quase todos os livros da Bíblia hebraica cerca de mil anos mais antigas do que os códices conhecidos antes', 'Contêm um evangelho perdido de Jesus', 'Provam que Jesus viveu em Qumran', 'São os originais escritos pelos profetas'], c: 0,
+      e: ['Correto: só Ester não aparece, e o texto mostra a estabilidade e a variedade da Bíblia hebraica antes da era cristã.', 'Não há textos cristãos em Qumran.', 'Os manuscritos não mencionam Jesus; essa é uma especulação sem base.', 'São cópias; não existem originais (autógrafos) de livros bíblicos.'] },
+    { p: 'O que a palavra grega <i>hairesis</i> significava em Flávio Josefo?',
+      o: ['Doutrina condenada pela Igreja', 'Escola de pensamento ou corrente', 'Traição política contra Roma', 'Sacrifício no Templo'], c: 1,
+      e: ['Esse é o sentido posterior, cristão, da palavra "heresia".', 'Josefo a usa de modo neutro para fariseus, saduceus e essênios.', 'Não tem esse sentido.', 'Não tem relação com o culto sacrificial.'] }
+  ],
+  criterio: 'Uma boa resposta distingue os grupos por crenças e práticas (ressurreição, tradição oral, relação com o Templo), indica as fontes antigas que os descrevem (Josefo, Novo Testamento, Qumran), reconhece o que é incerto e evita estereótipos, como usar "fariseu" como sinônimo de hipócrita.'
+});
+
+CURSO.complemento('t1-n1-m1-a3', {
+  quiz: [
+    { p: 'Qual era a língua do dia a dia de Jesus, segundo o consenso dos estudiosos?',
+      o: ['Latim', 'Grego koiné', 'Aramaico', 'Hebraico moderno'], c: 2,
+      e: ['O latim era a língua da administração e do exército romanos, pouco usada pela população.', 'O grego era a língua franca do Oriente; Jesus pode ter conhecido algo dele, mas não era sua língua principal.', 'O aramaico era a língua cotidiana dos judeus da Galileia e da Judeia.', 'O hebraico moderno só surgiu nos séculos XIX–XX; o hebraico antigo era a língua das Escrituras.'] },
+    { p: 'O que é a diáspora judaica no século I?',
+      o: ['A expulsão dos judeus de Jerusalém em 135 d.C.', 'As comunidades judaicas espalhadas pelo Mediterrâneo e pela Mesopotâmia', 'Um partido político judaico', 'A festa da colheita'], c: 1,
+      e: ['A expulsão após Bar Kokhba foi um evento posterior; a diáspora já existia havia séculos.', 'Alexandria, Antioquia, Roma e Babilônia tinham grandes comunidades judaicas.', 'Não é um partido.', 'Não é uma festa.'] },
+    { p: 'O que o arquivo de Babata, achado no deserto da Judeia, mostra sobre as mulheres judias?',
+      o: ['Que eram proibidas de ter bens', 'Que podiam possuir bens, fazer contratos e ir a tribunais', 'Que eram sacerdotisas do Templo', 'Que não sabiam ler'], c: 1,
+      e: ['O arquivo mostra o contrário.', 'Os documentos de Babata, do início do século II, mostram uma mulher administrando propriedades e litigando.', 'O sacerdócio do Templo era masculino.', 'O arquivo não trata da alfabetização dela; a pergunta não se sustenta com essa fonte.'] },
+    { p: 'Sobre a aparência de Jesus, qual afirmação está de acordo com a pesquisa?',
+      o: ['O Novo Testamento o descreve como alto e de olhos azuis', 'O Novo Testamento não descreve sua aparência; a imagem de pele clara vem da arte europeia', 'O Sudário de Turim é aceito por todos como retrato fiel', 'Josefo descreve detalhadamente seu rosto'], c: 1,
+      e: ['Não há descrição física de Jesus no Novo Testamento.', 'Pesquisadores como Joan Taylor reconstroem um judeu do século I com aparência típica da região.', 'A autenticidade do Sudário é debatida e a datação por carbono de 1988 o situou na Idade Média.', 'Josefo não descreve a aparência de Jesus.'] }
+  ],
+  criterio: 'Uma boa resposta liga cada aspecto do cotidiano (trabalho, família, língua, religião) a uma fonte ou achado arqueológico, distingue o que é consenso do que é estimativa (por exemplo, a população de Nazaré) e não projeta no século I costumes de outras épocas.'
+});
+
+CURSO.complemento('t1-n1-m2-a1', {
+  quiz: [
+    { p: 'Por que Mateus, Marcos e Lucas são chamados de evangelhos "sinóticos"?',
+      o: ['Porque foram escritos pelo mesmo autor', 'Porque seguem roteiros parecidos e podem ser "vistos juntos" em colunas', 'Porque foram aprovados num sínodo', 'Porque narram só os milagres'], c: 1,
+      e: ['São atribuídos a autores diferentes.', '"Sinótico" vem do grego "ver junto": os três compartilham estrutura e muitas frases.', 'O nome não vem de sínodo.', 'Narram também ensinamentos, paixão e ressurreição.'] },
+    { p: 'Que evangelhos narram o nascimento de Jesus?',
+      o: ['Os quatro', 'Só Marcos e João', 'Só Mateus e Lucas', 'Nenhum'], c: 2,
+      e: ['Marcos e João não têm narrativa da infância.', 'É o contrário: esses dois começam com a vida adulta (João, com o prólogo do Verbo).', 'Mateus traz os magos e a fuga para o Egito; Lucas, a manjedoura e os pastores.', 'Dois evangelhos narram.'] },
+    { p: 'Como católicos interpretam tradicionalmente os "irmãos de Jesus" de Marcos 6:3?',
+      o: ['Como filhos de Maria e José nascidos depois de Jesus', 'Como parentes próximos, por exemplo primos, como propôs Jerônimo', 'Como discípulos sem laço familiar', 'Como anjos'], c: 1,
+      e: ['Essa é a leitura de muitos protestantes.', 'É a leitura católica tradicional, ligada à virgindade perpétua de Maria.', 'O texto fala em família; essa leitura não é a tradicional.', 'Não há tradição nesse sentido.'] },
+    { p: 'O Pai-Nosso termina, em muitas igrejas protestantes, com "pois teu é o reino, o poder e a glória". O que se sabe dessa frase?',
+      o: ['É uma doxologia antiga, ausente dos manuscritos mais antigos de Mateus', 'Foi inventada por Lutero', 'Está em todos os manuscritos de Mateus e Lucas', 'É proibida na missa católica'], c: 0,
+      e: ['Correto: aparece cedo (por exemplo, na Didaquê, numa forma mais curta), mas não nos manuscritos mais antigos de Mateus.', 'É muito anterior a Lutero.', 'Não está nos manuscritos mais antigos de Mateus nem em Lucas.', 'Na missa católica ela aparece, separada, depois de uma oração do padre.'] }
+  ],
+  criterio: 'Uma boa resposta compara os relatos com referência a capítulos e versículos, mostra o que é comum e o que é próprio de cada evangelista, separa a leitura de fé (concepção virginal, cumprimento das Escrituras) da análise histórica e não trata diferenças como prova de que "tudo é falso" nem as esconde.'
+});
+
+CURSO.complemento('t1-n1-m2-a2', {
+  quiz: [
+    { p: 'Qual é a posição da quase totalidade dos historiadores da Antiguidade sobre a existência de Jesus?',
+      o: ['Jesus é um mito criado no século II', 'Jesus existiu; o debate é sobre o que se pode afirmar sobre ele', 'Não há como saber nada', 'Só os historiadores cristãos aceitam que existiu'], c: 1,
+      e: ['A tese "miticista" é rejeitada pela quase totalidade dos especialistas.', 'Correto: religiosos ou não, os historiadores aceitam a existência e discutem os detalhes.', 'Há um núcleo de fatos considerados seguros, como o batismo por João e a crucificação.', 'Pesquisadores judeus, agnósticos e ateus chegam à mesma conclusão básica.'] },
+    { p: 'O batismo de Jesus por João é considerado histórico sobretudo pelo critério de…',
+      o: ['Embaraço: os primeiros cristãos não teriam inventado algo que sugeria inferioridade de Jesus', 'Dissimilaridade com o judaísmo', 'Aparecer só em João', 'Ser um milagre'], c: 0,
+      e: ['Correto: o episódio criava dificuldades que os próprios evangelistas tentam explicar.', 'O batismo de João era uma prática judaica; a dissimilaridade não se aplica.', 'O episódio está nos sinóticos e é aludido em João.', 'O critério não se baseia em milagre.'] },
+    { p: 'O que é "Q" na hipótese das duas fontes?',
+      o: ['Um evangelho encontrado em Nag Hammadi', 'Uma coleção hipotética de ditos de Jesus usada por Mateus e Lucas', 'O nome grego de Marcos', 'Um concílio do século II'], c: 1,
+      e: ['O texto de Nag Hammadi mais parecido é o Evangelho de Tomé, que não é Q.', 'Q (do alemão <i>Quelle</i>, fonte) explica o material comum a Mateus e Lucas que não está em Marcos; nunca foi encontrado.', 'Não tem relação com o nome de Marcos.', 'Não é um concílio.'] },
+    { p: 'Qual fonte romana diz que "Cristo" foi executado por Pôncio Pilatos no reinado de Tibério?',
+      o: ['Suetônio', 'Plínio, o Jovem', 'Tácito, Anais 15.44', 'Júlio César'], c: 2,
+      e: ['Suetônio fala de um "Chrestus" em Roma, identificação debatida.', 'Plínio descreve o culto dos cristãos, não a execução.', 'Tácito, escrevendo por volta de 116, liga Cristo a Pilatos e a Tibério.', 'César morreu em 44 a.C.'] }
+  ],
+  criterio: 'Uma boa resposta aplica pelo menos três critérios ao episódio escolhido, indica em quais fontes ele aparece (com referência), apresenta argumentos a favor e contra a historicidade com autores de posições diferentes e deixa claro que a conclusão histórica não decide a questão de fé.'
+});
+</script>
+
 <script id="motor">
 {
 const C = window.CURSO;
