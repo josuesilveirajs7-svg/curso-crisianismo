@@ -27,7 +27,14 @@ Cada aula tem objetivo, explicação em seções, caixas destacadas (conceito-ch
 
 ## Estado atual
 
-Curso completo: 4 trilhas, 48 módulos e 144 aulas. Os temas centrais são tratados em profundidade; os complementares, de forma mais sintética. Informações revisadas em 25/11/2026 (dados de religião do Censo 2022 do IBGE, divulgados em junho de 2025, e relatórios do Pew Research Center de 2025 e 2026).
+Curso completo: 4 trilhas, 48 módulos e 144 aulas (cerca de 93 mil palavras). Revisão e ampliação de 27/11/2026:
+
+- todas as aulas têm de 4 a 5 seções, com quadros (conceito, exemplo, analogia, Bíblia, cuidado, prática, dado, conexão entre trilhas), perspectivas lado a lado e marcação do grau de certeza (consenso, debate, ensino de igreja, tradição);
+- todas as 144 aulas têm quiz de 4 questões, com explicação para cada alternativa;
+- todos os exercícios têm prompt de estudo e um critério do que é uma boa resposta;
+- glossário ampliado para 91 termos e linha do tempo para 86 eventos; novos prompts gerais.
+
+Dados verificados: religião no Censo 2022 do IBGE (divulgado em junho de 2025), relatórios do Pew Research Center de 2025 e de 18/11/2026, documentos recentes das igrejas.
 
 ## Instalar como app
 
@@ -69,14 +76,22 @@ O `index.html` tem blocos `<script>` separados, para que cada entrega só **acre
 | `dados-prompts` | Prompts gerais da biblioteca |
 | `dados-sobre` | Página "Sobre o curso" |
 | `conteudo-tX-nY…` | Conteúdo das aulas, um bloco por nível de cada trilha |
+| `complementos-t1-n1` | Quizzes e critérios das aulas longas do Básico da Trilha 1 |
+| `dados-ampliados` | Termos, eventos e prompts acrescentados na revisão de 2026 |
 | `motor` | Navegação, progresso, glossário, busca, tema, linha do tempo, árvore etc. |
 
 Para revisar ou acrescentar conteúdo, edite ou insira um bloco `<script id="conteudo-tX-nY-mZ">` antes do bloco `motor`, usando:
 
 ```js
 CURSO.modulo('t1-n1-m2', { intro: `...`, aprofundar: { videos: [], leituras: [], livros: [] } });
-CURSO.aula('t1-n1-m2-a1', { revisado: 'AAAA-MM-DD', objetivo: '...', secoes: [], exercicio: { p: '...', prompt: '...' } });
+CURSO.aula('t1-n1-m2-a1', { revisado: 'AAAA-MM-DD', objetivo: '...', secoes: [{ t: 'Título', h: `<p>…</p>` }],
+  quiz: [{ p: 'Pergunta', o: ['A', 'B', 'C', 'D'], c: 1, e: ['por que A', 'por que B', 'por que C', 'por que D'] }],
+  exercicio: { p: '...', prompt: '...', criterio: 'O que uma boa resposta deve conter' } });
+// acrescentar só quiz e critério a uma aula existente, sem mudar o texto:
+CURSO.complemento('t1-n1-m1-a1', { quiz: [...], criterio: '...' });
 ```
+
+Convenções do HTML das aulas: `<aside data-box="conceito|exemplo|analogia|biblia|cuidado|pratica|conexao|dado" data-t="Título">`, `<span data-tag="consenso|debate|igreja|tradicao|opiniao">`, `<dfn data-g="chave-do-glossario">` e `<div class="persp">` para perspectivas. Citações bíblicas usam a Almeida Revista e Corrigida (domínio público).
 
 Os IDs seguem o padrão `t` (trilha) `n` (nível) `m` (módulo) `a` (aula).
 

@@ -368,7 +368,7 @@ figcaption{font-size:14px;color:var(--mut);margin-top:6px}
 <script id="dados-base">
 window.CURSO = {
   versao: 'Curso completo',
-  atualizado: '2026-11-25',
+  atualizado: '2026-11-27',
   trilhas: [], aulas: {}, modulos: {}, glossario: [], eventos: [], prompts: [], arvore: null, sobre: '',
   aula(id, d){ this.aulas[id] = d; },
   modulo(id, d){ this.modulos[id] = d; },
@@ -700,7 +700,7 @@ CURSO.sobre = `
 </ul>
 <p class="muted">Este resumo é informativo e não substitui orientação jurídica. Casos de intolerância podem ser denunciados à polícia, ao Ministério Público e ao Disque 100 (Direitos Humanos).</p>
 <h2>Estado da obra</h2>
-<p>As 144 aulas das quatro trilhas estão publicadas. Os temas centrais são tratados em profundidade; os complementares, de forma mais sintética, com leituras para aprofundar.</p>
+<p>As 144 aulas das quatro trilhas estão publicadas e foram revisadas e ampliadas em novembro de 2026: todas têm de quatro a cinco seções com quadros de conceito, exemplo, perspectivas e conexões entre trilhas; um quiz de quatro questões com explicação para cada alternativa; e um exercício com prompt de estudo e critério de uma boa resposta. O glossário e a linha do tempo também foram ampliados. Informações sujeitas a mudança (dados, cargos, documentos recentes) indicam a data e a fonte.</p>
 `;
 </script>
 
@@ -8274,59 +8274,169 @@ CURSO.modulo('t4-n3-m1', {
 });
 
 CURSO.aula('t4-n3-m1-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Ler corretamente os dados de religião dos Censos do IBGE e entender seus limites.',
+  revisado: '2026-11-27',
+  objetivo: 'Ler corretamente os dados de religião dos Censos do IBGE, de 1872 a 2022, entender as grandes tendências e os cuidados metodológicos na comparação.',
   secoes: [
-{ t: 'A série histórica', h: `
-<div class="scroll"><table><thead><tr><th class="y">Censo</th><th>Católicos</th><th>Evangélicos</th><th>Sem religião</th></tr></thead><tbody>
+{ t: 'Uma série de 150 anos', h: `
+<p>O IBGE e seus antecessores perguntam a religião da população desde o primeiro recenseamento, em 1872. A série mostra uma das maiores transformações religiosas do mundo contemporâneo: um país quase inteiramente católico tornou-se religiosamente plural em poucas décadas. <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th>Censo</th><th>Católicos</th><th>Evangélicos</th><th>Sem religião</th></tr></thead><tbody>
+<tr><td class="y">1872</td><td>99,7%</td><td>—</td><td>—</td></tr>
+<tr><td class="y">1940</td><td>95,2%</td><td>2,6%</td><td>0,2%</td></tr>
+<tr><td class="y">1970</td><td>91,8%</td><td>5,2%</td><td>0,8%</td></tr>
+<tr><td class="y">1980</td><td>89,2%</td><td>6,6%</td><td>1,6%</td></tr>
 <tr><td class="y">1991</td><td>83,0%</td><td>9,0%</td><td>4,7%</td></tr>
 <tr><td class="y">2000</td><td>73,6%</td><td>15,4%</td><td>7,4%</td></tr>
 <tr><td class="y">2010</td><td>65,1%</td><td>21,6%</td><td>7,9%</td></tr>
 <tr><td class="y">2022</td><td>56,7%</td><td>26,9%</td><td>9,3%</td></tr>
 </tbody></table></div>
-<aside data-box="dado" data-t="Fonte e cuidado"><p>Fonte: IBGE, Censos Demográficos. Os números de 2010 e 2022 referem-se à população de 10 anos ou mais e vêm da divulgação do IBGE de 6 de junho de 2025 (resultados preliminares da amostra do Censo 2022). Para toda a população, o Censo de 2010 havia registrado 64,6% de católicos, 22,2% de evangélicos e 8,0% sem religião. Os dados de 1991 e 2000 são da população total. Compare sempre números com a mesma base. <span data-tag="consenso"></span></p></aside>` },
-{ t: 'O que mais o Censo 2022 mostra', h: `
+<p class="muted sm">Fonte: IBGE, Censos Demográficos. Valores de 1872 a 2000 arredondados, para a população total. Os números de 2010 e 2022 referem-se à população de 10 anos ou mais e vêm da divulgação do IBGE de 6 de junho de 2025 (resultados preliminares da amostra do Censo 2022). Para toda a população, o Censo de 2010 havia registrado 64,6% de católicos, 22,2% de evangélicos e 8,0% sem religião.</p>
+<aside data-box="cuidado" data-t="Compare sempre números com a mesma base"><p>Uma diferença de base (população total ou de 10 anos ou mais) pode mudar os percentuais em quase um ponto. Ao citar dados, diga sempre o ano, a base e a fonte.</p></aside>` },
+
+{ t: 'O que mostrou o Censo 2022', h: `
+<p>Segundo a divulgação do IBGE de 6 de junho de 2025: <span data-tag="consenso"></span></p>
 <ul>
-<li>O catolicismo atingiu o menor percentual da série iniciada em 1872, mas segue majoritário — maior no Nordeste (63,9%) e no Sul (62,4%).</li>
-<li>O crescimento evangélico continuou, mas desacelerou: cerca de 5 pontos percentuais entre 2010 e 2022, menos que na década anterior — segundo o IBGE, a primeira desaceleração desde 1960. O Norte tem a maior proporção de evangélicos (36,8%); entre os estados, o Acre (44,4%).</li>
+<li>O catolicismo atingiu o <b>menor percentual da série</b> iniciada em 1872, mas segue majoritário — maior no Nordeste (63,9%) e no Sul (62,4%).</li>
+<li>O crescimento evangélico continuou, mas <b>desacelerou</b>: cerca de 5 pontos percentuais entre 2010 e 2022, menos que na década anterior — segundo o IBGE, a primeira desaceleração desde 1960.</li>
+<li>O Norte tem a maior proporção de evangélicos (36,8%); entre os estados, o Acre (44,4%).</li>
 <li>Roraima tem a maior proporção de pessoas sem religião (16,9%).</li>
 <li>Umbanda e candomblé passaram de 0,3% para 1,0%.</li>
 <li>Evangélicos têm perfil etário mais jovem; mulheres são maioria em quase todos os grupos religiosos, exceto entre os sem religião.</li>
+</ul>` },
+
+{ t: 'Como ler os dados', h: `
+<ul>
+<li><b>O Censo registra a religião declarada</b>, não a prática. Muitos católicos declarados não frequentam a missa; muitos evangélicos mudam de igreja.</li>
+<li><b>"Sem religião" não significa ateu</b>: inclui muitas pessoas que creem em Deus, rezam e às vezes frequentam cultos, mas não se ligam a uma instituição. Ateus e agnósticos declarados são uma pequena parte.</li>
+<li><b>"Evangélico" reúne igrejas muito diferentes</b>: históricas, pentecostais, neopentecostais e igrejas "não determinadas".</li>
+<li>A pergunta do Censo é <b>aberta</b> (a pessoa diz sua religião, que depois é classificada), o que permite captar a diversidade, mas exige codificação cuidadosa.</li>
+<li><b>Pesquisas de opinião</b>, como as do Datafolha, usam amostras e perguntas diferentes e costumam mostrar proporções de evangélicos mais altas que o Censo — em 2020, por exemplo, cerca de 31% de evangélicos e 50% de católicos entre adultos. As diferenças vêm de metodologia, idade mínima e momento da coleta.</li>
 </ul>
-<p>Fonte: IBGE, divulgação de 6/6/2025. <span data-tag="consenso"></span></p>
-<aside data-box="cuidado" data-t="Limites dos dados"><p>O Censo registra a religião declarada, não a prática. "Sem religião" não significa ateu: inclui muitas pessoas que creem em Deus, mas não se ligam a uma igreja. E "evangélico" reúne igrejas muito diferentes.</p></aside>` }
+<p><span data-tag="consenso"></span></p>
+<aside data-box="pratica" data-t="Onde consultar"><p>As tabelas de religião do Censo estão no site do IBGE, no sistema SIDRA, com dados por estado e município. É possível comparar sua cidade com o país — tema do projeto deste nível.</p></aside>` },
+
+{ t: 'Uma transição religiosa', h: `
+<p>Demógrafos como José Eustáquio Diniz Alves falam em "transição religiosa": o declínio da hegemonia católica e a diversificação do campo religioso. Projeções feitas antes do Censo 2022 sugeriam que evangélicos poderiam superar católicos por volta dos anos 2030; a desaceleração observada em 2022 tornou essas projeções mais incertas. <span data-tag="debate"></span></p>
+<p>Para a Igreja Católica, os dados são um desafio pastoral; para as igrejas evangélicas, um sinal de crescimento com novos desafios, como a evasão de jovens; para os pesquisadores, um laboratório de mudança religiosa. <span data-tag="opiniao"></span></p>` }
   ],
-  exercicio: { p: 'Consulte os dados do seu estado.', prompt: 'Explique como consultar no site do IBGE os dados de religião do Censo 2022 para [ESTADO/MUNICÍPIO], como interpretá-los com cuidado (base populacional, categorias, margem da amostra) e como compará-los com 2010.' }
+  quiz: [
+    { p: 'Qual foi a proporção de católicos no Censo 2022 (população de 10 anos ou mais)?',
+      o: ['83,0%', '73,6%', '65,1%', '56,7%'], c: 3,
+      e: ['É de 1991.', 'É de 2000.', 'É de 2010 (10 anos ou mais).', 'Correto.'] },
+    { p: 'O que o Censo 2022 mostrou sobre o crescimento evangélico?',
+      o: ['Que parou totalmente', 'Que continuou, mas desacelerou pela primeira vez desde 1960', 'Que dobrou', 'Que os evangélicos já são maioria'], c: 1,
+      e: ['Continuou crescendo.', 'Correto.', 'Não.', 'São 26,9%.'] },
+    { p: 'O que significa "sem religião" nos censos?',
+      o: ['Ateu', 'Pessoa sem vínculo com uma instituição religiosa, que pode crer em Deus', 'Pessoa que não respondeu', 'Espírita'], c: 1,
+      e: ['Ateus são uma pequena parte.', 'Correto.', 'Não.', 'Espíritas são outra categoria.'] },
+    { p: 'Qual região tem a maior proporção de evangélicos no Censo 2022?',
+      o: ['Sul', 'Nordeste', 'Norte', 'Sudeste'], c: 2,
+      e: ['Tem forte presença católica (62,4%).', 'Tem a maior proporção de católicos (63,9%).', 'Correto (36,8%).', 'Não.'] }
+  ],
+  exercicio: { p: 'Leia o Censo da sua cidade.', prompt: 'Use as tabelas de religião do Censo do IBGE (SIDRA) para comparar o estado e o município de [CIDADE] com o Brasil: proporções de católicos, evangélicos, sem religião, espíritas e religiões afro-brasileiras, e o que mudou entre 2010 e 2022. Explique como encontrar os dados, cuidados com a base (população total ou de 10 anos ou mais) e possíveis explicações para as diferenças. Não invente números: diga onde buscá-los.',
+    criterio: 'Uma boa resposta indica o caminho correto para os dados, compara bases equivalentes, interpreta com cautela (religião declarada não é prática) e não inventa números.' }
 });
 
 CURSO.aula('t4-n3-m1-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar os fatores que pesquisadores associam ao crescimento evangélico.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender os fatores que os pesquisadores apontam para o crescimento evangélico no Brasil e o debate sobre o peso de cada um.',
   secoes: [
-{ t: 'Explicações', h: `
+{ t: 'Uma mudança rápida', h: `
+<p>Em 1980, os evangélicos eram cerca de 6,6% da população; em 2022, 26,9% da população de 10 anos ou mais. O crescimento foi sobretudo <b>pentecostal</b> e concentrado nas periferias urbanas e nas fronteiras agrícolas do Norte e do Centro-Oeste. Pesquisadores como Paul Freston, Ricardo Mariano, Ronaldo de Almeida e Antônio Flávio Pierucci apontam vários fatores, que se combinam. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Fatores apontados', h: `
 <ul>
-<li><b>Urbanização e migração</b>: famílias que migraram para as periferias das grandes cidades encontraram nas igrejas evangélicas redes de acolhimento.</li>
-<li><b>Proximidade e leigos</b>: abrir uma igreja pentecostal é rápido e barato; pastores vêm da própria comunidade, enquanto a Igreja Católica tem poucos padres por fiel.</li>
-<li><b>Experiência religiosa intensa</b>: cura, libertação, louvor, conversão como "novo começo".</li>
-<li><b>Mudanças de vida</b>: afastamento do álcool, da violência e de outras dependências, valorizado sobretudo por mulheres.</li>
-<li><b>Mídia</b>: rádio, TV e redes sociais.</li>
+<li><b>Urbanização e migração</b>: entre 1960 e 2000, o Brasil se tornou majoritariamente urbano. Famílias que migraram do campo para as periferias das grandes cidades perderam laços comunitários e encontraram nas igrejas evangélicas redes de acolhimento, amizade e apoio.</li>
+<li><b>Proximidade e leigos</b>: abrir uma igreja pentecostal é rápido e barato — basta um salão e um pastor —; pastores vêm da própria comunidade, falam a mesma linguagem e não precisam de longa formação. A Igreja Católica tem poucos padres por fiel (cerca de um para vários milhares de católicos) e paróquias grandes.</li>
+<li><b>Experiência religiosa intensa</b>: cura, libertação, louvor, oração em línguas, testemunhos; a conversão vivida como "novo começo".</li>
+<li><b>Mudanças de vida</b>: afastamento do álcool, da violência, do jogo e de outras dependências, valorizado sobretudo por mulheres, que muitas vezes trazem depois maridos e filhos.</li>
+<li><b>Mídia</b>: rádio, TV e redes sociais, usados intensamente desde os anos 1980.</li>
+<li><b>Mercado religioso</b>: a separação entre Igreja e Estado e a liberdade religiosa permitiram concorrência entre igrejas, o que, segundo a teoria da "escolha racional", favorece o dinamismo.</li>
+<li><b>Mudanças no catolicismo</b>: alguns autores apontam que a ênfase católica, nos anos 1970–80, em temas sociais e nas CEBs não respondeu a todas as demandas espirituais; outros discordam.</li>
 </ul>
-<p>O peso de cada fator é debatido. Há também projeções de que evangélicos poderiam superar católicos nas próximas décadas; a desaceleração vista no Censo 2022 tornou essas projeções mais incertas. <span data-tag="debate"></span></p>` }
+<p>O peso de cada fator é debatido. <span data-tag="debate"></span></p>` },
+
+{ t: 'Explicações e críticas', h: `
+<div class="persp">
+<div><h4>Explicações "funcionais"</h4><p>Destacam necessidades sociais (migração, pobreza, violência) que as igrejas atendem. Críticos dizem que elas reduzem a fé a uma resposta à carência.</p></div>
+<div><h4>Explicações a partir dos fiéis</h4><p>Pesquisadores como Juliano Spyer e Christina Vital da Cunha insistem em ouvir os próprios evangélicos: para eles, a conversão é uma experiência de encontro com Deus, de dignidade e de pertencimento, e não só uma estratégia de sobrevivência.</p></div>
+</div>
+<p>Também se discute a <b>evasão</b>: muitas pessoas passam por várias igrejas ou deixam as instituições, o que alimenta o grupo dos "sem religião" e dos "desigrejados". <span data-tag="debate"></span></p>` },
+
+{ t: 'Para onde vai?', h: `
+<p>Houve projeções de que evangélicos poderiam superar católicos nas próximas décadas; a desaceleração vista no Censo 2022 tornou essas projeções mais incertas. Pesquisadores observam também o crescimento dos sem religião entre os jovens e das religiões afro-brasileiras declaradas. <span data-tag="debate"></span></p>
+<aside data-box="cuidado" data-t="Cuidado com previsões"><p>Previsões religiosas costumam falhar: no século XX, muitos sociólogos previram o fim da religião, o que não aconteceu. Use projeções como cenários, não como certezas.</p></aside>
+<aside data-box="conexao" data-t="Trilha 3 · Intermediário"><p>As características do pentecostalismo e do neopentecostalismo brasileiros foram estudadas nos módulos sobre esses movimentos.</p></aside>` }
   ],
-  exercicio: { p: 'Compare explicações sociológicas do crescimento evangélico.', prompt: 'Compare as explicações de pesquisadores brasileiros (por exemplo, Ricardo Mariano, Juliano Spyer e Ronaldo de Almeida) para o crescimento evangélico no Brasil. Que dados usam, em que concordam e em que divergem?' }
+  quiz: [
+    { p: 'Que vertente evangélica mais cresceu no Brasil desde os anos 1980?',
+      o: ['Luterana', 'Pentecostal', 'Anglicana', 'Presbiteriana'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Por que a abertura de igrejas pentecostais é considerada um fator de crescimento?',
+      o: ['Porque exige grandes catedrais', 'Porque é rápida e barata, e os pastores vêm da própria comunidade', 'Porque é financiada pelo governo', 'Porque exige longa formação teológica'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que pesquisadores como Juliano Spyer destacam?',
+      o: ['Que os evangélicos são manipulados', 'A importância de ouvir os próprios evangélicos e entender a conversão a partir de sua experiência', 'Que a religião vai acabar', 'Que só fatores econômicos importam'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que o Censo 2022 fez com as projeções de que evangélicos superariam católicos?',
+      o: ['Confirmou que já superaram', 'Tornou-as mais incertas, por causa da desaceleração', 'Mostrou que os católicos voltaram a crescer muito', 'Não mudou nada'], c: 1,
+      e: ['Não.', 'Correto.', 'Os católicos continuaram caindo.', 'Mudou o quadro.'] }
+  ],
+  exercicio: { p: 'Explique o crescimento evangélico num bairro.', prompt: 'Ajude-me a investigar o crescimento evangélico num bairro de periferia: que dados procurar (Censo, cadastro de igrejas, mapas), que perguntas fazer em entrevistas com fiéis e pastores, que fatores testar (migração, redes sociais, mudanças de vida, mídia) e como evitar preconceitos na análise. Indique pesquisadores brasileiros para ler e cuidados éticos.',
+    criterio: 'Uma boa resposta propõe fontes de dados reais, perguntas abertas, hipóteses claras ligadas à literatura (Freston, Mariano, Almeida, Spyer) e cuidados éticos e contra estereótipos.' }
 });
 
 CURSO.aula('t4-n3-m1-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Entender a presença evangélica nas periferias e as novas formas de comunidade.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer a vida religiosa nas periferias brasileiras, a diversidade das experiências evangélicas e católicas e o fenômeno dos "desigrejados".',
   secoes: [
-{ t: 'Igreja na periferia', h: `
-<p>Pesquisas etnográficas mostram igrejas pequenas, muitas vezes em garagens ou salas comerciais, que oferecem apoio emocional, redes de emprego, cuidado com crianças e ajuda para dependentes químicos. Ao mesmo tempo, há relatos de controle rígido de costumes, cobrança financeira e, em alguns lugares, relações com o crime organizado e intolerância contra religiões afro-brasileiras. <span data-tag="consenso"></span> sobre a diversidade de experiências.</p>
-<aside data-box="cuidado" data-t="Estereótipos"><p>Evangélicos brasileiros não são um bloco único: há diferenças de classe, região, raça, igreja e posição política. Generalizações — positivas ou negativas — costumam falhar. O mesmo vale para os católicos.</p></aside>` },
-{ t: 'Novas comunidades', h: `
-<p>Crescem também comunidades evangélicas de classe média com estilo contemporâneo, igrejas em células, ministérios online e os "desigrejados" — pessoas que mantêm a fé sem frequentar uma igreja fixa. Entre católicos, novas comunidades carismáticas (como Canção Nova e Shalom) atraem jovens. <span data-tag="consenso"></span></p>` }
+{ t: 'Igrejas de bairro', h: `
+<p>Pesquisas etnográficas mostram, nas periferias, muitas igrejas pequenas, em garagens, salas comerciais ou antigos bares, frequentemente fundadas por moradores do próprio bairro. Elas oferecem: <span data-tag="consenso"></span></p>
+<ul>
+<li>apoio emocional e espiritual em momentos de crise — luto, desemprego, doença, violência;</li>
+<li>redes de emprego e de ajuda mútua (cestas básicas, indicações, mutirões);</li>
+<li>cuidado com crianças e jovens (escola dominical, grupos de jovens, música);</li>
+<li>ajuda para dependentes químicos e para egressos do sistema prisional;</li>
+<li>espaços de liderança para pessoas que não a têm em outros lugares — inclusive mulheres e jovens negros.</li>
+</ul>
+<p>Ao mesmo tempo, há relatos de controle rígido de costumes, cobrança financeira, abusos de poder de líderes e, em alguns lugares, relações com o crime organizado e intolerância contra religiões afro-brasileiras — incluindo grupos criminosos que usam símbolos evangélicos para atacar terreiros. <span data-tag="consenso"></span> sobre a diversidade de experiências.</p>` },
+
+{ t: 'Nem bloco único, nem caricatura', h: `
+<aside data-box="cuidado" data-t="Diversidade"><p>Evangélicos brasileiros não são um bloco único: há diferenças de classe, região, raça, igreja e posição política. Há pastoras negras em favelas, empresários de megaigrejas, jovens progressistas, missionários indígenas e fiéis que não se envolvem com política. Generalizações — positivas ou negativas — costumam falhar. O mesmo vale para os católicos, que vão de comunidades eclesiais de base a movimentos carismáticos e grupos tradicionalistas.</p></aside>
+<p>O antropólogo Juliano Spyer (<i>Povo de Deus</i>, 2020) e a pesquisadora Christina Vital da Cunha (<i>Oração de traficante</i>, 2015) mostram como a vida religiosa nas periferias se mistura com o cotidiano, o trabalho, a violência e a política. A Igreja Católica também mantém presença forte nas periferias, com paróquias, pastorais sociais, comunidades e movimentos. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Novas formas', h: `
+<ul>
+<li><b>Igrejas de classe média</b> com estilo contemporâneo: louvor com banda, pregação sobre família e carreira, cafés e estacionamento, presença forte nas redes sociais.</li>
+<li><b>Igrejas em células</b>: pequenos grupos nas casas durante a semana, ligados a uma igreja maior.</li>
+<li><b>Ministérios on-line</b>: cultos transmitidos, pastores influenciadores, comunidades digitais — acelerados pela pandemia de covid-19.</li>
+<li><b>Novas comunidades católicas</b>: comunidades carismáticas de vida e aliança, como Canção Nova e Shalom (fundada em Fortaleza em 1982), atraem jovens e se espalharam pelo mundo.</li>
+</ul>
+<p><span data-tag="consenso"></span></p>` },
+
+{ t: 'Os "desigrejados"', h: `
+<p>Os <b>"desigrejados"</b> são pessoas que mantêm a fé cristã sem frequentar uma igreja fixa — muitas vezes depois de decepções com líderes, conflitos, escândalos ou excesso de regras. Leem a Bíblia, oram, ouvem pregações na internet e às vezes se reúnem em pequenos grupos informais. Muitos se declaram "sem religião" no Censo; outros, "evangélicos não determinados". <span data-tag="consenso"></span></p>
+<div class="persp">
+<div><h4>Leitura das igrejas</h4><p>Muitas lideranças veem o fenômeno com preocupação, lembrando que a fé cristã é comunitária ("não deixando a nossa congregação", Hebreus 10:25).</p></div>
+<div><h4>Leitura de pesquisadores</h4><p>Pesquisadores veem nele um sinal de individualização da fé e de crítica às instituições, que aparece também em outros países.</p></div>
+</div>
+<aside data-box="conexao" data-t="Trilha 4 · Especialista"><p>Juventude, mulheres e "desigrejados" são tema da aula "Mulheres nas igrejas, juventude e 'desigrejados'".</p></aside>` }
   ],
-  exercicio: { p: 'Mapeie as igrejas de um bairro.', prompt: 'Como fazer, com respeito e método, um mapeamento das igrejas de um bairro: o que observar, que dados públicos usar, como entrevistar lideranças e fiéis e quais cuidados éticos tomar?' }
+  quiz: [
+    { p: 'Qual destas é uma função frequentemente exercida por igrejas de periferia, segundo pesquisas?',
+      o: ['Cobrar impostos', 'Redes de apoio, emprego e ajuda a dependentes químicos', 'Emitir documentos', 'Policiamento'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Os evangélicos brasileiros formam um bloco homogêneo?',
+      o: ['Sim, todos pensam igual', 'Não: há diferenças de classe, região, raça, igreja e posição política', 'Sim, todos são pentecostais', 'Sim, todos são de classe média'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Quem são os "desigrejados"?',
+      o: ['Ateus', 'Pessoas que mantêm a fé cristã sem frequentar uma igreja fixa', 'Padres afastados', 'Membros de igrejas fechadas'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Qual destas é uma nova comunidade carismática católica fundada em Fortaleza?',
+      o: ['Canção Nova', 'Shalom', 'Opus Dei', 'Focolares'], c: 1,
+      e: ['Foi fundada em Cachoeira Paulista (SP).', 'Correto (1982).', 'É espanhola (1928).', 'É italiana (1943).'] }
+  ],
+  exercicio: { p: 'Faça uma etnografia respeitosa.', prompt: 'Planeje uma visita de observação a uma igreja de bairro (evangélica ou católica): como pedir permissão, o que observar (espaço, culto, participantes, redes de ajuda), perguntas para entrevistas com fiéis e líderes, como registrar sem expor pessoas e como evitar estereótipos na análise. Indique dois livros de pesquisadores brasileiros para ler antes.',
+    criterio: 'Uma boa resposta inclui pedido de consentimento, roteiro de observação e perguntas abertas, cuidados com a privacidade e referências reais, e trata os fiéis como sujeitos, não como objetos de julgamento.' }
 });
 
 CURSO.modulo('t4-n3-m2', {
@@ -8339,50 +8449,156 @@ CURSO.modulo('t4-n3-m2', {
 });
 
 CURSO.aula('t4-n3-m2-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar a relação entre Igreja e Estado nas Constituições brasileiras.',
+  revisado: '2026-11-27',
+  objetivo: 'Acompanhar a relação entre religião e Estado nas Constituições brasileiras, de 1824 a 1988, e os principais dispositivos atuais sobre liberdade religiosa.',
   secoes: [
-{ t: 'Da religião oficial à laicidade', h: `
-<ul>
-<li><b>1824</b>: catolicismo religião oficial.</li>
-<li><b>1890–1891</b>: separação entre Igreja e Estado; liberdade de culto; casamento civil.</li>
-<li><b>1934</b>: Estado laico, mas com "colaboração recíproca em prol do interesse coletivo" e ensino religioso facultativo nas escolas públicas — fórmula que se repete, com variações, depois.</li>
-<li><b>1988</b>: liberdade de crença e culto (art. 5º, VI), proibição de o Estado estabelecer ou subvencionar cultos, ressalvada a colaboração de interesse público (art. 19, I), e imunidade de impostos para templos (art. 150, VI, b).</li>
-</ul>
+{ t: 'Da religião oficial à separação', h: `
+<div class="scroll"><table><thead><tr><th>Constituição</th><th>Religião e Estado</th></tr></thead><tbody>
+<tr><td class="y">1824</td><td>Catolicismo religião oficial; outras religiões permitidas apenas em culto doméstico, sem forma exterior de templo; padroado.</td></tr>
+<tr><td class="y">1890–1891</td><td>Separação entre Igreja e Estado (Decreto 119-A); liberdade de culto; casamento civil; cemitérios secularizados; ensino leigo nas escolas públicas; proibição de subvencionar cultos.</td></tr>
+<tr><td class="y">1934</td><td>Estado laico, mas com "colaboração recíproca em prol do interesse coletivo"; ensino religioso facultativo nas escolas públicas; casamento religioso com efeitos civis; assistência religiosa em quartéis, hospitais e prisões — fórmula que se repete, com variações, depois.</td></tr>
+<tr><td class="y">1937 e 1946</td><td>Mantêm a separação; a de 1946 introduz a imunidade de impostos para templos.</td></tr>
+<tr><td class="y">1967–1969</td><td>Mantêm o modelo, sob o regime militar.</td></tr>
+<tr><td class="y">1988</td><td>Liberdade de crença e culto; proibição de o Estado estabelecer ou subvencionar cultos, ressalvada a colaboração de interesse público; imunidade dos templos.</td></tr>
+</tbody></table></div>
 <p><span data-tag="consenso"></span></p>
-<aside data-box="exemplo" data-t="O Cristo Redentor"><p>Inaugurado em 1931, com a presença do presidente Getúlio Vargas e do cardeal Leme, o Cristo Redentor simboliza a reaproximação entre Igreja Católica e Estado nos anos 1930 — e tornou-se ícone nacional para crentes e não crentes.</p></aside>` }
+<aside data-box="exemplo" data-t="O Cristo Redentor"><p>Inaugurado em 12 de outubro de 1931, com a presença do presidente Getúlio Vargas e do cardeal Sebastião Leme, o Cristo Redentor simboliza a reaproximação entre Igreja Católica e Estado nos anos 1930 — a "neocristandade" — e tornou-se ícone nacional para crentes e não crentes. Foi eleito uma das "Novas Sete Maravilhas do Mundo" em 2007.</p></aside>` },
+
+{ t: 'O que diz a Constituição de 1988', h: `
+<ul>
+<li><b>Art. 5º, VI</b>: é inviolável a liberdade de consciência e de crença, assegurado o livre exercício dos cultos religiosos e garantida a proteção aos locais de culto e às suas liturgias.</li>
+<li><b>Art. 5º, VII</b>: assistência religiosa nas entidades civis e militares de internação coletiva.</li>
+<li><b>Art. 5º, VIII</b>: ninguém será privado de direitos por motivo de crença religiosa — com a possibilidade de "escusa de consciência" e prestação alternativa.</li>
+<li><b>Art. 19, I</b>: é vedado à União, aos estados e aos municípios estabelecer cultos religiosos ou igrejas, subvencioná-los, embaraçar-lhes o funcionamento ou manter com eles relações de dependência ou aliança, ressalvada a colaboração de interesse público.</li>
+<li><b>Art. 150, VI, b</b>: imunidade de impostos para "templos de qualquer culto" (ampliada em 2022 para templos em imóveis alugados).</li>
+<li><b>Art. 210, § 1º</b>: ensino religioso de matrícula facultativa nas escolas públicas de ensino fundamental.</li>
+<li><b>Art. 226, § 2º</b>: o casamento religioso tem efeito civil, nos termos da lei.</li>
+</ul>
+<p>O preâmbulo menciona a promulgação "sob a proteção de Deus" — o STF decidiu (2002) que o preâmbulo não tem força normativa. <span data-tag="consenso"></span></p>` },
+
+{ t: 'O acordo Brasil–Santa Sé', h: `
+<p>Em 2008, o Brasil assinou com a Santa Sé um acordo sobre o estatuto jurídico da Igreja Católica no país, promulgado em 2010. Trata de personalidade jurídica das instituições católicas, patrimônio, ensino religioso, casamento, assistência religiosa e vistos para missionários. <span data-tag="consenso"></span></p>
+<div class="persp">
+<div><h4>Defensores</h4><p>O acordo apenas consolida direitos já previstos em lei, dá segurança jurídica e é comum entre o Vaticano e outros Estados.</p></div>
+<div><h4>Críticos</h4><p>Igrejas evangélicas e defensores da laicidade criticaram o tratamento específico a uma religião; houve propostas de uma "lei geral das religiões" para estender direitos semelhantes a todas.</p></div>
+</div>
+<p><span data-tag="debate"></span></p>
+<aside data-box="conexao" data-t="Trilha 4 · Especialista"><p>A laicidade e a legislação contra a intolerância religiosa são aprofundadas no módulo final do curso.</p></aside>` }
   ],
-  exercicio: { p: 'Leia os artigos 5º, 19 e 150 da Constituição.', prompt: 'Explique os artigos 5º (VI a VIII), 19 (I) e 150 (VI, b) da Constituição de 1988 sobre religião: o que garantem, como o STF os interpretou em casos importantes e que debates provocam.' }
+  quiz: [
+    { p: 'Qual Constituição introduziu a fórmula da "colaboração recíproca em prol do interesse coletivo" entre Estado e religiões?',
+      o: ['1824', '1891', '1934', '1988'], c: 2,
+      e: ['Tinha religião oficial.', 'Separou sem essa fórmula.', 'Correto.', 'Mantém uma ressalva parecida ("colaboração de interesse público").'] },
+    { p: 'Qual artigo da Constituição de 1988 proíbe o Estado de estabelecer ou subvencionar cultos?',
+      o: ['Art. 5º, VI', 'Art. 19, I', 'Art. 226', 'Art. 231'], c: 1,
+      e: ['Garante a liberdade de crença e culto.', 'Correto.', 'Trata da família e do casamento.', 'Trata dos indígenas.'] },
+    { p: 'O que garante o art. 150, VI, b?',
+      o: ['Ensino religioso obrigatório', 'Imunidade de impostos para templos de qualquer culto', 'Religião oficial', 'Feriados religiosos'], c: 1,
+      e: ['O ensino religioso é facultativo (art. 210).', 'Correto.', 'Não há religião oficial.', 'Não.'] },
+    { p: 'O que é o acordo Brasil–Santa Sé (2008)?',
+      o: ['Um tratado que torna o catolicismo religião oficial', 'Um acordo sobre o estatuto jurídico da Igreja Católica no Brasil, criticado por defensores da laicidade e evangélicos', 'Um acordo comercial', 'Um tratado com os ortodoxos'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Compare três Constituições.', prompt: 'Compare as Constituições de 1824, 1891 e 1988 no tratamento da religião: religião oficial, liberdade de culto, financiamento, casamento, ensino religioso, imunidade tributária e assistência religiosa. Cite os artigos de 1988 com precisão e explique o contexto político de cada uma. Termine com o debate sobre o acordo Brasil–Santa Sé. Não invente artigos.',
+    criterio: 'Uma boa resposta traz os dispositivos corretos, especialmente os artigos 5º, 19, 150, 210 e 226 de 1988, explica o contexto histórico e apresenta o debate sobre o acordo com equilíbrio.' }
 });
 
 CURSO.aula('t4-n3-m2-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer a atuação política de católicos e evangélicos no Brasil contemporâneo.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender a participação de católicos e evangélicos na política brasileira — da Liga Eleitoral Católica à Frente Parlamentar Evangélica — e analisar o tema com dados e sem partidarismo.',
   secoes: [
-{ t: 'Católicos', h: `
-<p>A Liga Eleitoral Católica (1932) orientava o voto católico. Nos anos 1960–80, a CNBB teve papel na defesa dos direitos humanos e na redemocratização; ao mesmo tempo, setores católicos apoiaram o regime militar. Hoje, católicos estão em todo o espectro político, com grupos progressistas e conservadores. <span data-tag="consenso"></span></p>` },
-{ t: 'Evangélicos', h: `
-<p>Na Assembleia Constituinte (1987–1988), evangélicos eleitos em número inédito formaram uma bancada, com o lema "irmão vota em irmão". A Frente Parlamentar Evangélica se organizou formalmente nos anos 2000 e se tornou uma das mais influentes do Congresso, com atuação destacada em pautas morais. Algumas igrejas têm vínculos com partidos (como a Universal com o Republicanos). Pesquisas mostram que o voto evangélico pesou nas eleições presidenciais recentes, mas não é homogêneo. <span data-tag="consenso"></span></p>
-<aside data-box="cuidado" data-t="Neutralidade"><p>Este curso descreve fatos e posições sem dizer em quem votar. Ao analisar religião e política, separe dados (número de parlamentares, votações, pesquisas eleitorais com data e instituto) de opiniões sobre eles.</p></aside>` }
+{ t: 'Católicos e política', h: `
+<ul>
+<li>A <b>Liga Eleitoral Católica</b> (1932), criada pelo cardeal Leme, orientava o voto católico, recomendando candidatos comprometidos com bandeiras da Igreja (ensino religioso, indissolubilidade do casamento, assistência religiosa), sem criar um partido.</li>
+<li>Nos anos 1950–60, surgiram a Ação Católica, a Juventude Universitária Católica e partidos democratas-cristãos.</li>
+<li>Nos anos 1960–80, a CNBB teve papel na defesa dos direitos humanos e na redemocratização (campanhas pela anistia, pelas Diretas Já, pela participação popular na Constituinte); ao mesmo tempo, setores católicos apoiaram o regime militar.</li>
+<li>As CEBs e pastorais sociais contribuíram para a formação de movimentos sociais e partidos de esquerda; outros grupos católicos, como a Renovação Carismática, apoiaram candidatos conservadores.</li>
+</ul>
+<p>Hoje, católicos estão em todo o espectro político, com grupos progressistas e conservadores. Há uma Frente Parlamentar Mista Católica no Congresso. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Evangélicos e política', h: `
+<p>Até os anos 1980, muitos evangélicos diziam que "crente não se mete em política". Isso mudou na <b>Assembleia Constituinte</b> (1987–1988): evangélicos eleitos em número inédito — cerca de três dezenas — formaram uma bancada, com o lema "irmão vota em irmão", atuando em temas morais, liberdade religiosa e concessões de rádio e TV. <span data-tag="consenso"></span></p>
+<ul>
+<li>A <b>Frente Parlamentar Evangélica</b> se organizou formalmente nos anos 2000 e se tornou uma das mais influentes do Congresso, com atuação destacada em pautas morais (aborto, drogas, família, educação) e de liberdade religiosa.</li>
+<li>Algumas igrejas têm vínculos com partidos (como a Universal com o Republicanos) e lançam candidatos oficiais.</li>
+<li>Há também evangélicos progressistas, organizados em grupos como a Frente de Evangélicos pelo Estado de Direito (2016), e lideranças de vários partidos.</li>
+</ul>
+<p>Pesquisas eleitorais (como as do Datafolha) mostraram que o voto evangélico pesou nas eleições presidenciais de 2018 e 2022, com maioria evangélica favorável a Jair Bolsonaro nas duas, enquanto os católicos se dividiram e, em 2022, deram maioria a Lula. O voto evangélico, porém, não é homogêneo e varia por região, renda, raça e igreja. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Debates', h: `
+<div class="persp">
+<div><h4>Participação legítima</h4><p>Religiosos são cidadãos e têm o direito de defender seus valores na política; excluí-los seria contrário à democracia. Grupos religiosos representam demandas de setores populares antes pouco ouvidos.</p></div>
+<div><h4>Riscos apontados</h4><p>Uso de templos e cultos para campanha (proibido pela lei eleitoral), pressão de líderes sobre o voto dos fiéis, troca de apoio por concessões e benefícios, e tentativa de impor normas religiosas a toda a sociedade, o que tensionaria a laicidade.</p></div>
+</div>
+<p><span data-tag="debate"></span></p>
+<aside data-box="cuidado" data-t="Neutralidade"><p>Este curso descreve fatos e posições sem dizer em quem votar. Ao analisar religião e política, separe dados (número de parlamentares, votações, pesquisas eleitorais com data e instituto) de opiniões sobre eles. A lei eleitoral proíbe propaganda em templos e o abuso de poder religioso é discutido pela Justiça Eleitoral.</p></aside>` }
   ],
-  exercicio: { p: 'Analise a atuação de uma frente parlamentar religiosa.', prompt: 'Explique, com dados e fontes oficiais (Câmara dos Deputados), como se organiza a Frente Parlamentar Evangélica ou outra frente religiosa, quais pautas defende e como votou em projetos relevantes. Apresente avaliações de apoiadores e críticos.' }
+  quiz: [
+    { p: 'O que foi a Liga Eleitoral Católica (1932)?',
+      o: ['Um partido católico', 'Uma organização que orientava o voto católico, recomendando candidatos, sem ser partido', 'Uma ordem religiosa', 'Um sindicato'], c: 1,
+      e: ['Não era partido.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Quando os evangélicos formaram uma bancada pela primeira vez em número expressivo?',
+      o: ['Em 1891', 'Na Assembleia Constituinte de 1987–1988', 'Em 2018', 'Em 1964'], c: 1,
+      e: ['Não.', 'Correto: "irmão vota em irmão".', 'Já existia antes.', 'Não.'] },
+    { p: 'O voto evangélico é homogêneo?',
+      o: ['Sim, todos votam igual', 'Não; varia por região, renda, raça e igreja', 'Sim, é sempre de esquerda', 'Não existe voto evangélico'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Pesquisas mostram padrões, mas não homogeneidade.'] },
+    { p: 'O que a lei eleitoral proíbe em relação aos templos?',
+      o: ['Que candidatos sejam religiosos', 'Propaganda eleitoral em templos', 'Que fiéis votem', 'Que igrejas existam'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Analise religião e política com dados.', prompt: 'Analise a presença de religiosos no Congresso Nacional atual: como identificar parlamentares ligados a igrejas, o que é a Frente Parlamentar Evangélica e a Frente Parlamentar Católica, que pautas defendem, como votaram em temas importantes e o que mostram pesquisas eleitorais (com data e instituto). Use fontes como o site da Câmara, o DIAP e institutos de pesquisa, e não emita juízo partidário. Se não tiver dados atualizados, diga.',
+    criterio: 'Uma boa resposta indica fontes verificáveis, apresenta dados com data, distingue posições de diferentes grupos religiosos, evita juízo partidário e reconhece os limites da informação.' }
 });
 
 CURSO.aula('t4-n3-m2-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer os principais debates sobre laicidade no Brasil.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer os principais debates sobre laicidade no Brasil — símbolos religiosos, ensino religioso, feriados, imunidade, ritos religiosos — e as decisões dos tribunais.',
   secoes: [
-{ t: 'Casos em debate', h: `
+{ t: 'O que é laicidade', h: `
+<p><dfn data-g="laicidade">Laicidade</dfn> é o princípio de neutralidade do Estado em matéria religiosa: o Estado não adota religião oficial, não favorece nem persegue nenhuma e garante a liberdade de todas — e a de não ter religião. Não é o mesmo que <b>laicismo</b>, posição que busca excluir a religião da vida pública. No Brasil, a laicidade está no artigo 19 da Constituição. <span data-tag="consenso"></span></p>
+<div class="persp">
+<div><h4>Laicidade "colaborativa"</h4><p>O Estado pode reconhecer a tradição religiosa da maioria e cooperar com igrejas em obras sociais, educação e saúde, desde que respeite a liberdade de todos. É o modelo mais próximo da prática brasileira e de países como Alemanha e Itália.</p></div>
+<div><h4>Laicidade "estrita"</h4><p>O Estado deve evitar qualquer símbolo ou benefício que favoreça religiões, para garantir igualdade a crentes de todas as fés e a não crentes. É o modelo mais próximo da França.</p></div>
+</div>` },
+
+{ t: 'Os debates no Brasil', h: `
+<div class="scroll"><table><thead><tr><th>Tema</th><th>Situação</th></tr></thead><tbody>
+<tr><td><b>Símbolos religiosos em prédios públicos</b></td><td>Em 2007, o Conselho Nacional de Justiça decidiu que crucifixos podiam permanecer em tribunais, como símbolo cultural; em 2012, o Tribunal de Justiça do Rio Grande do Sul mandou retirá-los de suas salas. O tema segue em discussão.</td></tr>
+<tr><td><b>Ensino religioso</b></td><td>Em 2017, o STF (ADI 4439), por 6 votos a 5, permitiu o ensino religioso confessional nas escolas públicas, com matrícula facultativa. Críticos temem favorecimento das religiões majoritárias.</td></tr>
+<tr><td><b>"Deus seja louvado"</b></td><td>Frase impressa nas cédulas do real (e antes do cruzado) desde 1986; ações para retirá-la não prosperaram.</td></tr>
+<tr><td><b>Imunidade tributária</b></td><td>Templos não pagam impostos sobre patrimônio, renda e serviços ligados às suas finalidades; há debates sobre fiscalização e abusos.</td></tr>
+<tr><td><b>Feriados religiosos</b></td><td>Nacionais (Sexta-feira Santa, Aparecida, Finados, Natal) e municipais; vistos por uns como herança cultural, por outros como privilégio.</td></tr>
+<tr><td><b>Sacrifício de animais</b></td><td>Em 2019, o STF declarou constitucional o sacrifício de animais em ritos de religiões de matriz africana, protegendo a liberdade de culto.</td></tr>
+<tr><td><b>Guarda do sábado</b></td><td>Em 2020, o STF decidiu que concursos e provas devem oferecer alternativas a quem guarda o sábado por motivo religioso, quando possível.</td></tr>
+</tbody></table></div>
+<p><span data-tag="consenso"></span> sobre os fatos; <span data-tag="debate"></span> sobre a avaliação.</p>` },
+
+{ t: 'Argumentos em disputa', h: `
 <ul>
-<li><b>Símbolos religiosos em prédios públicos</b>: em 2007, o Conselho Nacional de Justiça decidiu que crucifixos podiam permanecer em tribunais; o tema segue em discussão.</li>
-<li><b>Ensino religioso</b>: em 2017, o STF (ADI 4439) permitiu o ensino religioso confessional nas escolas públicas, com matrícula facultativa.</li>
-<li><b>"Deus seja louvado"</b> nas cédulas do real, desde os anos 1980.</li>
-<li><b>Imunidade tributária</b> dos templos.</li>
-<li><b>Feriados religiosos</b> nacionais e municipais.</li>
+<li><b>Maioria e cultura</b>: defensores dos símbolos e feriados lembram que o cristianismo faz parte da história e da cultura brasileiras e que retirar tudo seria uma forma de hostilidade à religião.</li>
+<li><b>Igualdade</b>: críticos lembram que o Estado deve tratar igualmente católicos, evangélicos, espíritas, adeptos de religiões afro-brasileiras, judeus, muçulmanos, budistas, ateus e agnósticos.</li>
+<li><b>Proteção das minorias</b>: decisões como a do sacrifício de animais e a da guarda do sábado mostram a laicidade protegendo minorias religiosas.</li>
+<li><b>Moral pública</b>: em temas como aborto, casamento e drogas, discute-se se argumentos religiosos podem fundamentar leis num Estado laico; muitos filósofos (como John Rawls e Jürgen Habermas) discutem como religiosos podem participar do debate público com razões compreensíveis para todos.</li>
 </ul>
-<div class="persp"><div><h4>Laicidade "colaborativa"</h4><p>O Estado pode reconhecer a tradição religiosa da maioria e cooperar com igrejas em obras sociais, desde que respeite a liberdade de todos. <span data-tag="opiniao"></span></p></div><div><h4>Laicidade "estrita"</h4><p>O Estado deve evitar qualquer símbolo ou benefício que favoreça religiões, para garantir igualdade a crentes de todas as fés e a não crentes. <span data-tag="opiniao"></span></p></div></div>` }
+<aside data-box="pratica" data-t="Para debater em sala"><p>Escolha um caso — crucifixo em tribunal, ensino religioso confessional, feriado religioso — e organize um debate com papéis definidos (cristão, adepto de religião afro-brasileira, ateu, jurista). Cada um deve apresentar o melhor argumento do outro lado antes do seu.</p></aside>` }
   ],
-  exercicio: { p: 'Debata um caso de laicidade ouvindo os dois lados.', prompt: 'Apresente os melhores argumentos a favor e contra [CASO, ex.: crucifixos em tribunais / ensino religioso confessional], citando decisões do STF ou do CNJ, a Constituição e autores de diferentes posições.' }
+  quiz: [
+    { p: 'Qual a diferença entre laicidade e laicismo?',
+      o: ['São sinônimos', 'Laicidade é neutralidade do Estado com liberdade para todos; laicismo busca excluir a religião da vida pública', 'Laicismo é a religião oficial', 'Laicidade proíbe religiões'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que o STF decidiu em 2017 (ADI 4439)?',
+      o: ['Proibiu todo ensino religioso', 'Permitiu o ensino religioso confessional nas escolas públicas, com matrícula facultativa', 'Tornou o ensino religioso obrigatório', 'Criou uma religião oficial'], c: 1,
+      e: ['Não.', 'Correto, por 6 a 5.', 'A matrícula é facultativa.', 'Não.'] },
+    { p: 'O que o STF decidiu em 2019 sobre o sacrifício de animais em ritos religiosos?',
+      o: ['Proibiu', 'Declarou constitucional em ritos de religiões de matriz africana', 'Liberou para qualquer fim', 'Não julgou'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Julgou.'] },
+    { p: 'Desde quando a frase "Deus seja louvado" aparece nas cédulas brasileiras?',
+      o: ['1891', '1986', '2010', '1500'], c: 1,
+      e: ['Não.', 'Correto (no cruzado e depois no real).', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Prepare um debate sobre laicidade.', prompt: 'Prepare um debate sobre a pergunta "Crucifixos devem ser retirados de prédios públicos no Brasil?". Apresente os melhores argumentos a favor e contra, a base constitucional (art. 5º e 19), as decisões do CNJ (2007) e do TJ-RS (2012), comparações com outros países (França, Itália) e a perspectiva de pessoas de diferentes religiões e sem religião. Termine sem dar a resposta "certa".',
+    criterio: 'Uma boa resposta apresenta argumentos fortes dos dois lados, cita corretamente a Constituição e as decisões, faz comparações internacionais pertinentes e mantém neutralidade.' }
 });
 
 CURSO.modulo('t4-n3-m3', {
@@ -8395,49 +8611,168 @@ CURSO.modulo('t4-n3-m3', {
 });
 
 CURSO.aula('t4-n3-m3-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer o Barroco mineiro e outros marcos da arquitetura religiosa brasileira.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer o Barroco mineiro e outros marcos da arte e da arquitetura religiosa no Brasil, de Aleijadinho a Niemeyer.',
   secoes: [
-{ t: 'Barroco e Rococó', h: `
-<p>O ouro de Minas Gerais financiou, no século XVIII, igrejas sustentadas sobretudo por irmandades. Antônio Francisco Lisboa, o <b>Aleijadinho</b>, esculpiu os doze profetas em pedra-sabão e as cenas da Paixão no Santuário do Bom Jesus de Matosinhos, em Congonhas (Patrimônio Mundial desde 1985); Manuel da Costa Ataíde pintou forros como o da Igreja de São Francisco de Assis, em Ouro Preto (cidade Patrimônio Mundial desde 1980). Historiadores da arte classificam boa parte dessa produção como rococó religioso. <span data-tag="consenso"></span></p>` },
+{ t: 'O ouro e as irmandades', h: `
+<p>O ouro de Minas Gerais financiou, no século XVIII, dezenas de igrejas em Ouro Preto, Mariana, Sabará, São João del-Rei, Tiradentes, Congonhas e Diamantina. Como a Coroa proibiu a entrada de ordens religiosas em Minas (para controlar o contrabando de ouro), as igrejas foram sustentadas sobretudo por <b>irmandades</b> e ordens terceiras, que competiam entre si em riqueza e beleza. Isso explica a abundância de igrejas em cidades pequenas e a forte presença de artistas leigos, muitos deles mestiços. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Aleijadinho e Ataíde', h: `
+<p><b>Antônio Francisco Lisboa</b>, o <b>Aleijadinho</b> (1738–1814), filho de um arquiteto português e de uma mulher escravizada, foi escultor, entalhador e arquiteto. Uma doença degenerativa, não identificada com certeza, deformou suas mãos e pés na maturidade, e a tradição diz que trabalhava com as ferramentas amarradas aos braços. <span data-tag="tradicao"></span> Suas obras-primas: <span data-tag="consenso"></span></p>
+<ul>
+<li>os <b>doze profetas</b> em pedra-sabão (c. 1800–1805), no adro do Santuário do Bom Jesus de Matosinhos, em <b>Congonhas</b> (Patrimônio Mundial desde 1985);</li>
+<li>as 66 figuras em cedro dos <b>Passos da Paixão</b>, nas capelas do mesmo santuário;</li>
+<li>o projeto e a decoração da Igreja de São Francisco de Assis, em <b>Ouro Preto</b> (cidade Patrimônio Mundial desde 1980).</li>
+</ul>
+<p><b>Manuel da Costa Ataíde</b> (1762–1830) pintou forros como o da Igreja de São Francisco de Assis, em Ouro Preto, em que a Virgem e os anjos têm traços mestiços — leitura que muitos historiadores fazem como expressão da sociedade mineira. <span data-tag="debate"></span> Historiadores da arte classificam boa parte dessa produção como <b>rococó religioso</b>, mais leve e claro que o Barroco anterior. <span data-tag="consenso"></span></p>
+<aside data-box="exemplo" data-t="Dois estilos numa cidade"><p>Em Ouro Preto, compare a Matriz de Nossa Senhora do Pilar, de interior escuro e coberto de ouro (barroco "joanino"), com a São Francisco de Assis, clara, com pedra-sabão e cores suaves (rococó). Juntas, mostram a evolução da arte mineira no século XVIII.</p></aside>` },
+
 { t: 'Outros marcos', h: `
 <ul>
-<li>Igreja e Convento de São Francisco, em Salvador, com talha dourada.</li>
-<li>Mosteiros de São Bento no Rio e em Salvador.</li>
-<li>Catedral de Brasília, de Oscar Niemeyer (inaugurada em 1970).</li>
-<li>Cristo Redentor (1931), no Rio de Janeiro.</li>
+<li><b>Salvador</b>: Igreja e Convento de São Francisco (início do século XVIII), com interior inteiramente coberto de talha dourada; Catedral Basílica, antiga igreja dos jesuítas.</li>
+<li><b>Recife</b>: Capela Dourada da Ordem Terceira de São Francisco (1696–1724).</li>
+<li><b>Rio de Janeiro</b>: Mosteiro de São Bento, com interior dourado; obras de Mestre Valentim.</li>
+<li><b>Sabará (MG)</b>: Igreja de Nossa Senhora do Ó, com pinturas de influência oriental (chinesices).</li>
+<li><b>Neogótico</b>: Catedral da Sé de São Paulo (1913–1954) e Catedral de Petrópolis.</li>
+<li><b>Modernismo</b>: a Igreja de São Francisco de Assis da Pampulha (Belo Horizonte, 1943), de Oscar Niemeyer, com painéis de Candido Portinari — a Igreja se recusou a consagrá-la por 16 anos, por estranhar a forma moderna; o conjunto da Pampulha é Patrimônio Mundial desde 2016. A <b>Catedral de Brasília</b>, também de Niemeyer, foi inaugurada em 1970.</li>
+<li><b>Contemporâneo</b>: o Santuário Nacional de Aparecida e o Templo de Salomão (2014), em São Paulo.</li>
 </ul>
-<aside data-box="pratica" data-t="Visitando"><p>Igrejas históricas são templos ativos e patrimônio: respeite horários de missa, evite flash e verifique se é permitido fotografar.</p></aside>` }
+<p><span data-tag="consenso"></span></p>
+<aside data-box="pratica" data-t="Visitar com respeito"><p>Igrejas históricas são templos ativos e patrimônio: respeite horários de missa, evite flash e verifique se é permitido fotografar. Muitas cobram ingresso para manutenção fora dos horários de celebração.</p></aside>
+<aside data-box="conexao" data-t="Trilha 2 · Avançado"><p>O Barroco como arte da Reforma católica foi estudado na aula "Jesuítas, novas ordens e o Barroco".</p></aside>` }
   ],
-  exercicio: { p: 'Analise uma obra de Aleijadinho.', prompt: 'Analise os profetas de Aleijadinho em Congonhas: datas, técnica, iconografia, debates sobre a autoria e o papel da obra na identidade cultural brasileira.' }
+  quiz: [
+    { p: 'Por que as igrejas de Minas Gerais foram sustentadas sobretudo por irmandades?',
+      o: ['Porque não havia católicos', 'Porque a Coroa proibiu a entrada de ordens religiosas em Minas', 'Porque os bispos eram ricos', 'Porque eram protestantes'], c: 1,
+      e: ['Não.', 'Correto, para controlar o contrabando de ouro.', 'Não.', 'Não.'] },
+    { p: 'Onde estão os doze profetas de Aleijadinho?',
+      o: ['Ouro Preto', 'Congonhas, no Santuário do Bom Jesus de Matosinhos', 'Salvador', 'Rio de Janeiro'], c: 1,
+      e: ['Ouro Preto tem a São Francisco de Assis.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Quem pintou o forro da Igreja de São Francisco de Assis, em Ouro Preto?',
+      o: ['Aleijadinho', 'Manuel da Costa Ataíde', 'Portinari', 'Niemeyer'], c: 1,
+      e: ['Ele projetou a igreja e fez esculturas.', 'Correto.', 'Pintou na Pampulha.', 'É arquiteto do século XX.'] },
+    { p: 'Por que a Igreja da Pampulha demorou 16 anos para ser consagrada?',
+      o: ['Por falta de dinheiro', 'Porque a Igreja estranhou sua forma moderna', 'Porque desabou', 'Porque era protestante'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Leia uma igreja histórica.', prompt: 'Escolha uma igreja histórica brasileira (por exemplo, São Francisco de Assis de Ouro Preto, São Francisco de Salvador, Bom Jesus de Matosinhos ou a Pampulha) e faça uma "leitura" dela: contexto histórico, quem financiou e construiu, estilo, elementos artísticos principais, significados religiosos das imagens, reconhecimento como patrimônio e uso atual. Separe dado histórico de tradição.',
+    criterio: 'Uma boa resposta traz dados corretos de datas e autores, explica o estilo com exemplos concretos, interpreta o sentido religioso das imagens e separa fato de lenda.' }
 });
 
 CURSO.aula('t4-n3-m3-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer a história da música cristã no Brasil, da música sacra colonial ao gospel.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer a música cristã no Brasil — sacra, hinos protestantes, música católica popular e gospel — e seu impacto cultural e econômico.',
   secoes: [
-{ t: 'Da música sacra ao gospel', h: `
+{ t: 'Música sacra colonial e imperial', h: `
+<p>A música foi parte essencial da vida religiosa colonial. Em Minas Gerais, no século XVIII, compositores mulatos organizados em irmandades de músicos produziram uma rica música sacra, redescoberta no século XX pelo musicólogo Francisco Curt Lange. Destaca-se <b>José Joaquim Emerico Lobo de Mesquita</b> (†1805). <span data-tag="consenso"></span></p>
+<p>No Rio de Janeiro, o padre <b>José Maurício Nunes Garcia</b> (1767–1830), neto de escravizados, foi mestre de capela da corte de D. João VI e compôs centenas de obras, entre elas um <i>Réquiem</i> (1816). No século XX, Heitor Villa-Lobos compôs a <i>Missa São Sebastião</i> (1937). <span data-tag="consenso"></span></p>` },
+
+{ t: 'Hinos protestantes', h: `
+<p>Os protestantes trouxeram a tradição do canto congregacional. Os hinários marcaram gerações: <span data-tag="consenso"></span></p>
 <ul>
-<li><b>Colônia e Império</b>: compositores como José Joaquim Emerico Lobo de Mesquita, em Minas, e o padre José Maurício Nunes Garcia, mestre de capela no Rio.</li>
-<li><b>Hinários protestantes</b>: o <i>Cantor Cristão</i> (batista) e a <i>Harpa Cristã</i> (Assembleia de Deus, 1922) marcaram gerações.</li>
-<li><b>Música católica popular</b>: padre Zezinho, a Renovação Carismática, padre Marcelo Rossi, que vendeu milhões de discos no fim dos anos 1990.</li>
-<li><b>Gospel</b>: a partir dos anos 1990, gravadoras, rádios e grandes ministérios de louvor (como Diante do Trono) formaram um dos maiores mercados musicais do país; o Grammy Latino tem categoria de música cristã em português.</li>
+<li><i>Salmos e Hinos</i> (1861), organizado por Sarah Kalley, o primeiro hinário protestante em português;</li>
+<li>o <b><i>Cantor Cristão</i></b> (1891), batista, organizado por Salomão Ginsburg;</li>
+<li>a <b><i>Harpa Cristã</i></b> (1922), da Assembleia de Deus, cantada até hoje em milhares de igrejas;</li>
+<li>os <i>Hinos de Louvores e Súplicas a Deus</i>, da Congregação Cristã no Brasil, acompanhados por orquestras.</li>
 </ul>
-<p><span data-tag="consenso"></span></p>` }
+<p>Muitos hinos eram traduções de hinos ingleses e norte-americanos; com o tempo, compositores brasileiros criaram os seus. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Música católica popular', h: `
+<p>Depois do Concílio Vaticano II, a missa em português abriu espaço para cantos populares: <span data-tag="consenso"></span></p>
+<ul>
+<li>as <b>missas afro e sertanejas</b> e os cantos das CEBs, com temas sociais;</li>
+<li>o <b>padre Zezinho</b>, autor de centenas de canções desde os anos 1960, como "Oração pela família";</li>
+<li>a <b>Renovação Carismática</b>, com louvores e grupos musicais;</li>
+<li>o <b>padre Marcelo Rossi</b>, que vendeu milhões de discos no fim dos anos 1990 com músicas como "Erguei as mãos", e o padre Fábio de Melo, nas décadas seguintes.</li>
+</ul>` },
+
+{ t: 'O gospel', h: `
+<p>A partir dos anos 1990, gravadoras, rádios, festivais e grandes ministérios de louvor — como o <b>Diante do Trono</b>, de Belo Horizonte (1997), cujos shows reuniram centenas de milhares de pessoas — formaram um dos maiores mercados musicais do país. Cantoras como Aline Barros e cantores como Fernandinho e Thalles Roberto tornaram-se conhecidos fora das igrejas. O Grammy Latino tem, desde 2004, uma categoria para álbuns de música cristã em língua portuguesa. <span data-tag="consenso"></span></p>
+<p>O gospel brasileiro mistura estilos: pop, rock, sertanejo, samba, funk, forró, rap. A "música de louvor e adoração", cantada nos cultos com banda, influenciou também comunidades católicas. <span data-tag="consenso"></span></p>
+<div class="persp">
+<div><h4>Críticas</h4><p>Críticos dentro das igrejas apontam a comercialização, o culto a celebridades, letras teologicamente pobres e a transformação do culto em show.</p></div>
+<div><h4>Defesas</h4><p>Defensores destacam a capacidade de comunicar a fé a novas gerações, a profissionalização de músicos e o fortalecimento da identidade evangélica.</p></div>
+</div>
+<p><span data-tag="debate"></span></p>
+<aside data-box="exemplo" data-t="Música e fé no cotidiano"><p>Hinos e louvores fazem parte da vida de milhões de brasileiros — em casamentos, velórios, festas e no rádio dos ônibus. Muitas músicas da Harpa Cristã, como "Porque Ele vive", são conhecidas também por católicos.</p></aside>` }
   ],
-  exercicio: { p: 'Compare um hino antigo e uma canção gospel atual.', prompt: 'Compare um hino tradicional (da Harpa Cristã ou do Cantor Cristão) com uma canção gospel atual quanto a teologia, linguagem, estrutura musical e uso no culto. Não reproduza letras completas; descreva e cite no máximo um verso curto.' }
+  quiz: [
+    { p: 'Quem foi o padre José Maurício Nunes Garcia?',
+      o: ['Um pregador pentecostal', 'Mestre de capela da corte de D. João VI e compositor de música sacra', 'Um cantor gospel', 'Um jesuíta do século XVI'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Qual hinário é usado pela Assembleia de Deus desde 1922?',
+      o: ['Cantor Cristão', 'Harpa Cristã', 'Salmos e Hinos', 'Hinário Luterano'], c: 1,
+      e: ['É batista.', 'Correto.', 'É de 1861, organizado por Sarah Kalley.', 'Não.'] },
+    { p: 'Que padre vendeu milhões de discos no fim dos anos 1990?',
+      o: ['Padre Cícero', 'Padre Marcelo Rossi', 'Padre Antônio Vieira', 'Padre José Maurício'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'É do século XIX.'] },
+    { p: 'Qual crítica é feita ao mercado gospel dentro das igrejas?',
+      o: ['Que não existe', 'Comercialização, culto a celebridades e transformação do culto em show', 'Que só toca música clássica', 'Que é proibido'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Compare três tradições musicais.', prompt: 'Compare três tradições de música cristã no Brasil: a música sacra colonial mineira, os hinos da Harpa Cristã e o gospel contemporâneo. Para cada uma: contexto, quem compunha e para quem, estilo, temas das letras, função no culto e na sociedade. Analise uma música de cada (sem reproduzir letras protegidas por direitos autorais; resuma o tema). Indique pesquisadores ou fontes.',
+    criterio: 'Uma boa resposta descreve corretamente cada tradição com exemplos, analisa temas sem copiar letras protegidas, mostra a função religiosa e social e cita fontes.' }
 });
 
 CURSO.aula('t4-n3-m3-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Identificar a presença do cristianismo na literatura, no cinema e na TV brasileiros.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer como o cristianismo aparece na literatura, no teatro, no cinema e na televisão brasileiros, de Vieira às novelas bíblicas.',
   secoes: [
-{ t: 'Literatura e teatro', h: `
-<p>Os sermões do padre Antônio Vieira são clássicos da língua portuguesa. No século XX, o <i>Auto da Compadecida</i> (1955), de Ariano Suassuna, mistura humor nordestino e julgamento das almas; <i>O pagador de promessas</i>, de Dias Gomes, virou filme premiado com a Palma de Ouro em Cannes (1962). A poeta Adélia Prado fez da fé católica tema central de sua obra. <span data-tag="consenso"></span></p>` },
-{ t: 'Cinema e TV', h: `
-<p>O filme <i>O Auto da Compadecida</i> (2000) tornou-se um dos mais populares do país. Novelas bíblicas da TV Record, como <i>Os Dez Mandamentos</i> (2015), alcançaram grandes audiências, e sua versão para o cinema (2016) teve números de bilheteria contestados por relatos de compras em bloco de ingressos. As encenações da Paixão, como a de Nova Jerusalém (PE), são tradição popular. <span data-tag="consenso"></span></p>` }
+{ t: 'Literatura', h: `
+<ul>
+<li>Os sermões do padre <b>Antônio Vieira</b> (1608–1697), como o "Sermão da Sexagésima" (1655), sobre a arte de pregar, e o "Sermão de Santo Antônio aos Peixes" (1654), são clássicos da língua portuguesa. Fernando Pessoa o chamou de "imperador da língua portuguesa".</li>
+<li><b>Gregório de Matos</b> (século XVII) escreveu poemas religiosos ao lado de sátiras ferozes ao clero.</li>
+<li><b>Machado de Assis</b> tratou da religião com ironia e profundidade em contos como "Missa do Galo" (1894) e "A igreja do diabo" (1883).</li>
+<li><b>Guimarães Rosa</b>, em <i>Grande Sertão: Veredas</i> (1956), fez da pergunta sobre Deus e o diabo o centro do romance.</li>
+<li>Poetas católicos como Jorge de Lima e Murilo Mendes, no século XX, e <b>Adélia Prado</b>, que fez da fé católica e do cotidiano tema central de sua obra.</li>
+</ul>
+<p><span data-tag="consenso"></span></p>` },
+
+{ t: 'Teatro e cinema', h: `
+<ul>
+<li><b><i>O Auto da Compadecida</i></b> (1955), de Ariano Suassuna, mistura humor nordestino, cordel e o julgamento das almas, em que Nossa Senhora intercede por João Grilo. O filme de Guel Arraes (2000) tornou-se um dos mais populares do país, e uma continuação foi lançada em 2024.</li>
+<li><b><i>O Pagador de Promessas</i></b>, peça de Dias Gomes (1960), conta a história de Zé do Burro, que tenta cumprir a promessa de levar uma cruz até uma igreja de Salvador e é barrado pelo padre. O filme de Anselmo Duarte ganhou a <b>Palma de Ouro</b> em Cannes (1962) — até hoje a única de um filme brasileiro.</li>
+<li>Os <b>autos</b> jesuíticos de Anchieta (século XVI) e os autos de Natal populares mostram a longa tradição do teatro religioso no Brasil.</li>
+<li>Filmes biográficos, como <i>Irmã Dulce</i> (2014), e filmes espíritas, como <i>Nosso Lar</i> (2010) e <i>Chico Xavier</i> (2010), tiveram grande público.</li>
+</ul>
+<p><span data-tag="consenso"></span></p>` },
+
+{ t: 'Televisão e mídia', h: `
+<p>A televisão aproximou o público de narrativas religiosas: <span data-tag="consenso"></span></p>
+<ul>
+<li>Novelas bíblicas da TV Record, como <i>Os Dez Mandamentos</i> (2015), alcançaram grandes audiências. Sua versão para o cinema (2016) teve números de bilheteria contestados por relatos de compras em bloco de ingressos.</li>
+<li>Emissoras católicas (Rede Vida, Canção Nova, TV Aparecida) e evangélicas (Record, Rede Gospel, Novo Tempo) transmitem missas, cultos e programas.</li>
+<li>As encenações da Paixão, como a de Nova Jerusalém (PE), são transmitidas e viraram tradição popular.</li>
+<li>Nas redes sociais, padres, pastores e influenciadores religiosos têm milhões de seguidores.</li>
+</ul>` },
+
+{ t: 'Como analisar', h: `
+<p>Ao analisar obras de arte com temas religiosos, vale perguntar: <span data-tag="opiniao"></span></p>
+<ol>
+<li>Que imagem da religião a obra apresenta — fé popular, instituição, conflito, humor, crítica?</li>
+<li>De que ponto de vista: de um crente, de um crítico, de um observador?</li>
+<li>Como as diferentes tradições reagiram à obra?</li>
+<li>O que a obra revela sobre o Brasil de sua época?</li>
+</ol>
+<aside data-box="exemplo" data-t="Um conflito revelador"><p>Em <i>O Pagador de Promessas</i>, o padre recusa a cruz de Zé do Burro porque a promessa foi feita num terreiro de candomblé, a Iansã, identificada com Santa Bárbara. A obra mostra o choque entre a religiosidade popular e a Igreja oficial, e entre o catolicismo e as religiões afro-brasileiras, temas estudados neste curso.</p></aside>
+<aside data-box="conexao" data-t="Trilha 4 · Intermediário"><p>Promessas, romarias e sincretismo foram estudados no módulo sobre religiosidade popular.</p></aside>` }
   ],
-  exercicio: { p: 'Analise uma obra brasileira com tema cristão.', prompt: 'Analise [OBRA, ex.: Auto da Compadecida ou O pagador de promessas]: como representa a fé, a Igreja e a religiosidade popular, que críticas faz e como foi recebida por católicos e evangélicos.' }
+  quiz: [
+    { p: 'Que filme brasileiro ganhou a Palma de Ouro em Cannes (1962)?',
+      o: ['O Auto da Compadecida', 'O Pagador de Promessas', 'Os Dez Mandamentos', 'Central do Brasil'], c: 1,
+      e: ['É de 2000 e não ganhou a Palma.', 'Correto, de Anselmo Duarte.', 'Não.', 'Ganhou o Urso de Ouro em Berlim (1998).'] },
+    { p: 'Quem escreveu <i>O Auto da Compadecida</i> (1955)?',
+      o: ['Dias Gomes', 'Ariano Suassuna', 'Machado de Assis', 'Guimarães Rosa'], c: 1,
+      e: ['Escreveu <i>O Pagador de Promessas</i>.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Que conto de Machado de Assis tem título religioso?',
+      o: ['"O Alienista"', '"Missa do Galo"', '"Dom Casmurro"', '"Quincas Borba"'], c: 1,
+      e: ['É uma novela, sem título religioso.', 'Correto (1894).', 'É romance.', 'É romance.'] },
+    { p: 'Por que o padre recusa a cruz de Zé do Burro em <i>O Pagador de Promessas</i>?',
+      o: ['Porque a cruz era pequena', 'Porque a promessa foi feita num terreiro de candomblé', 'Porque Zé era protestante', 'Porque era Sexta-feira'], c: 1,
+      e: ['Não.', 'Correto: a Iansã, identificada com Santa Bárbara.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Analise uma obra com tema religioso.', prompt: 'Analise [O Auto da Compadecida / O Pagador de Promessas / Grande Sertão: Veredas / um poema de Adélia Prado]: contexto, enredo ou tema, imagem da religião apresentada, ponto de vista do autor, reações de diferentes tradições e o que a obra revela sobre o Brasil. Não reproduza longos trechos protegidos por direitos autorais; resuma e cite no máximo frases curtas.',
+    criterio: 'Uma boa resposta resume a obra com precisão, analisa a imagem da religião com argumentos, contextualiza historicamente e respeita direitos autorais.' }
 });
 </script>
 
@@ -8453,48 +8788,156 @@ CURSO.modulo('t4-n4-m1', {
 });
 
 CURSO.aula('t4-n4-m1-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Apresentar as posições cristãs sobre ciência, evolução e origem do universo.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer as principais posições cristãs sobre fé e ciência — criação, evolução, cosmologia — e os modelos para pensar a relação entre as duas.',
   secoes: [
-{ t: 'Um leque de posições', h: `
+{ t: 'Modelos de relação', h: `
+<p>O físico e teólogo Ian Barbour (1990) propôs quatro modelos para pensar a relação entre ciência e religião, muito usados até hoje: <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th>Modelo</th><th>Ideia</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td><b>Conflito</b></td><td>Ciência e religião competem pela verdade; uma deve vencer</td><td>Criacionistas literalistas; ateus como Richard Dawkins (<i>Deus, um delírio</i>, 2006)</td></tr>
+<tr><td><b>Independência</b></td><td>Tratam de questões diferentes: a ciência, do "como"; a religião, do "porquê" e do sentido</td><td>O biólogo Stephen Jay Gould falou em "magistérios não sobrepostos" (1997)</td></tr>
+<tr><td><b>Diálogo</b></td><td>Podem conversar sobre questões de fronteira, como a origem do universo e a mente</td><td>Muitos cientistas e teólogos</td></tr>
+<tr><td><b>Integração</b></td><td>Buscam uma visão de mundo unificada</td><td>Teilhard de Chardin; teologia da natureza</td></tr>
+</tbody></table></div>
+<p>A tese do "conflito permanente" é rejeitada pelos historiadores da ciência como simplificação, mas conflitos reais existem em temas específicos, sobretudo a evolução. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Criação e evolução', h: `
+<p>Sobre a origem da vida e do ser humano, há três grandes posições entre cristãos: <span data-tag="igreja">varia por igreja</span></p>
 <ul>
-<li><b>Criacionismo da Terra jovem</b>: leitura literal de Gênesis, Terra com milhares de anos; difundido a partir de <i>The Genesis Flood</i> (1961). Presente em parte das igrejas evangélicas.</li>
-<li><b>Design Inteligente</b>: afirma que certas estruturas biológicas indicam um projetista; a comunidade científica não o reconhece como ciência (nos EUA, um tribunal assim decidiu em 2005, no caso Dover).</li>
-<li><b>Evolucionismo teísta / criação evolutiva</b>: Deus cria por meio dos processos naturais. A Igreja Católica admite a evolução desde Pio XII (<i>Humani Generis</i>, 1950), e João Paulo II disse em 1996 que ela era "mais que uma hipótese"; muitas igrejas protestantes históricas e evangélicos como Francis Collins (BioLogos) defendem essa posição.</li>
+<li><b>Criacionismo da Terra jovem</b>: leitura literal de Gênesis 1–11; a Terra teria alguns milhares de anos, e o dilúvio explicaria as camadas geológicas. Difundido a partir de <i>The Genesis Flood</i> (1961), de Whitcomb e Morris. Presente em parte das igrejas evangélicas e entre adventistas; no Brasil, a Sociedade Criacionista Brasileira existe desde 1972.</li>
+<li><b>Design Inteligente</b>: afirma que certas estruturas biológicas complexas indicam um projetista. A comunidade científica não o reconhece como ciência; nos EUA, um tribunal assim decidiu em 2005, no caso Kitzmiller contra Dover, ao proibir seu ensino nas aulas de biologia.</li>
+<li><b>Evolucionismo teísta ou criação evolutiva</b>: Deus cria por meio dos processos naturais, inclusive a evolução. A Igreja Católica admite a evolução desde Pio XII (<i>Humani Generis</i>, 1950), e João Paulo II disse em 1996 que ela era "mais que uma hipótese"; o papa Francisco afirmou em 2014 que Deus não é "um mago com uma varinha". Muitas igrejas protestantes históricas e evangélicos como o geneticista Francis Collins (fundador da BioLogos) defendem essa posição.</li>
 </ul>
-<p><span data-tag="igreja">varia por igreja</span> O ensino científico sobre a evolução e a idade do universo é <span data-tag="consenso"></span> na ciência.</p>
+<p>O ensino científico sobre a evolução e a idade do universo (cerca de 13,8 bilhões de anos) e da Terra (cerca de 4,5 bilhões) é <span data-tag="consenso"></span> na ciência.</p>
+<aside data-box="cuidado" data-t="Gênesis não é um livro de ciência"><p>A maioria dos biblistas, católicos e protestantes, entende que Gênesis 1–2 não foi escrito para responder a perguntas científicas modernas, mas para afirmar, em linguagem do Antigo Oriente, que Deus é criador de tudo, que o mundo é bom e que o ser humano é imagem de Deus. Agostinho, no século V, já alertava contra usar a Bíblia para contradizer o que se sabe da natureza.</p></aside>` },
+
+{ t: 'Cosmologia', h: `
+<p>A teoria do Big Bang tem origem na hipótese do "átomo primitivo" (1931) do padre e físico belga <b>Georges Lemaître</b>. Em 1951, Pio XII viu nela uma confirmação da criação; o próprio Lemaître pediu cautela, por considerar que a ciência não deve ser usada para provar a fé. Hoje, alguns pensadores cristãos usam a "sintonia fina" das constantes físicas como argumento a favor de um Criador; outros, crentes ou não, consideram esse argumento inconclusivo. <span data-tag="debate"></span></p>` },
+
+{ t: 'Fé e ciência hoje', h: `
+<ul>
+<li>Muitos cientistas são religiosos e muitos religiosos fazem ciência; a Igreja Católica mantém a Pontifícia Academia das Ciências e o Observatório Vaticano.</li>
+<li>Na pandemia de covid-19, a maioria das igrejas apoiou a vacinação e as medidas sanitárias; houve resistências em alguns grupos.</li>
+<li>Temas atuais incluem mudanças climáticas, neurociência e consciência, inteligência artificial e edição genética.</li>
+</ul>
 <aside data-box="conexao" data-t="Trilha 2 · Especialista"><p>A história das relações entre fé e ciência, incluindo o caso Galileu, está no módulo sobre Iluminismo e secularização.</p></aside>` }
   ],
-  exercicio: { p: 'Compare as quatro tipologias de Ian Barbour.', prompt: 'Explique as quatro formas de relação entre ciência e religião propostas por Ian Barbour (conflito, independência, diálogo e integração), com exemplos de cristãos que representam cada uma.' }
+  quiz: [
+    { p: 'O que a Igreja Católica ensina sobre a evolução?',
+      o: ['Que é proibido aceitá-la', 'Que pode ser aceita; João Paulo II disse em 1996 que era "mais que uma hipótese"', 'Que a Terra tem 6 mil anos', 'Não tem posição'], c: 1,
+      e: ['Não.', 'Correto; Pio XII já a admitia em 1950.', 'Essa é a posição criacionista da Terra jovem.', 'Tem posição.'] },
+    { p: 'O que decidiu o caso Kitzmiller contra Dover (EUA, 2005)?',
+      o: ['Que o Design Inteligente é ciência', 'Que o Design Inteligente não é ciência e não pode ser ensinado nas aulas de biologia de escolas públicas', 'Que a evolução é falsa', 'Que a religião deve ser ensinada'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Quem propôs a hipótese que deu origem à teoria do Big Bang?',
+      o: ['Darwin', 'O padre Georges Lemaître', 'Galileu', 'Einstein'], c: 1,
+      e: ['Não.', 'Correto (1931).', 'Não.', 'Einstein inicialmente resistiu à ideia.'] },
+    { p: 'Quais são os quatro modelos de Ian Barbour para a relação entre ciência e religião?',
+      o: ['Fé, esperança, caridade e razão', 'Conflito, independência, diálogo e integração', 'Católico, ortodoxo, protestante e pentecostal', 'Física, química, biologia e teologia'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Compare posições sobre criação e evolução.', prompt: 'Compare as posições do criacionismo da Terra jovem, do Design Inteligente e do evolucionismo teísta: argumentos, leitura de Gênesis, relação com a ciência, igrejas e autores que as defendem (no Brasil e no mundo) e críticas que recebem. Explique também o que diz o consenso científico e como as escolas brasileiras tratam o tema. Seja respeitoso com todas as posições, mas claro sobre o que é ciência.',
+    criterio: 'Uma boa resposta apresenta as três posições com fidelidade, distingue afirmações científicas de teológicas, cita autores e documentos reais e mantém respeito sem relativizar o consenso científico.' }
 });
 
 CURSO.aula('t4-n4-m1-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer as posições das igrejas sobre temas éticos e bioéticos controversos.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer as posições das igrejas em temas de ética, sexualidade e bioética, as decisões brasileiras sobre esses temas e a distância entre ensino oficial e prática dos fiéis.',
   secoes: [
-{ t: 'Vida, família e sexualidade', h: `
+{ t: 'Fundamentos comuns, conclusões diferentes', h: `
+<p>As igrejas partem de fundamentos parecidos — a dignidade humana como imagem de Deus, o amor ao próximo, a valorização da vida e da família —, mas chegam a conclusões diferentes, conforme seu modo de ler a Escritura, a tradição e a razão, e conforme o peso dado à experiência e às ciências. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Posições oficiais', h: `
 <div class="scroll"><table><thead><tr><th>Tema</th><th>Posições</th></tr></thead><tbody>
-<tr><td>Aborto</td><td>Rejeitado pelas igrejas católica, ortodoxa e pela maioria das evangélicas; algumas igrejas protestantes históricas admitem exceções ou defendem a decisão da mulher.</td></tr>
-<tr><td>Contracepção</td><td>Igreja Católica admite só métodos naturais (<i>Humanae Vitae</i>, 1968); a maioria das igrejas protestantes a aceita.</td></tr>
-<tr><td>Divórcio</td><td>Católicos não o reconhecem sacramentalmente (há anulação); ortodoxos admitem novo casamento em certos casos; protestantes variam.</td></tr>
-<tr><td>Homossexualidade</td><td>Igrejas católica, ortodoxa e a maioria das evangélicas mantêm o casamento como união entre homem e mulher (a Igreja Católica admitiu em 2023 bênçãos não litúrgicas a casais em situação irregular, inclusive do mesmo sexo); algumas luteranas, anglicanas e outras celebram casamentos entre pessoas do mesmo sexo.</td></tr>
-<tr><td>Fim da vida</td><td>As grandes igrejas rejeitam a eutanásia e aceitam cuidados paliativos e a recusa de tratamentos desproporcionais.</td></tr>
+<tr><td><b>Aborto</b></td><td>Rejeitado pelas igrejas católica, ortodoxa e pela maioria das evangélicas, por defenderem a vida desde a concepção; algumas igrejas protestantes históricas admitem exceções ou defendem a decisão da mulher.</td></tr>
+<tr><td><b>Contracepção</b></td><td>A Igreja Católica admite só métodos naturais (<i>Humanae Vitae</i>, 1968); a maioria das igrejas protestantes e ortodoxas a aceita, em graus variados.</td></tr>
+<tr><td><b>Reprodução assistida</b></td><td>A Igreja Católica rejeita a fertilização in vitro (<i>Donum Vitae</i>, 1987); a maioria das igrejas protestantes a aceita, com ressalvas sobre embriões descartados.</td></tr>
+<tr><td><b>Divórcio</b></td><td>Católicos não o reconhecem sacramentalmente (há declarações de nulidade); ortodoxos admitem novo casamento em certos casos; protestantes variam.</td></tr>
+<tr><td><b>Homossexualidade</b></td><td>As igrejas católica, ortodoxa e a maioria das evangélicas mantêm o casamento como união entre homem e mulher (a Igreja Católica admitiu em 2023 bênçãos pastorais não litúrgicas a casais em situação irregular, inclusive do mesmo sexo); algumas luteranas, anglicanas, presbiterianas e outras celebram casamentos entre pessoas do mesmo sexo.</td></tr>
+<tr><td><b>Fim da vida</b></td><td>As grandes igrejas rejeitam a eutanásia e o suicídio assistido e aceitam cuidados paliativos e a recusa de tratamentos desproporcionais.</td></tr>
+<tr><td><b>Pena de morte</b></td><td>Inadmissível para a Igreja Católica desde 2018; muitas igrejas protestantes a rejeitam; algumas evangélicas norte-americanas a aceitam.</td></tr>
 </tbody></table></div>
-<p><span data-tag="igreja">posições oficiais variam por igreja</span> Pesquisas mostram que muitos fiéis discordam das posições oficiais de suas próprias igrejas. <span data-tag="consenso"></span></p>` }
+<p><span data-tag="igreja">posições oficiais variam por igreja</span></p>` },
+
+{ t: 'No Brasil', h: `
+<p>Temas de bioética e sexualidade chegaram com frequência ao Supremo Tribunal Federal, sempre com participação de igrejas e grupos religiosos nas audiências públicas: <span data-tag="consenso"></span></p>
+<ul>
+<li><b>2008</b>: o STF autorizou pesquisas com células-tronco embrionárias (ADI 3510).</li>
+<li><b>2011</b>: reconheceu a união estável entre pessoas do mesmo sexo (ADI 4277); em 2013, o CNJ determinou que cartórios celebrassem casamentos.</li>
+<li><b>2012</b>: permitiu a interrupção da gravidez de feto anencéfalo (ADPF 54), somando-se aos casos já previstos no Código Penal (estupro e risco de vida da gestante).</li>
+<li>O debate sobre a descriminalização do aborto até a 12ª semana (ADPF 442) mobiliza igrejas e movimentos de vários lados.</li>
+</ul>
+<p>Igrejas católicas e evangélicas se aliaram muitas vezes nesses debates, em defesa de posições conservadoras; grupos cristãos progressistas, como as Católicas pelo Direito de Decidir, defenderam outras posições. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Ensino e prática', h: `
+<p>Pesquisas mostram que muitos fiéis discordam das posições oficiais de suas próprias igrejas — por exemplo, grande parte dos católicos brasileiros usa métodos contraceptivos artificiais. Isso não é novidade na história: igrejas sempre conviveram com diferenças entre o ensino e a prática. <span data-tag="consenso"></span></p>
+<div class="persp">
+<div><h4>Leitura das igrejas</h4><p>A verdade moral não depende de maioria; o papel da Igreja é anunciar o ideal e acompanhar as pessoas com misericórdia.</p></div>
+<div><h4>Leitura de críticos internos</h4><p>A distância indica que o ensino precisa ser repensado à luz da experiência dos fiéis, das ciências e de novas leituras bíblicas.</p></div>
+</div>
+<aside data-box="cuidado" data-t="Debater com respeito"><p>Esses temas envolvem convicções profundas e experiências pessoais. Num debate, é possível discordar com firmeza sem desqualificar quem pensa diferente — crente ou não.</p></aside>` }
   ],
-  exercicio: { p: 'Compare as posições de três igrejas sobre um tema bioético.', prompt: 'Compare a posição oficial da Igreja Católica, de uma igreja luterana (IECLB) e da Assembleia de Deus sobre [TEMA, ex.: reprodução assistida], citando documentos oficiais. Apresente também os argumentos de críticos de cada posição.' }
+  quiz: [
+    { p: 'Que documento católico de 1968 admite apenas métodos naturais de regulação da natalidade?',
+      o: ['<i>Rerum Novarum</i>', '<i>Humanae Vitae</i>', '<i>Laudato Si\'</i>', '<i>Dignitatis Humanae</i>'], c: 1,
+      e: ['É de 1891.', 'Correto, de Paulo VI.', 'É de 2015.', 'É de 1965.'] },
+    { p: 'O que o STF decidiu em 2011 (ADI 4277)?',
+      o: ['Proibiu o casamento civil', 'Reconheceu a união estável entre pessoas do mesmo sexo', 'Permitiu o aborto em qualquer caso', 'Proibiu pesquisas com células-tronco'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'As pesquisas foram autorizadas em 2008.'] },
+    { p: 'Como as grandes igrejas veem a eutanásia e os cuidados paliativos?',
+      o: ['Aceitam a eutanásia', 'Rejeitam a eutanásia e aceitam cuidados paliativos e a recusa de tratamentos desproporcionais', 'Rejeitam qualquer tratamento médico', 'Não têm posição'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Têm posição.'] },
+    { p: 'O que pesquisas mostram sobre fiéis e ensino oficial?',
+      o: ['Todos seguem o ensino oficial', 'Muitos fiéis discordam das posições oficiais de suas igrejas', 'Ninguém conhece o ensino oficial', 'As igrejas não têm ensino oficial'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Mapeie um debate bioético.', prompt: 'Escolha um tema — [células-tronco embrionárias / fim da vida e cuidados paliativos / reprodução assistida] — e apresente: as posições oficiais de três igrejas (com documentos), os argumentos de cada uma, o que diz a lei brasileira e as decisões do STF, e o que dizem pesquisas sobre a opinião dos fiéis. Mantenha neutralidade e cite fontes.',
+    criterio: 'Uma boa resposta apresenta posições com documentos reais, descreve corretamente a legislação e as decisões judiciais, distingue ensino oficial de opinião dos fiéis e mantém neutralidade.' }
 });
 
 CURSO.aula('t4-n4-m1-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar os debates sobre o papel das mulheres nas igrejas e o fenômeno dos jovens "desigrejados".',
+  revisado: '2026-11-27',
+  objetivo: 'Analisar o lugar das mulheres nas igrejas, a relação dos jovens com a religião e o fenômeno dos "desigrejados", com dados e diferentes perspectivas.',
   secoes: [
-{ t: 'Mulheres', h: `
-<p>As mulheres são maioria nos bancos das igrejas brasileiras (Censo 2022). Sobre a liderança, as posições variam: a Igreja Católica e as ortodoxas não ordenam mulheres sacerdotes (João Paulo II, <i>Ordinatio Sacerdotalis</i>, 1994), embora o papa Francisco tenha nomeado mulheres para cargos de direção no Vaticano; anglicanos, luteranos e metodistas ordenam mulheres há décadas — em 2025, Sarah Mullally foi nomeada a primeira arcebispa de Cantuária; entre batistas e pentecostais, a prática varia de convenção para convenção. Teólogas feministas, católicas e protestantes, propõem novas leituras bíblicas; críticos as acusam de adaptar a fé à cultura. <span data-tag="debate"></span></p>` },
-{ t: 'Juventude e "desigrejados"', h: `
-<p>No Brasil, os sem religião são mais numerosos entre os jovens e os homens (Censo 2022). Muitos "desigrejados" continuam crendo em Deus e orando, mas rejeitam instituições, escândalos ou posicionamentos políticos das igrejas. Ao mesmo tempo, há relatos e pesquisas recentes sobre maior interesse religioso entre jovens em alguns países europeus — tema ainda debatido. <span data-tag="debate"></span></p>` }
+{ t: 'Mulheres nas igrejas', h: `
+<p>As mulheres são maioria nos bancos das igrejas brasileiras (Censo 2022) e sustentam boa parte da vida comunitária: catequese, pastorais, círculos de oração, música, assistência social, missões. Sobre a <b>liderança</b>, as posições variam: <span data-tag="igreja">varia por igreja</span></p>
+<ul>
+<li>A Igreja Católica e as ortodoxas não ordenam mulheres sacerdotes (João Paulo II, <i>Ordinatio Sacerdotalis</i>, 1994). Comissões estudaram o diaconato feminino. O papa Francisco nomeou mulheres para cargos de direção no Vaticano e permitiu que votassem no Sínodo (2023); em 2025, a irmã Simona Brambilla tornou-se a primeira mulher prefeita de um dicastério.</li>
+<li>Anglicanos, luteranos e metodistas ordenam mulheres há décadas — em 2025, Sarah Mullally foi escolhida a primeira arcebispa de Cantuária.</li>
+<li>Entre batistas e pentecostais, a prática varia de convenção para convenção: a Igreja do Evangelho Quadrangular, fundada por uma mulher, ordena pastoras; outras igrejas reservam o pastorado aos homens e valorizam ministérios femininos como missionárias e "pastoras auxiliares".</li>
+</ul>
+<div class="persp">
+<div><h4>Argumentos pela ordenação</h4><p>Gálatas 3:28 ("não há macho nem fêmea"), a liderança de mulheres no Novo Testamento (Febe, Priscila, Júnia, Maria Madalena) e a igualdade de dignidade.</p></div>
+<div><h4>Argumentos contra</h4><p>Jesus escolheu doze homens, a tradição constante da Igreja e textos como 1 Timóteo 2:12; para católicos e ortodoxos, o sacerdote representa Cristo como esposo da Igreja.</p></div>
+</div>
+<p>Teólogas feministas, católicas e protestantes — como Elisabeth Schüssler Fiorenza e, no Brasil, Ivone Gebara —, propõem novas leituras bíblicas; críticos as acusam de adaptar a fé à cultura. <span data-tag="debate"></span></p>` },
+
+{ t: 'Juventude', h: `
+<p>No Brasil, os sem religião são mais numerosos entre os jovens e os homens (Censo 2022). Ao mesmo tempo, jovens lotam eventos religiosos: a Jornada Mundial da Juventude no Rio (2013) teve cerca de 3,7 milhões de pessoas na missa final em Copacabana, segundo os organizadores; encontros evangélicos e festivais gospel reúnem multidões. <span data-tag="consenso"></span></p>
+<p>Há relatos e pesquisas recentes sobre maior interesse religioso entre jovens em alguns países europeus: na França, o número de adultos batizados na Páscoa de 2025 cresceu mais de 40% em relação ao ano anterior, com muitos jovens; uma pesquisa encomendada pela Sociedade Bíblica no Reino Unido (2025) sugeriu aumento da frequência às igrejas entre jovens, resultado contestado por outros pesquisadores. O tema ainda é debatido. <span data-tag="debate"></span></p>` },
+
+{ t: 'Os "desigrejados"', h: `
+<p>Muitos "desigrejados" continuam crendo em Deus e orando, mas rejeitam instituições, escândalos ou posicionamentos políticos das igrejas. Alguns se reúnem em pequenos grupos; outros acompanham pregações pela internet. <span data-tag="consenso"></span></p>
+<p>Os motivos mais citados em pesquisas e relatos incluem: decepção com líderes, abusos de poder ou escândalos financeiros e sexuais; excesso de regras; uso político da fé; conflitos sobre sexualidade e papel da mulher; e a busca de uma espiritualidade mais pessoal. <span data-tag="consenso"></span></p>
+<aside data-box="pratica" data-t="Ouvir histórias"><p>Converse com pessoas de diferentes gerações sobre sua trajetória religiosa: o que as aproximou ou afastou da igreja, o que mantêm de fé, o que esperam das comunidades. Ouça sem tentar convencer ninguém.</p></aside>
+<aside data-box="conexao" data-t="Trilha 4 · Avançado"><p>Os dados do Censo sobre sem religião e o fenômeno dos desigrejados nas periferias foram apresentados no módulo sobre o crescimento evangélico.</p></aside>` }
   ],
-  exercicio: { p: 'Entreviste (com respeito) uma pessoa desigrejada.', prompt: 'Prepare um roteiro respeitoso de entrevista com uma pessoa que deixou de frequentar igrejas, mas mantém alguma fé: perguntas abertas, cuidados éticos e como analisar as respostas à luz da sociologia da religião.' }
+  quiz: [
+    { p: 'Que documento de 1994 reafirmou que a Igreja Católica não ordena mulheres sacerdotes?',
+      o: ['<i>Ordinatio Sacerdotalis</i>', '<i>Laudato Si\'</i>', '<i>Humanae Vitae</i>', '<i>Lumen Gentium</i>'], c: 0,
+      e: ['Correto.', 'É sobre ecologia.', 'É sobre a natalidade.', 'É do Vaticano II, sobre a Igreja.'] },
+    { p: 'Que igreja pentecostal, fundada por uma mulher, ordena pastoras?',
+      o: ['Congregação Cristã no Brasil', 'Igreja do Evangelho Quadrangular', 'Igreja Ortodoxa', 'Igreja Católica'], c: 1,
+      e: ['Não ordena mulheres.', 'Correto: fundada por Aimee Semple McPherson.', 'Não é pentecostal.', 'Não.'] },
+    { p: 'Entre quem os "sem religião" são mais numerosos no Brasil, segundo o Censo 2022?',
+      o: ['Idosos e mulheres', 'Jovens e homens', 'Crianças', 'Moradores do Nordeste'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'O Nordeste tem a maior proporção de católicos.'] },
+    { p: 'Que texto é citado a favor da ordenação de mulheres?',
+      o: ['1 Timóteo 2:12', 'Gálatas 3:28', 'Levítico 11', 'Gênesis 11'], c: 1,
+      e: ['É citado contra.', 'Correto: "não há macho nem fêmea".', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Compare posições sobre mulheres na liderança.', prompt: 'Compare as posições de quatro igrejas presentes no Brasil (por exemplo, Igreja Católica, IECLB, Igreja Presbiteriana do Brasil e Igreja do Evangelho Quadrangular) sobre a liderança e a ordenação de mulheres: documentos, argumentos bíblicos e teológicos, prática atual e debates internos. Inclua a perspectiva de teólogas e de críticos. Mantenha neutralidade.',
+    criterio: 'Uma boa resposta traz as posições corretas de cada igreja, apresenta argumentos dos dois lados com textos bíblicos, menciona debates internos e mantém neutralidade.' }
 });
 
 CURSO.modulo('t4-n4-m2', {
@@ -8507,40 +8950,156 @@ CURSO.modulo('t4-n4-m2', {
 });
 
 CURSO.aula('t4-n4-m2-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar a mudança do cristianismo para o Sul Global com dados atuais.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender o deslocamento do cristianismo para o Sul Global — África, América Latina e Ásia —, seus números, características e consequências.',
   secoes: [
-{ t: 'Números', h: `
-<aside data-box="dado" data-t="Pew Research Center"><ul>
-<li>Em 2020, os cristãos eram a maior religião do mundo, mas sua participação caiu de cerca de 31% (2010) para 29% da população mundial (relatório de junho de 2025).</li>
-<li>A África Subsaariana passou a ter o maior número de cristãos: 30,7% dos cristãos do mundo, contra 22,3% na Europa (2020).</li>
-<li>Projeções publicadas em novembro de 2026 indicam que, por volta de 2070, a maioria dos cristãos do mundo (54%) viverá na África Subsaariana.</li>
-</ul></aside>
-<p>Esse cristianismo do Sul é em geral mais jovem, mais pentecostal ou carismático e mais conservador em temas morais. O Brasil é um dos países com mais cristãos do mundo. <span data-tag="consenso"></span></p>` }
+{ t: 'Um novo mapa', h: `
+<p>Segundo o Pew Research Center, em 2020 os cristãos eram a maior religião do mundo, mas sua participação caiu de cerca de 31% (2010) para 29% da população mundial (relatório de junho de 2025). A <b>África Subsaariana</b> passou a ter o maior número de cristãos: 30,7% dos cristãos do mundo, contra 22,3% na Europa (2020). <span data-tag="consenso"></span></p>
+<p>Projeções do Pew publicadas em 18 de novembro de 2026 indicam que, se as tendências demográficas atuais continuarem: <span data-tag="consenso"></span> como projeção</p>
+<ul>
+<li>por volta de 2070, a maioria dos cristãos do mundo (<b>54%</b>) viverá na África Subsaariana, que terá cerca de 1,6 bilhão de cristãos;</li>
+<li>a República Democrática do Congo deve superar os Estados Unidos como o país com mais cristãos;</li>
+<li>os cristãos deixariam de ser maioria nos EUA, embora continuem o maior grupo religioso;</li>
+<li>os muçulmanos devem superar os cristãos em número no mundo por volta de 2035, sobretudo por terem população mais jovem e maior fecundidade.</li>
+</ul>
+<aside data-box="cuidado" data-t="Projeções não são profecias"><p>Projeções demográficas supõem que tendências atuais continuem — de fecundidade, mortalidade, migração e mudança de religião. Guerras, crises, políticas e movimentos religiosos podem alterá-las.</p></aside>` },
+
+{ t: 'Características', h: `
+<p>Esse cristianismo do Sul é, em geral: <span data-tag="consenso"></span></p>
+<ul>
+<li><b>mais jovem</b>, em sociedades com alta proporção de crianças e jovens;</li>
+<li><b>mais pentecostal ou carismático</b>, com forte ênfase em cura, libertação, profecia e prosperidade — inclusive dentro das igrejas católicas e anglicanas;</li>
+<li><b>mais conservador em temas morais</b>, o que gera tensões com igrejas do Norte, como no anglicanismo e nas reações africanas à <i>Fiducia Supplicans</i>;</li>
+<li><b>mais ligado a problemas sociais concretos</b>: pobreza, guerras, saúde, corrupção, mudanças climáticas;</li>
+<li><b>diverso</b>, com igrejas independentes africanas (como a kimbanguista, no Congo, e as igrejas aladura, na Nigéria), igrejas domésticas na China e grandes igrejas na Coreia do Sul.</li>
+</ul>
+<p>O historiador Philip Jenkins chamou esse fenômeno de "a próxima cristandade" (2002); Andrew Walls e Lamin Sanneh mostraram como a tradução da Bíblia para línguas locais permitiu que o cristianismo se tornasse africano e asiático, e não só europeu. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Missão reversa', h: `
+<p>Hoje, igrejas do Sul enviam missionários e fundam comunidades no Norte — o que se chama "missão reversa": nigerianos, ganenses e congoleses lideram igrejas em Londres, Paris e Berlim; padres africanos e latino-americanos servem em paróquias europeias com falta de clero; o Brasil está entre os países que mais enviam missionários evangélicos ao exterior, e igrejas brasileiras estão presentes em Portugal, nos EUA, no Japão e na África. <span data-tag="consenso"></span></p>
+<p>O Brasil, com cerca de 180 milhões de pessoas que se declaram cristãs, é um dos países com mais cristãos do mundo, e a América Latina reúne cerca de um quarto dos cristãos. <span data-tag="consenso"></span></p>
+<aside data-box="conexao" data-t="Trilha 2 · Especialista"><p>As tendências do cristianismo no século XXI foram apresentadas na aula "O cristianismo no século XXI".</p></aside>` }
   ],
-  exercicio: { p: 'Analise os dados do Pew sobre o seu continente.', prompt: 'Com base nos relatórios do Pew Research Center de 2025 e 2026, descreva a situação e as projeções do cristianismo na América Latina e no Brasil: proporções, tendências, fatores e limites das projeções.' }
+  quiz: [
+    { p: 'Que região tinha o maior número de cristãos em 2020, segundo o Pew?',
+      o: ['Europa', 'África Subsaariana', 'América do Norte', 'Ásia Oriental'], c: 1,
+      e: ['Ficou em segundo (22,3%).', 'Correto (30,7%).', 'Não.', 'Não.'] },
+    { p: 'O que as projeções do Pew de novembro de 2026 indicam para 2070?',
+      o: ['Que a Europa voltará a ter a maioria dos cristãos', 'Que 54% dos cristãos viverão na África Subsaariana', 'Que o cristianismo desaparecerá', 'Que os EUA terão 90% de cristãos'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não; deixariam de ter maioria cristã.'] },
+    { p: 'O que é a "missão reversa"?',
+      o: ['A volta dos missionários europeus para casa', 'Igrejas do Sul enviando missionários e fundando comunidades no Norte', 'Uma missão contra o cristianismo', 'Um concílio'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Qual característica é comum ao cristianismo do Sul Global?',
+      o: ['Ser mais idoso', 'Ser mais pentecostal ou carismático e mais conservador em temas morais', 'Rejeitar a Bíblia', 'Ser só católico'], c: 1,
+      e: ['É mais jovem.', 'Correto.', 'Não.', 'É muito diverso.'] }
+  ],
+  exercicio: { p: 'Estude o cristianismo num país do Sul.', prompt: 'Escolha um país do Sul Global — [Nigéria / República Democrática do Congo / Coreia do Sul / China / Filipinas] — e apresente: história da chegada do cristianismo, proporção de cristãos e principais igrejas (com fonte e data), características (pentecostalismo, igrejas independentes, relação com o Estado), desafios atuais e relação com o Brasil. Indique se os números forem estimativas.',
+    criterio: 'Uma boa resposta traz dados com fonte e data, descreve a diversidade de igrejas, menciona desafios reais e distingue estimativas de dados censitários.' }
 });
 
 CURSO.aula('t4-n4-m2-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar o declínio e as transformações do cristianismo na Europa.',
+  revisado: '2026-11-27',
+  objetivo: 'Entender o declínio e as transformações do cristianismo na Europa — dados, explicações e sinais em sentido contrário.',
   secoes: [
-{ t: 'Declínio e transformação', h: `
-<p>Na Europa Ocidental, a frequência às igrejas caiu muito desde os anos 1960; igrejas são vendidas ou transformadas. Na Alemanha, onde membros pagam imposto eclesiástico, centenas de milhares de pessoas deixam as igrejas a cada ano. A socióloga Grace Davie descreveu muitos europeus como pessoas que "creem sem pertencer". <span data-tag="consenso"></span></p>
-<p>Há, porém, sinais em sentido contrário: comunidades de imigrantes africanos, latino-americanos e asiáticos revitalizam igrejas; houve aumento de batismos de adultos em alguns países, como a França, em 2025. Se isso indica uma mudança de tendência é debatido. <span data-tag="debate"></span></p>` }
+{ t: 'Os números do declínio', h: `
+<p>Na Europa Ocidental, a frequência às igrejas caiu muito desde os anos 1960; em muitos países, menos de 10% da população vai ao culto semanalmente. Igrejas são vendidas, fechadas ou transformadas em livrarias, bibliotecas e apartamentos, sobretudo na Holanda, na Bélgica e no Reino Unido. <span data-tag="consenso"></span></p>
+<ul>
+<li>Na <b>Alemanha</b>, onde membros pagam imposto eclesiástico, centenas de milhares de pessoas deixam as igrejas católica e evangélica a cada ano; desde 2022, os membros das duas grandes igrejas somam menos da metade da população.</li>
+<li>Na <b>Inglaterra e no País de Gales</b>, o censo de 2021 registrou, pela primeira vez, menos da metade da população (46,2%) declarando-se cristã.</li>
+<li>Na <b>Irlanda</b> e na <b>Polônia</b>, países de forte tradição católica, a prática caiu rapidamente nas últimas décadas, em parte por causa de escândalos de abuso.</li>
+</ul>
+<p><span data-tag="consenso"></span></p>` },
+
+{ t: 'Explicações', h: `
+<ul>
+<li><b>Modernização e prosperidade</b>: segundo sociólogos como Pippa Norris e Steve Bruce, sociedades ricas, seguras e com Estado de bem-estar tendem a precisar menos da religião, de geração em geração.</li>
+<li><b>Igrejas estatais</b>: a teoria da "escolha racional" sugere que igrejas oficiais, sem concorrência, perdem dinamismo.</li>
+<li><b>Memória histórica</b>: guerras de religião, aliança com o poder e, mais recentemente, escândalos de abuso abalaram a confiança.</li>
+<li><b>Mudança cultural</b> dos anos 1960, individualismo e pluralismo.</li>
+</ul>
+<p>A socióloga Grace Davie descreveu muitos europeus como pessoas que "creem sem pertencer" e propôs também a ideia de "religião vicária": minorias praticantes que mantêm a religião "em nome" de uma maioria que a valoriza sem praticar — como se vê nos funerais e nas grandes tragédias. <span data-tag="debate"></span></p>` },
+
+{ t: 'Sinais em sentido contrário', h: `
+<ul>
+<li>Comunidades de imigrantes africanos, latino-americanos e asiáticos revitalizam igrejas, inclusive católicas e ortodoxas.</li>
+<li>Houve aumento de batismos de adultos em alguns países, como a França, em 2025 — mais de 10 mil catecúmenos adultos na Páscoa, um recorde recente.</li>
+<li>A reabertura da catedral de Notre-Dame de Paris (dezembro de 2024) e grandes peregrinações, como a de Chartres e o Caminho de Santiago, atraem muitos jovens.</li>
+<li>Na Europa Oriental, depois do comunismo, houve retorno à identidade ortodoxa e católica, embora a prática regular seja baixa em muitos países.</li>
+</ul>
+<p>Se isso indica uma mudança de tendência é debatido. <span data-tag="debate"></span></p>
+<div class="persp">
+<div><h4>Leitura das igrejas</h4><p>Muitas igrejas europeias falam em "nova evangelização" e em comunidades menores, mais conscientes e missionárias.</p></div>
+<div><h4>Leitura de sociólogos</h4><p>Alguns veem uma transformação, e não só um declínio: a fé se torna escolha pessoal, e não herança social.</p></div>
+</div>
+<aside data-box="conexao" data-t="Trilha 2 · Especialista"><p>As teorias da secularização (Casanova, Berger, Taylor) foram estudadas na aula "Secularização: teorias e debates".</p></aside>` }
   ],
-  exercicio: { p: 'Compare Europa e Brasil.', prompt: 'Compare o processo de secularização na Europa Ocidental e no Brasil: dados, causas propostas pelos pesquisadores e o papel de imigrantes e de movimentos de renovação.' }
+  quiz: [
+    { p: 'O que registrou o censo de 2021 na Inglaterra e no País de Gales?',
+      o: ['Que 90% são cristãos', 'Que, pela primeira vez, menos da metade da população (46,2%) se declarou cristã', 'Que não há cristãos', 'Que a maioria é muçulmana'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que significa "religião vicária", na expressão de Grace Davie?',
+      o: ['Religião praticada por vigários', 'Minorias praticantes que mantêm a religião em nome de uma maioria que a valoriza sem praticar', 'Religião estatal', 'Religião proibida'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Que sinal recente contraria a tendência de declínio na França?',
+      o: ['O fechamento de Notre-Dame', 'O aumento de batismos de adultos em 2025', 'O fim do imposto eclesiástico', 'A proibição do culto'], c: 1,
+      e: ['Notre-Dame foi reaberta em 2024.', 'Correto.', 'A França não tem esse imposto.', 'Não.'] },
+    { p: 'Qual explicação sociológica relaciona o declínio à prosperidade e à segurança?',
+      o: ['Teoria da escolha racional', 'A tese de Pippa Norris e outros de que sociedades ricas e seguras precisam menos da religião', 'A teoria do conflito', 'Nenhuma'], c: 1,
+      e: ['Ela enfatiza a falta de concorrência entre igrejas.', 'Correto.', 'Não.', 'Há várias.'] }
+  ],
+  exercicio: { p: 'Compare Europa e Brasil.', prompt: 'Compare a situação religiosa de um país europeu (por exemplo, Alemanha, França ou Reino Unido) com a do Brasil: proporção de cristãos e sem religião, frequência aos cultos, papel do Estado, igrejas que crescem e que encolhem, imigração e tendências recentes. Use dados com fonte e data (censos, Pew, institutos nacionais) e apresente explicações sociológicas diferentes.',
+    criterio: 'Uma boa resposta traz dados verificáveis com data, compara de forma justa, apresenta mais de uma explicação e evita prever o futuro com certeza.' }
 });
 
 CURSO.aula('t4-n4-m2-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer a situação de cristãos perseguidos e avaliar as fontes sobre o tema.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer a situação de cristãos perseguidos e da liberdade religiosa no mundo, as causas da perseguição e as fontes que a medem, com olhar equilibrado.',
   secoes: [
 { t: 'Onde e por quê', h: `
-<p>Cristãos sofrem restrições ou violência em países como Coreia do Norte, partes da Nigéria e do Sahel, Afeganistão, Paquistão, Índia (leis anticonversão em alguns estados), China (controle estatal das igrejas) e Nicarágua (prisão e exílio de clérigos). As causas variam: regimes autoritários, grupos jihadistas, nacionalismos religiosos e conflitos étnicos e de terra. <span data-tag="consenso"></span></p>
-<aside data-box="cuidado" data-t="Avalie as fontes"><p>A organização evangélica Portas Abertas publica anualmente a Lista Mundial da Perseguição; o Pew Research Center mede restrições a todas as religiões; a fundação católica Ajuda à Igreja que Sofre publica relatórios sobre liberdade religiosa. Cada uma tem método e perspectiva próprios. Lembre também que cristãos podem ser perseguidores — na história e hoje — e que muçulmanos, judeus, religiões tradicionais e ateus também sofrem perseguição.</p></aside>` }
+<p>Cristãos sofrem restrições ou violência em vários países, por causas diferentes: <span data-tag="consenso"></span></p>
+<div class="scroll"><table><thead><tr><th>Causa</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td>Regimes totalitários</td><td>Coreia do Norte (há décadas apontada como o país mais hostil a cristãos)</td></tr>
+<tr><td>Grupos jihadistas</td><td>Partes da Nigéria e do Sahel, Moçambique (Cabo Delgado), regiões do Oriente Médio</td></tr>
+<tr><td>Leis religiosas restritivas</td><td>Afeganistão, Paquistão (leis de blasfêmia), Irã (perseguição a convertidos)</td></tr>
+<tr><td>Nacionalismos religiosos</td><td>Índia (leis anticonversão em alguns estados e violência contra cristãos e muçulmanos)</td></tr>
+<tr><td>Controle estatal</td><td>China (registro obrigatório e "sinização" das igrejas; acordo do Vaticano sobre nomeação de bispos desde 2018)</td></tr>
+<tr><td>Regimes autoritários na América Latina</td><td>Nicarágua (prisão e exílio de bispos e padres, como o bispo Rolando Álvarez, preso em 2023 e expulso em 2024)</td></tr>
+<tr><td>Conflitos étnicos e de terra</td><td>Disputas entre agricultores e pastores na Nigéria, com dimensão religiosa</td></tr>
+</tbody></table></div>
+<p>As causas variam e muitas vezes se misturam: religião, etnia, terra, política e crime. <span data-tag="consenso"></span></p>` },
+
+{ t: 'Quem mede e como', h: `
+<ul>
+<li>A organização evangélica <b>Portas Abertas</b> publica anualmente a Lista Mundial da Perseguição, com os 50 países mais difíceis para cristãos.</li>
+<li>O <b>Pew Research Center</b> mede restrições governamentais e hostilidades sociais contra todas as religiões, em quase 200 países.</li>
+<li>A fundação católica <b>Ajuda à Igreja que Sofre</b> publica relatórios sobre liberdade religiosa no mundo, para todas as religiões.</li>
+<li>O governo dos EUA (Comissão de Liberdade Religiosa Internacional) e organizações de direitos humanos também publicam relatórios.</li>
+</ul>
+<p>Cada uma tem método e perspectiva próprios: algumas medem só cristãos, outras todas as religiões; algumas contam restrições legais, outras violência. Números como "X milhões de cristãos perseguidos" dependem muito da definição de perseguição. <span data-tag="debate"></span></p>` },
+
+{ t: 'Um olhar equilibrado', h: `
+<aside data-box="cuidado" data-t="Perseguidos e perseguidores"><p>Lembre também que cristãos podem ser perseguidores — na história (Cruzadas, Inquisição, guerras de religião) e hoje (como as milícias "anti-balaka", de maioria cristã, que atacaram muçulmanos na República Centro-Africana em 2013–2014) — e que muçulmanos, judeus, bahá'ís, yazidis, religiões tradicionais e ateus também sofrem perseguição. Os rohingyas, muçulmanos de Mianmar, e os uigures, na China, são exemplos atuais. A liberdade religiosa é um direito de todos.</p></aside>
+<p>As igrejas respondem com oração, ajuda humanitária, defesa diplomática e acolhida de refugiados. O papa Francisco falou em "ecumenismo do sangue" para lembrar que cristãos de diferentes igrejas morrem juntos. Muitas igrejas também defendem a liberdade religiosa de não cristãos. <span data-tag="consenso"></span></p>
+<aside data-box="pratica" data-t="Como acompanhar"><p>Compare relatórios de fontes diferentes, observe o método e a data, e desconfie de notícias sem fonte que circulam nas redes sociais, às vezes com imagens fora de contexto.</p></aside>
+<aside data-box="conexao" data-t="Trilha 1 · Avançado"><p>As perseguições aos cristãos no Império Romano e a memória dos mártires foram estudadas no módulo "Perseguições e mártires".</p></aside>` }
   ],
-  exercicio: { p: 'Compare dois relatórios sobre perseguição religiosa.', prompt: 'Compare a metodologia e as conclusões da Lista Mundial da Perseguição (Portas Abertas) e do relatório do Pew Research Center sobre restrições religiosas: o que cada um mede, vantagens, limites e críticas.' }
+  quiz: [
+    { p: 'Qual país é há décadas apontado como o mais hostil a cristãos?',
+      o: ['Brasil', 'Coreia do Norte', 'Itália', 'Etiópia'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Que organização mede restrições a todas as religiões em quase 200 países?',
+      o: ['Portas Abertas', 'Pew Research Center', 'Conselho Mundial de Igrejas', 'Vaticano'], c: 1,
+      e: ['Mede sobretudo cristãos.', 'Correto.', 'Não é seu foco.', 'Não.'] },
+    { p: 'Por que os números de "cristãos perseguidos" variam tanto?',
+      o: ['Porque são inventados', 'Porque dependem da definição de perseguição e do método de cada fonte', 'Porque não há perseguição', 'Porque só o Vaticano conta'], c: 1,
+      e: ['Não necessariamente.', 'Correto.', 'Há perseguição real.', 'Não.'] },
+    { p: 'Qual afirmação reflete um olhar equilibrado sobre perseguição religiosa?',
+      o: ['Só cristãos são perseguidos', 'Cristãos podem ser perseguidos e perseguidores, e a liberdade religiosa é direito de todos', 'Perseguição religiosa não existe mais', 'Só muçulmanos perseguem'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Compare relatórios sobre liberdade religiosa.', prompt: 'Compare como a Lista Mundial da Perseguição (Portas Abertas), o relatório do Pew sobre restrições religiosas e o relatório da Ajuda à Igreja que Sofre tratam um mesmo país — [Nigéria / Índia / China / Nicarágua]: métodos, dados, conclusões e diferenças. Explique as causas da situação no país e inclua a situação de outras minorias religiosas. Indique a data dos relatórios e diga se não tiver a versão mais recente.',
+    criterio: 'Uma boa resposta descreve corretamente os métodos de cada fonte, compara conclusões com datas, explica causas complexas e inclui outras minorias religiosas.' }
 });
 
 CURSO.modulo('t4-n4-m3', {
@@ -8553,55 +9112,155 @@ CURSO.modulo('t4-n4-m3', {
 });
 
 CURSO.aula('t4-n4-m3-a1', {
-  revisado: '2026-11-25',
-  objetivo: 'Explicar o que é laicidade e como ela aparece na lei brasileira.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer o que a lei brasileira diz sobre laicidade e liberdade religiosa — Constituição, leis e decisões dos tribunais — e como esses direitos funcionam no cotidiano.',
   secoes: [
-{ t: 'Laicidade não é antirreligião', h: `
-<p><dfn data-g="laicidade">Laicidade</dfn> significa que o Estado não tem religião oficial, não privilegia nem persegue nenhuma crença e garante a liberdade de todos, inclusive de quem não tem religião. É diferente de "laicismo", visão que busca afastar a religião da vida pública. <span data-tag="consenso"></span></p>
+{ t: 'Laicidade', h: `
+<p><dfn data-g="laicidade">Laicidade</dfn> significa que o Estado não tem religião oficial, não privilegia nem persegue nenhuma crença e garante a liberdade de todos, inclusive de quem não tem religião. É diferente de "laicismo", visão que busca afastar a religião da vida pública. A laicidade protege tanto o Estado da interferência das igrejas quanto as igrejas da interferência do Estado. <span data-tag="consenso"></span></p>` },
+
+{ t: 'O que diz a lei', h: `
 <ul>
-<li><b>Art. 5º, VI</b>: liberdade de consciência e de crença, livre exercício dos cultos e proteção aos locais de culto.</li>
-<li><b>Art. 5º, VII e VIII</b>: assistência religiosa em hospitais, presídios e quartéis; ninguém será privado de direitos por motivo de crença (com a "escusa de consciência").</li>
-<li><b>Art. 19, I</b>: o Estado não pode estabelecer, subvencionar ou embaraçar cultos, ressalvada a colaboração de interesse público.</li>
+<li><b>Art. 5º, VI</b>: liberdade de consciência e de crença, livre exercício dos cultos e proteção aos locais de culto e às liturgias.</li>
+<li><b>Art. 5º, VII e VIII</b>: assistência religiosa em hospitais, presídios e quartéis; ninguém será privado de direitos por motivo de crença (com a "escusa de consciência", por exemplo diante do serviço militar, mediante prestação alternativa).</li>
+<li><b>Art. 19, I</b>: o Estado não pode estabelecer, subvencionar ou embaraçar cultos, nem manter com eles relação de dependência ou aliança, ressalvada a colaboração de interesse público.</li>
+<li><b>Art. 210, § 1º</b> e <b>Lei de Diretrizes e Bases da Educação</b> (art. 33, com redação de 1997): ensino religioso de matrícula facultativa, como parte da formação básica, "vedadas quaisquer formas de proselitismo".</li>
 <li><b>Lei nº 13.796/2019</b>: garante a estudantes alternativas a provas e aulas marcadas em dia de guarda religiosa (como o sábado).</li>
-</ul>` }
+<li><b>Código Civil</b>: organizações religiosas são pessoas jurídicas livres para se organizar, e o Estado não pode negar seu registro.</li>
+</ul>
+<p><span data-tag="consenso"></span></p>` },
+
+{ t: 'Decisões importantes', h: `
+<div class="scroll"><table><thead><tr><th class="y">Ano</th><th>Decisão</th></tr></thead><tbody>
+<tr><td class="y">2017</td><td>STF (ADI 4439): ensino religioso confessional permitido nas escolas públicas, com matrícula facultativa.</td></tr>
+<tr><td class="y">2019</td><td>STF: constitucional o sacrifício de animais em ritos de religiões de matriz africana.</td></tr>
+<tr><td class="y">2020</td><td>STF: provas e concursos devem oferecer alternativas a quem guarda dias religiosos, quando possível.</td></tr>
+<tr><td class="y">2024</td><td>STF: adultos capazes que sejam Testemunhas de Jeová podem recusar transfusões, e o SUS deve oferecer alternativas.</td></tr>
+</tbody></table></div>
+<p>Essas decisões mostram a laicidade como proteção de minorias religiosas e da consciência individual. <span data-tag="consenso"></span></p>` },
+
+{ t: 'No cotidiano', h: `
+<aside data-box="pratica" data-t="Situações comuns"><p><b>Na escola pública</b>: o ensino religioso é facultativo; orações coletivas não podem ser impostas; alunos de todas as crenças devem ser respeitados. <b>No trabalho</b>: empregadores devem, na medida do possível, acomodar práticas religiosas, e ninguém pode ser discriminado por sua fé. <b>Em hospitais e presídios</b>: há direito a assistência religiosa da própria tradição. <b>No serviço público</b>: o agente público não pode usar o cargo para promover sua religião.</p></aside>
+<div class="persp">
+<div><h4>Defesa da liberdade religiosa</h4><p>Grupos religiosos lembram que a liberdade inclui expressar a fé em público, educar os filhos segundo suas convicções e participar do debate político.</p></div>
+<div><h4>Defesa da laicidade</h4><p>Defensores do Estado laico lembram que leis e políticas devem valer para todos e não podem impor convicções religiosas a quem não as compartilha.</p></div>
+</div>
+<p>As duas preocupações são legítimas e se equilibram na Constituição. <span data-tag="opiniao"></span></p>
+<p class="muted">Este resumo é informativo e não substitui orientação jurídica.</p>` }
   ],
-  exercicio: { p: 'Aplique a laicidade a um caso concreto.', prompt: 'Analise à luz da Constituição de 1988 o caso: "[CASO, ex.: uma escola pública que faz oração diária obrigatória]". Que direitos estão em jogo, o que dizem decisões judiciais semelhantes e como resolver respeitando todos?' }
+  quiz: [
+    { p: 'O que significa laicidade?',
+      o: ['Que o Estado é ateu', 'Que o Estado não tem religião oficial, não privilegia nem persegue crenças e garante a liberdade de todos', 'Que as religiões são proibidas', 'Que só a religião da maioria é permitida'], c: 1,
+      e: ['Laicidade não é ateísmo de Estado.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que garante a Lei nº 13.796/2019?',
+      o: ['Imunidade de templos', 'Alternativas a estudantes para provas e aulas em dia de guarda religiosa', 'Feriados religiosos', 'Ensino religioso obrigatório'], c: 1,
+      e: ['Está na Constituição.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que a LDB proíbe no ensino religioso?',
+      o: ['Falar de religião', 'Qualquer forma de proselitismo', 'Ensinar história das religiões', 'Que professores sejam religiosos'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que significa a "escusa de consciência" (art. 5º, VIII)?',
+      o: ['Que ninguém precisa cumprir leis', 'Que quem se recusa por motivo de crença a uma obrigação geral, como o serviço militar, pode cumprir prestação alternativa', 'Que religiosos não votam', 'Que padres não pagam impostos'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Resolva casos práticos de liberdade religiosa.', prompt: 'Analise três casos à luz da Constituição e das decisões do STF: (1) um estudante adventista com prova marcada para o sábado; (2) uma escola pública que faz oração obrigatória antes das aulas; (3) uma funcionária pública que quer usar símbolo religioso no trabalho. Para cada caso, indique os dispositivos legais, os direitos em jogo e soluções possíveis. Lembre que a resposta não substitui orientação jurídica.',
+    criterio: 'Uma boa resposta cita corretamente os artigos e leis (5º, 19, 210, Lei 13.796/2019), identifica os direitos em tensão, propõe soluções razoáveis e inclui o aviso sobre orientação jurídica.' }
 });
 
 CURSO.aula('t4-n4-m3-a2', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer a lei brasileira contra a intolerância religiosa e como agir diante de casos.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer o que a lei brasileira diz sobre intolerância religiosa, quem são as principais vítimas e como agir diante de casos de discriminação.',
   secoes: [
-{ t: 'O que diz a lei', h: `
+{ t: 'O que é crime', h: `
 <ul>
-<li><b>Lei nº 7.716/1989</b>: é crime praticar, induzir ou incitar discriminação ou preconceito de religião.</li>
-<li><b>Código Penal, art. 208</b>: crime de ultraje a culto — escarnecer de alguém publicamente por motivo de crença, impedir ou perturbar cerimônia religiosa, vilipendiar ato ou objeto de culto.</li>
-<li><b>Lei nº 11.635/2007</b>: institui o 21 de janeiro como Dia Nacional de Combate à Intolerância Religiosa, em memória de Mãe Gilda, ialorixá de Salvador que morreu em 2000 após ataques à sua casa e à sua imagem.</li>
+<li><b>Lei nº 7.716/1989</b> (Lei Caó), com a redação de 1997: é crime praticar, induzir ou incitar discriminação ou preconceito de raça, cor, etnia, <b>religião</b> ou procedência nacional — inclusive pelos meios de comunicação e pela internet.</li>
+<li><b>Código Penal, art. 208</b>: crime de ultraje a culto — escarnecer de alguém publicamente por motivo de crença, impedir ou perturbar cerimônia religiosa, vilipendiar publicamente ato ou objeto de culto.</li>
+<li><b>Lei nº 11.635/2007</b>: institui o <b>21 de janeiro</b> como Dia Nacional de Combate à Intolerância Religiosa, em memória de <b>Mãe Gilda</b> (Gildásia dos Santos e Santos), ialorixá de Salvador que morreu em 21 de janeiro de 2000 após ataques à sua casa e à sua imagem por um jornal ligado a uma igreja.</li>
 </ul>
-<p>Relatórios de órgãos públicos e pesquisas acadêmicas indicam que religiões de matriz africana são as mais atingidas por denúncias de intolerância no Brasil. Cristãos também relatam casos de discriminação. <span data-tag="consenso"></span></p>
-<aside data-box="pratica" data-t="Diante de um caso"><p>Registre provas (fotos, vídeos, testemunhas), procure a delegacia (em alguns estados há delegacias especializadas), o Ministério Público ou a Defensoria, e use o Disque 100. Ofereça apoio à vítima. Este resumo é informativo e não substitui orientação jurídica.</p></aside>` }
+<p><span data-tag="consenso"></span></p>
+<aside data-box="cuidado" data-t="Criticar não é crime"><p>A liberdade religiosa inclui a liberdade de discordar de outras religiões, de pregar a própria fé e de criticar ideias. O que a lei pune é a discriminação, o ódio, a violência, a perturbação de cultos e o desrespeito a pessoas e objetos sagrados. A fronteira nem sempre é simples, e os tribunais a avaliam caso a caso.</p></aside>` },
+
+{ t: 'Quem são as vítimas', h: `
+<p>Relatórios de órgãos públicos — como o Disque 100, do Ministério dos Direitos Humanos — e pesquisas acadêmicas indicam que <b>religiões de matriz africana</b>, como o candomblé e a umbanda, são as mais atingidas por denúncias de intolerância no Brasil, apesar de serem uma pequena parcela da população. Casos incluem ataques e incêndios a terreiros, agressões a adeptos com roupas e guias religiosas, discriminação na escola e no trabalho. Muitos estudiosos e militantes usam a expressão <b>"racismo religioso"</b>, porque veem nesses ataques uma ligação com o racismo contra a população negra. <span data-tag="consenso"></span></p>
+<aside data-box="exemplo" data-t="Um caso que chocou o país"><p>Em junho de 2015, no Rio de Janeiro, a menina Kailane Campos, de 11 anos, foi atingida por uma pedra na cabeça quando voltava de uma cerimônia de candomblé, vestida de branco, enquanto agressores gritavam ofensas religiosas. O caso mobilizou lideranças de várias religiões contra a intolerância.</p></aside>
+<p>Cristãos também relatam casos de discriminação, vandalismo de igrejas, ataques a imagens e hostilidade por suas convicções; judeus e muçulmanos relatam antissemitismo e islamofobia. <span data-tag="consenso"></span></p>` },
+
+{ t: 'O que fazer', h: `
+<aside data-box="pratica" data-t="Diante de um caso de intolerância"><p>Registre provas (fotos, vídeos, prints, nomes de testemunhas). Procure a delegacia — em alguns estados há delegacias especializadas em crimes raciais e de intolerância —, o Ministério Público ou a Defensoria Pública. Use o <b>Disque 100</b> (Direitos Humanos), que recebe denúncias de forma gratuita e anônima. Ofereça apoio à vítima e não exponha sua imagem sem consentimento. Em casos na escola, envolva a direção e o conselho tutelar, se houver criança.</p></aside>
+<p class="muted">Este resumo é informativo e não substitui orientação jurídica.</p>
+<p>Igrejas e líderes religiosos de várias tradições têm se manifestado contra a intolerância, e comissões estaduais, como a Comissão de Combate à Intolerância Religiosa do Rio de Janeiro (2008), reúnem diferentes religiões. <span data-tag="consenso"></span></p>
+<aside data-box="conexao" data-t="Trilha 3 · Intermediário"><p>Episódios de intolerância ligados a discursos de "batalha espiritual" foram discutidos na aula "Críticas, defesas e impacto social".</p></aside>` }
   ],
-  exercicio: { p: 'Pesquise como seu estado combate a intolerância religiosa.', prompt: 'Explique como o estado de [ESTADO] atua contra a intolerância religiosa: leis estaduais, delegacias especializadas, conselhos e dados oficiais recentes (com fonte e data). Indique como uma vítima pode buscar ajuda.' }
+  quiz: [
+    { p: 'Por que 21 de janeiro é o Dia Nacional de Combate à Intolerância Religiosa?',
+      o: ['Por ser feriado católico', 'Em memória de Mãe Gilda, ialorixá de Salvador que morreu nesse dia em 2000 após ataques', 'Por causa da Lei Áurea', 'Por ser o dia de São Sebastião'], c: 1,
+      e: ['Não.', 'Correto (Lei 11.635/2007).', 'Não.', 'São Sebastião é 20 de janeiro.'] },
+    { p: 'Que lei define como crime a discriminação por religião?',
+      o: ['Lei 7.716/1989', 'Lei 13.796/2019', 'Lei Áurea', 'Lei 6.802/1980'], c: 0,
+      e: ['Correto.', 'Trata de provas em dias de guarda.', 'Não.', 'Institui o feriado de Aparecida.'] },
+    { p: 'Quais religiões são as mais atingidas por denúncias de intolerância no Brasil?',
+      o: ['Católica', 'Religiões de matriz africana, como candomblé e umbanda', 'Budismo', 'Igrejas luteranas'], c: 1,
+      e: ['Também há casos, mas não são as mais atingidas.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Criticar ideias de outra religião é crime no Brasil?',
+      o: ['Sim, sempre', 'Não: a lei pune discriminação, ódio, violência e ultraje a culto, não a discordância de ideias', 'Sim, se for na internet', 'Só se for em templo'], c: 1,
+      e: ['Não.', 'Correto; a fronteira é avaliada caso a caso.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Prepare uma ação contra a intolerância.', prompt: 'Planeje uma atividade escolar ou comunitária para o 21 de janeiro (Dia Nacional de Combate à Intolerância Religiosa): objetivos, convidados de diferentes religiões e sem religião, conteúdos (lei, história de Mãe Gilda, dados), dinâmicas respeitosas e cuidados para não expor ninguém. Inclua orientações sobre como denunciar casos. Lembre que não substitui orientação jurídica.',
+    criterio: 'Uma boa resposta propõe atividade inclusiva e respeitosa, usa informações legais corretas, inclui a história de Mãe Gilda, orienta sobre denúncia e evita constranger participantes.' }
 });
 
 CURSO.aula('t4-n4-m3-a3', {
-  revisado: '2026-11-25',
-  objetivo: 'Conhecer experiências de diálogo inter-religioso e práticas de convivência respeitosa.',
+  revisado: '2026-11-27',
+  objetivo: 'Conhecer as formas e os marcos do diálogo inter-religioso, as iniciativas brasileiras e princípios práticos para a convivência entre pessoas de diferentes crenças — e concluir o percurso do curso.',
   secoes: [
-{ t: 'Diálogo em vários níveis', h: `
-<p>Estudiosos e igrejas falam em quatro formas de diálogo: da vida (convivência no dia a dia), da ação (trabalhar juntos por causas comuns), teológico (entre especialistas) e da experiência religiosa (partilhar oração e espiritualidade, respeitando diferenças). Marcos: a declaração <i>Nostra Aetate</i> (1965), o encontro de Assis convocado por João Paulo II (1986) e o Documento sobre a Fraternidade Humana, assinado em Abu Dhabi pelo papa Francisco e pelo grão-imame de Al-Azhar (2019). <span data-tag="consenso"></span></p>
-<p>No Brasil, iniciativas como a Caminhada em Defesa da Liberdade Religiosa, no Rio de Janeiro (desde 2008), reúnem cristãos, adeptos de religiões afro-brasileiras, judeus, muçulmanos, espíritas e outros. Há cristãos que criticam o diálogo inter-religioso por temerem relativismo; seus defensores respondem que dialogar não exige abrir mão das próprias convicções. <span data-tag="debate"></span></p>` },
-{ t: 'Convivência na prática', h: `
-<aside data-box="pratica" data-t="Princípios para conviver"><ul>
-<li>Conheça antes de julgar: leia o que cada grupo diz de si mesmo.</li>
-<li>Use os nomes que os grupos usam para si.</li>
-<li>Distinga discordância (legítima) de desrespeito e discriminação (ilegais).</li>
-<li>Em espaços públicos, não imponha práticas religiosas a quem não as compartilha.</li>
-<li>Defenda a liberdade dos outros como defenderia a sua.</li>
-</ul></aside>
+{ t: 'Quatro formas de diálogo', h: `
+<p>Documentos católicos, como <i>Diálogo e Anúncio</i> (1991), e de outras igrejas falam em quatro formas de diálogo inter-religioso: <span data-tag="consenso"></span></p>
+<ul>
+<li><b>Diálogo da vida</b>: convivência no dia a dia entre vizinhos, colegas e famílias de crenças diferentes.</li>
+<li><b>Diálogo da ação</b>: trabalhar juntos por causas comuns — paz, combate à fome, meio ambiente, direitos humanos.</li>
+<li><b>Diálogo teológico</b>: entre especialistas, para compreender as crenças de cada tradição.</li>
+<li><b>Diálogo da experiência religiosa</b>: partilhar oração e espiritualidade, respeitando diferenças.</li>
+</ul>
+<aside data-box="cuidado" data-t="Ecumenismo não é diálogo inter-religioso"><p><dfn data-g="ecumenismo">Ecumenismo</dfn> é o diálogo entre igrejas cristãs; diálogo inter-religioso é o diálogo com outras religiões — judaísmo, islã, religiões afro-brasileiras, indígenas, orientais — e com pessoas sem religião.</p></aside>` },
+
+{ t: 'Marcos', h: `
+<div class="scroll"><table><thead><tr><th class="y">Data</th><th>Marco</th></tr></thead><tbody>
+<tr><td class="y">1893</td><td>Parlamento Mundial das Religiões, em Chicago, primeiro grande encontro inter-religioso moderno.</td></tr>
+<tr><td class="y">1965</td><td>Declaração <i>Nostra Aetate</i>, do Concílio Vaticano II: a Igreja Católica "nada rejeita do que há de verdadeiro e santo" nas outras religiões e repudia o antissemitismo.</td></tr>
+<tr><td class="y">1986</td><td>Encontro de Assis, convocado por João Paulo II, com líderes de muitas religiões rezando pela paz.</td></tr>
+<tr><td class="y">2007</td><td>Carta "Uma palavra comum", de 138 estudiosos muçulmanos a líderes cristãos, sobre o amor a Deus e ao próximo.</td></tr>
+<tr><td class="y">2019</td><td>Documento sobre a Fraternidade Humana, assinado em Abu Dhabi pelo papa Francisco e pelo grão-imame de Al-Azhar, Ahmed al-Tayeb.</td></tr>
+</tbody></table></div>
+<p>O Conselho Mundial de Igrejas e muitas igrejas protestantes e ortodoxas também mantêm programas de diálogo inter-religioso. <span data-tag="consenso"></span></p>` },
+
+{ t: 'No Brasil', h: `
+<p>No Brasil, iniciativas como a <b>Caminhada em Defesa da Liberdade Religiosa</b>, no Rio de Janeiro (desde 2008), reúnem cristãos, adeptos de religiões afro-brasileiras, judeus, muçulmanos, espíritas, budistas, ciganos, indígenas e pessoas sem religião. Há conselhos inter-religiosos em várias cidades, comissões de combate à intolerância e encontros em datas como 21 de janeiro. <span data-tag="consenso"></span></p>
+<div class="persp">
+<div><h4>Críticas</h4><p>Há cristãos que criticam o diálogo inter-religioso por temerem relativismo — a ideia de que "todas as religiões são iguais" — ou por entenderem que ele enfraquece a missão de anunciar Cristo.</p></div>
+<div><h4>Respostas</h4><p>Seus defensores respondem que dialogar não exige abrir mão das próprias convicções: é possível crer firmemente e, ao mesmo tempo, respeitar, conhecer e conviver. O diálogo inclui reconhecer diferenças reais.</p></div>
+</div>
+<p><span data-tag="debate"></span></p>` },
+
+{ t: 'Princípios para a convivência', h: `
+<aside data-box="pratica" data-t="Cinco princípios"><p>Conheça antes de julgar: leia o que cada grupo diz de si mesmo. Use os nomes que os grupos usam para si. Distinga discordância (legítima) de desrespeito e discriminação (ilegais). Em espaços públicos, não imponha práticas religiosas a quem não as compartilha. Defenda a liberdade dos outros como defenderia a sua.</p></aside>
+<aside data-box="biblia" data-t="A regra de ouro"><blockquote>"Portanto, tudo o que vós quereis que os homens vos façam, fazei-lho também vós, porque esta é a lei e os profetas."</blockquote><cite>Mateus 7:12 — Almeida Revista e Corrigida (texto clássico, domínio público)</cite></aside>
+<p>Versões da "regra de ouro" existem em muitas tradições religiosas e filosóficas — no judaísmo (Hillel), no confucionismo, no islã —, o que mostra um terreno comum para a convivência. <span data-tag="consenso"></span></p>
 <p>Assim termina o percurso deste curso: da Galileia do século I ao Brasil plural de hoje. Conhecer a fé dos outros — e a própria — com rigor e respeito é um caminho para a convivência.</p>` }
   ],
-  exercicio: { p: 'Planeje uma atividade de diálogo inter-religioso.', prompt: 'Me ajude a planejar uma roda de conversa inter-religiosa numa escola ou bairro: objetivos, convidados de diferentes tradições, regras de respeito, perguntas mediadoras e cuidados com a laicidade se for em espaço público.' }
+  quiz: [
+    { p: 'Qual é a diferença entre ecumenismo e diálogo inter-religioso?',
+      o: ['São a mesma coisa', 'Ecumenismo é entre igrejas cristãs; diálogo inter-religioso é com outras religiões e com pessoas sem religião', 'Ecumenismo é só católico', 'Diálogo inter-religioso é proibido'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que foi assinado em Abu Dhabi em 2019?',
+      o: ['Um acordo de paz militar', 'O Documento sobre a Fraternidade Humana, pelo papa Francisco e pelo grão-imame de Al-Azhar', 'A união entre católicos e ortodoxos', 'Um tratado comercial'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'Qual destas é uma das quatro formas de diálogo inter-religioso?',
+      o: ['Diálogo da conversão forçada', 'Diálogo da ação: trabalhar juntos por causas comuns', 'Diálogo da competição', 'Diálogo do silêncio total'], c: 1,
+      e: ['Não.', 'Correto.', 'Não.', 'Não.'] },
+    { p: 'O que os defensores do diálogo respondem a quem teme o relativismo?',
+      o: ['Que todas as religiões são iguais', 'Que dialogar não exige abrir mão das próprias convicções', 'Que a fé não importa', 'Que é preciso mudar de religião'], c: 1,
+      e: ['Não é a resposta.', 'Correto.', 'Não.', 'Não.'] }
+  ],
+  exercicio: { p: 'Monte o dossiê do cristianismo na sua cidade.', prompt: 'Ajude-me a montar o dossiê final do curso sobre o cristianismo na minha cidade, [CIDADE]: igrejas históricas, festas religiosas, dados do Censo (onde encontrar), história local, iniciativas de diálogo e de combate à intolerância e roteiro para duas entrevistas respeitosas com fiéis de tradições diferentes (com consentimento). Indique fontes confiáveis para cada parte e não invente dados.',
+    criterio: 'Uma boa resposta organiza o dossiê em partes claras, indica fontes reais e verificáveis, propõe entrevistas com cuidados éticos e mantém respeito por todas as tradições.' }
 });
 </script>
 
@@ -8699,6 +9358,99 @@ CURSO.complemento('t1-n1-m2-a2', {
   ],
   criterio: 'Uma boa resposta aplica pelo menos três critérios ao episódio escolhido, indica em quais fontes ele aparece (com referência), apresenta argumentos a favor e contra a historicidade com autores de posições diferentes e deixa claro que a conclusão histórica não decide a questão de fé.'
 });
+</script>
+
+<script id="dados-ampliados">
+/* Ampliação do glossário, da linha do tempo e da biblioteca de prompts (revisão de 27/11/2026). */
+CURSO.glossario.push(
+  { k: 'hermeneutica', t: 'Hermenêutica', d: 'Do grego "interpretar". Arte e teoria da interpretação de textos. Na Bíblia, estuda os princípios para ler cada texto segundo seu contexto, gênero e sentido.' },
+  { k: 'exegese', t: 'Exegese', d: 'Do grego "tirar para fora". Interpretação detalhada de um texto específico, buscando o que ele quis dizer em seu contexto original.' },
+  { k: 'patristica', t: 'Patrística', d: 'Estudo dos Pais da Igreja, escritores cristãos dos primeiros séculos (aprox. do fim do século I ao século VIII), como Atanásio, Agostinho e João Crisóstomo.' },
+  { k: 'monaquismo', t: 'Monaquismo', d: 'Do grego <i>monachos</i>, "solitário". Forma de vida cristã de renúncia, oração e trabalho, em solidão (eremitas) ou em comunidade (cenobitas). Nasceu no Egito e na Síria nos séculos III e IV.' },
+  { k: 'escolastica', t: 'Escolástica', d: 'Método de ensino e pensamento das escolas e universidades medievais, que buscava compreender a fé com a razão por meio da lógica e do debate (<i>disputatio</i>). Tomás de Aquino é seu maior nome.' },
+  { k: 'filioque', t: 'Filioque', d: 'Expressão latina, "e do Filho", acrescentada no Ocidente ao Credo Niceno-Constantinopolitano para dizer que o Espírito Santo procede do Pai "e do Filho". É rejeitada pelos ortodoxos e foi uma das causas do Cisma de 1054.' },
+  { k: 'theosis', t: 'Theosis (divinização)', d: 'Na teologia ortodoxa, a participação do ser humano, pela graça, na vida divina — o fim da salvação. Resumida na frase de Atanásio: "Deus se fez homem para que o homem se tornasse Deus".' },
+  { k: 'iconoclastia', t: 'Iconoclastia', d: 'Do grego "quebra de imagens". Movimento do Império Bizantino (726–843) que proibiu e destruiu ícones, considerados idolatria. O II Concílio de Niceia (787) defendeu sua veneração.' },
+  { k: 'sucessao-apostolica', t: 'Sucessão apostólica', d: 'Doutrina segundo a qual os bispos receberam sua autoridade por uma cadeia ininterrupta de ordenações desde os apóstolos. Ensinada por católicos, ortodoxos, igrejas orientais antigas e anglicanos; a maioria dos protestantes entende a apostolicidade como fidelidade ao ensino apostólico.' },
+  { k: 'infalibilidade', t: 'Infalibilidade papal', d: 'Doutrina católica definida no Concílio Vaticano I (1870): o papa não erra quando define solenemente, <i>ex cathedra</i>, uma doutrina de fé ou moral para toda a Igreja. Não significa que o papa não erre em outras situações. Ortodoxos e protestantes a rejeitam.' },
+  { k: 'transubstanciacao', t: 'Transubstanciação', d: 'Doutrina católica segundo a qual, na eucaristia, a substância do pão e do vinho se converte no corpo e no sangue de Cristo, permanecendo as aparências. Termo usado oficialmente desde o IV Concílio de Latrão (1215).' },
+  { k: 'purgatorio', t: 'Purgatório', d: 'No ensino católico, purificação depois da morte dos que morreram na graça de Deus, mas ainda imperfeitos, antes de entrar no céu. Rejeitado pelos protestantes; os ortodoxos rezam pelos mortos, mas não adotam a formulação ocidental.' },
+  { k: 'justificacao', t: 'Justificação', d: 'Ato pelo qual Deus torna ou declara justo o pecador. Foi o grande tema da Reforma: para Lutero, "somente pela fé"; para Trento, a justificação inclui a renovação interior. A Declaração Conjunta de 1999 reconheceu um consenso básico entre católicos e luteranos.' },
+  { k: 'predestinacao', t: 'Predestinação', d: 'Doutrina segundo a qual Deus, desde a eternidade, escolhe quem será salvo. Central no calvinismo; os arminianos a entendem como baseada na fé que Deus prevê; católicos e ortodoxos afirmam a graça e a cooperação livre.' },
+  { k: 'calvinismo', t: 'Calvinismo', d: 'Tradição teológica reformada ligada a João Calvino, com ênfase na soberania de Deus, na autoridade da Escritura e na predestinação (resumida nos cinco pontos do Sínodo de Dort, 1618–1619). Presente entre presbiterianos, reformados e parte dos batistas.' },
+  { k: 'arminianismo', t: 'Arminianismo', d: 'Tradição teológica ligada a Jacó Armínio (†1609): a graça de Deus é oferecida a todos e pode ser aceita ou rejeitada; Cristo morreu por todos. Adotada por metodistas e pela maioria dos pentecostais.' },
+  { k: 'anabatistas', t: 'Anabatistas', d: '"Rebatizadores": movimento da Reforma radical (Zurique, 1525) que batizava apenas adultos que professavam a fé, defendia igrejas de crentes voluntários, a separação entre Igreja e Estado e, em geral, a não violência. Herdeiros: menonitas, amish e huteritas.' },
+  { k: 'avivamento', t: 'Avivamento', d: 'Período de renovação religiosa intensa, com conversões, oração e entusiasmo, como os "Grandes Despertamentos" nos EUA, o avivamento metodista na Inglaterra e o da Rua Azusa (1906).' },
+  { k: 'glossolalia', t: 'Glossolalia', d: '"Falar em línguas": oração em linguagem não aprendida, entendida pelos pentecostais como dom do Espírito Santo e, para muitos deles, evidência do batismo no Espírito. Estudada também por linguistas e neurocientistas.' },
+  { k: 'cessacionismo', t: 'Cessacionismo', d: 'Posição de que certos dons espirituais extraordinários (línguas, profecia, milagres) cessaram com a era apostólica. Comum entre reformados e batistas tradicionais; oposta ao continuacionismo pentecostal e carismático.' },
+  { k: 'teologia-prosperidade', t: 'Teologia da prosperidade', d: 'Ensino segundo o qual Deus deseja abençoar materialmente quem tem fé e contribui com dízimos e ofertas. Originou-se no movimento norte-americano "Palavra da Fé" e é forte entre neopentecostais; é criticada por católicos, protestantes históricos e muitos pentecostais.' },
+  { k: 'teologia-libertacao', t: 'Teologia da libertação', d: 'Corrente teológica latino-americana (Gustavo Gutiérrez, 1971; Leonardo Boff) que lê o Evangelho a partir dos pobres, com a "opção preferencial pelos pobres". O Vaticano criticou, em 1984, o uso de categorias marxistas.' },
+  { k: 'missao-integral', t: 'Missão integral', d: 'Proposta evangélica latino-americana (René Padilla, Samuel Escobar) segundo a qual evangelização e responsabilidade social são inseparáveis. Ganhou força com o Pacto de Lausanne (1974).' },
+  { k: 'miafisismo', t: 'Miafisismo', d: 'Doutrina das Igrejas Ortodoxas Orientais (copta, etíope, armênia, siríaca) de que em Cristo há "uma natureza unida", divina e humana, sem mistura. Foram chamadas de "monofisitas", termo que rejeitam.' },
+  { k: 'autocefalia', t: 'Autocefalia', d: 'Do grego "cabeça própria". Independência de uma igreja ortodoxa, que tem seu próprio patriarca ou arcebispo e sínodo, em comunhão com as demais.' },
+  { k: 'sinodalidade', t: 'Sinodalidade', d: 'Do grego "caminhar juntos". Modo de ser e decidir da Igreja com a participação de todo o povo de Deus, enfatizado pelo papa Francisco e pelo Sínodo de 2021–2024. Tem raízes nos sínodos da Igreja antiga e na prática ortodoxa.' },
+  { k: 'doutrina-social', t: 'Doutrina social da Igreja', d: 'Conjunto de ensinamentos católicos sobre a vida social, econômica e política, iniciado com a encíclica <i>Rerum Novarum</i> (1891). Princípios: dignidade humana, bem comum, destinação universal dos bens, subsidiariedade e solidariedade.' },
+  { k: 'irmandade', t: 'Irmandade', d: 'Associação de leigos católicos dedicada a um santo ou devoção, que construía igrejas, organizava festas, cuidava de doentes e garantia enterro digno. No Brasil colonial, irmandades negras, como as do Rosário, também compravam alforrias.' },
+  { k: 'sincretismo', t: 'Sincretismo', d: 'Mistura ou correspondência entre elementos de religiões diferentes, como entre orixás e santos católicos no Brasil. O termo é debatido: muitos adeptos de religiões afro-brasileiras recusam a ideia de mistura e afirmam a autonomia de sua religião.' },
+  { k: 'ex-voto', t: 'Ex-voto', d: 'Do latim "por um voto". Objeto deixado num santuário em agradecimento por uma graça alcançada — fotos, esculturas de cera, cartas, muletas —, comum no catolicismo popular.' },
+  { k: 'ano-liturgico', t: 'Ano litúrgico', d: 'Organização do ano em torno da vida de Cristo, com tempos e cores próprias: Advento, Natal, Tempo Comum, Quaresma, Páscoa e Pentecostes. No Ocidente, começa no 1º domingo do Advento.' },
+  { k: 'lecionario', t: 'Lecionário', d: 'Ciclo de leituras bíblicas para o culto ao longo do ano. A missa católica dominical segue um ciclo de três anos (A, B e C); muitas igrejas protestantes usam o Lecionário Comum Revisado (1992).' },
+  { k: 'pentecostes', t: 'Pentecostes', d: 'Do grego "quinquagésimo". Festa judaica das Semanas (Shavuot), cinquenta dias após a Páscoa. Para os cristãos, celebra a vinda do Espírito Santo sobre os discípulos (Atos 2), o "nascimento da Igreja".' },
+  { k: 'quaresma', t: 'Quaresma', d: 'Período de cerca de 40 dias de preparação para a Páscoa, da Quarta-feira de Cinzas à Semana Santa, com jejum, oração e esmola. No Brasil, a Igreja Católica lança nesse tempo a Campanha da Fraternidade.' }
+);
+
+CURSO.eventos.push(
+  { a: 'c. 48–50', n: 49, era: 'origens', t: 'Encontro de Jerusalém', d: 'Líderes da comunidade de Jerusalém, Pedro, Tiago e Paulo decidem não exigir a circuncisão dos gentios convertidos (Atos 15; Gálatas 2).', g: 'consenso' },
+  { a: 'c. 110', n: 110, era: 'antiga', t: 'Cartas de Inácio de Antioquia', d: 'A caminho do martírio em Roma, o bispo de Antioquia escreve sete cartas que mostram a organização das igrejas com bispo, presbíteros e diáconos.', g: 'consenso' },
+  { a: '203', n: 203, era: 'antiga', t: 'Martírio de Perpétua e Felicidade', d: 'Duas mulheres cristãs morrem na arena de Cartago; o relato inclui o diário da própria Perpétua.', g: 'consenso' },
+  { a: '250–251', n: 250, era: 'antiga', t: 'Perseguição de Décio', d: 'Primeira perseguição em todo o Império: todos devem sacrificar e receber um certificado. A readmissão dos que "caíram" divide as igrejas.', g: 'consenso' },
+  { a: '381', n: 381, era: 'antiga', t: 'Concílio de Constantinopla I', d: 'Afirma a divindade do Espírito Santo e amplia o Credo de Niceia. Completa-se a formulação da doutrina da Trindade.', g: 'consenso' },
+  { a: '410', n: 410, era: 'antiga', t: 'Saque de Roma', d: 'Os visigodos saqueiam Roma; em resposta às acusações pagãs contra os cristãos, Agostinho escreve A Cidade de Deus.', g: 'consenso' },
+  { a: '431', n: 431, era: 'antiga', t: 'Concílio de Éfeso', d: 'Proclama Maria Theotokos ("Mãe de Deus") e condena Nestório. A Igreja do Oriente, na Pérsia, não aceita o concílio.', g: 'consenso' },
+  { a: '787', n: 787, era: 'medieval', t: 'II Concílio de Niceia', d: 'Sétimo concílio ecumênico: afirma a legitimidade da veneração dos ícones contra a iconoclastia.', g: 'consenso' },
+  { a: '910', n: 910, era: 'medieval', t: 'Fundação de Cluny', d: 'Mosteiro beneditino na Borgonha, livre do controle dos senhores locais, que lidera uma grande reforma monástica.', g: 'consenso' },
+  { a: '1077', n: 1077, era: 'medieval', t: 'Canossa', d: 'Na Querela das Investiduras, o imperador Henrique IV faz penitência para obter o perdão do papa Gregório VII.', g: 'consenso' },
+  { a: 'c. 1209', n: 1209, era: 'medieval', t: 'Francisco de Assis e os franciscanos', d: 'Surge a ordem franciscana, de pobreza radical e pregação nas cidades. Pouco depois, Domingos funda os dominicanos (1216).', g: 'consenso' },
+  { a: '1215', n: 1215, era: 'medieval', t: 'IV Concílio de Latrão', d: 'Torna obrigatórias a confissão e a comunhão anuais e usa oficialmente o termo "transubstanciação".', g: 'consenso' },
+  { a: '1265–1273', n: 1265, era: 'medieval', t: 'Suma Teológica', d: 'Tomás de Aquino escreve sua grande síntese entre a filosofia de Aristóteles e a fé cristã, deixada inacabada.', g: 'consenso' },
+  { a: '1378–1417', n: 1378, era: 'medieval', t: 'Grande Cisma do Ocidente', d: 'Dois e depois três papas rivais dividem a Europa, até o Concílio de Constança eleger Martinho V.', g: 'consenso' },
+  { a: '1453', n: 1453, era: 'medieval', t: 'Queda de Constantinopla', d: 'Os otomanos tomam a capital bizantina; a Hagia Sophia torna-se mesquita. Moscou passa a se apresentar como "Terceira Roma".', g: 'consenso' },
+  { a: '1500', n: 1500, era: 'moderna', br: true, t: 'Primeira missa no Brasil', d: 'Frei Henrique de Coimbra celebra a primeira missa em terras brasileiras, em 26 de abril de 1500, na frota de Cabral.', g: 'consenso' },
+  { a: '1540', n: 1540, era: 'moderna', t: 'Aprovação da Companhia de Jesus', d: 'O papa Paulo III aprova a ordem fundada por Inácio de Loyola, que atuará em colégios e missões no mundo inteiro.', g: 'consenso' },
+  { a: '1551', n: 1551, era: 'moderna', br: true, t: 'Diocese de Salvador', d: 'Criada a primeira diocese do Brasil, sob o regime do padroado.', g: 'consenso' },
+  { a: '1557–1558', n: 1557, era: 'moderna', br: true, t: 'Culto calvinista e Confissão da Guanabara', d: 'Na França Antártica, huguenotes celebram um dos primeiros cultos protestantes das Américas; em 1558, três autores da Confissão de Fé da Guanabara são executados.', g: 'consenso' },
+  { a: '1572', n: 1572, era: 'moderna', t: 'Noite de São Bartolomeu', d: 'Massacre de milhares de protestantes em Paris e outras cidades francesas, durante as guerras de religião.', g: 'consenso' },
+  { a: '1611', n: 1611, era: 'moderna', t: 'King James Version', d: 'Publicada a tradução inglesa da Bíblia de maior influência cultural.', g: 'consenso' },
+  { a: '1618–1619', n: 1618, era: 'moderna', t: 'Sínodo de Dort', d: 'Igrejas reformadas condenam os arminianos e afirmam os cinco pontos do calvinismo.', g: 'consenso' },
+  { a: '1738', n: 1738, era: 'moderna', t: 'Experiência de John Wesley', d: 'Em Aldersgate, Londres, Wesley sente o coração "estranhamente aquecido"; começa o avivamento metodista.', g: 'consenso' },
+  { a: '1759', n: 1759, era: 'moderna', br: true, t: 'Expulsão dos jesuítas', d: 'O marquês de Pombal expulsa os jesuítas de Portugal e do Brasil. Em 1773, o papa suprime a ordem, restaurada em 1814.', g: 'consenso' },
+  { a: '1844', n: 1844, era: 'contemporanea', t: 'Grande Desapontamento', d: 'Frustra-se a expectativa milerita da volta de Cristo; de parte do movimento surgirá a Igreja Adventista do Sétimo Dia (1863).', g: 'consenso' },
+  { a: '1858–1859', n: 1858, era: 'contemporanea', br: true, t: 'Protestantismo de missão no Brasil', d: 'Robert Kalley funda a Igreja Evangélica Fluminense (1858), primeira igreja protestante de língua portuguesa no país; em 1859, chega o presbiteriano Ashbel Green Simonton.', g: 'consenso' },
+  { a: '1870', n: 1870, era: 'contemporanea', t: 'Concílio Vaticano I', d: 'Define o primado e a infalibilidade papal. No mesmo ano, Roma é anexada ao Reino da Itália.', g: 'consenso' },
+  { a: '1872–1875', n: 1872, era: 'contemporanea', br: true, t: 'Questão Religiosa', d: 'Conflito entre bispos e governo imperial sobre maçons nas irmandades; dois bispos são presos e depois anistiados.', g: 'consenso' },
+  { a: '1891', n: 1891, era: 'contemporanea', t: 'Rerum Novarum', d: 'Encíclica de Leão XIII sobre a condição dos operários, marco inicial da doutrina social católica.', g: 'consenso' },
+  { a: '1893–1897', n: 1893, era: 'contemporanea', br: true, t: 'Canudos', d: 'O arraial liderado por Antônio Conselheiro, no sertão da Bahia, é destruído pelo Exército depois de quatro expedições.', g: 'consenso' },
+  { a: '1910', n: 1910.5, era: 'contemporanea', t: 'Conferência de Edimburgo', d: 'Conferência Missionária Mundial considerada o marco inicial do movimento ecumênico moderno.', g: 'consenso' },
+  { a: '1930–1931', n: 1930, era: 'contemporanea', br: true, t: 'Padroeira e Cristo Redentor', d: 'Pio XI proclama Nossa Senhora Aparecida padroeira do Brasil (1930); o Cristo Redentor é inaugurado no Rio (1931).', g: 'consenso' },
+  { a: '1934', n: 1934, era: 'contemporanea', t: 'Declaração de Barmen', d: 'A Igreja Confessante alemã recusa submeter a Igreja ao Estado nazista.', g: 'consenso' },
+  { a: '1952', n: 1952, era: 'contemporanea', br: true, t: 'Fundação da CNBB', d: 'Criada a Conferência Nacional dos Bispos do Brasil, por iniciativa de dom Hélder Câmara.', g: 'consenso' },
+  { a: '1965', n: 1965.9, era: 'contemporanea', t: 'Fim das excomunhões de 1054', d: 'Em 7 de dezembro, Paulo VI e o patriarca Atenágoras retiram as excomunhões mútuas entre Roma e Constantinopla.', g: 'consenso' },
+  { a: '1968', n: 1968, era: 'contemporanea', t: 'Conferência de Medellín', d: 'O episcopado latino-americano aplica o Vaticano II ao continente; nasce a "opção preferencial pelos pobres" e, logo depois, a teologia da libertação.', g: 'consenso' },
+  { a: '1974', n: 1974, era: 'contemporanea', t: 'Pacto de Lausanne', d: 'Congresso evangélico mundial afirma que evangelização e responsabilidade social são parte do dever cristão.', g: 'consenso' },
+  { a: '1982', n: 1982, era: 'contemporanea', br: true, t: 'Fundação do CONIC', d: 'Criado o Conselho Nacional de Igrejas Cristãs do Brasil, reunindo a Igreja Católica e igrejas protestantes históricas.', g: 'consenso' },
+  { a: '1988', n: 1988, era: 'contemporanea', br: true, t: 'Constituição de 1988', d: 'Garante a liberdade de crença e de culto (art. 5º, VI) e a laicidade do Estado (art. 19, I).', g: 'consenso' },
+  { a: '2007', n: 2007, era: 'contemporanea', br: true, t: 'Dia de Combate à Intolerância Religiosa', d: 'Lei 11.635 institui o 21 de janeiro, em memória de Mãe Gilda, ialorixá de Salvador.', g: 'consenso' },
+  { a: '2013', n: 2013, era: 'contemporanea', t: 'Eleição do papa Francisco', d: 'Depois da renúncia de Bento XVI, é eleito o primeiro papa latino-americano e jesuíta.', g: 'consenso' },
+  { a: '2018–2019', n: 2018.8, era: 'contemporanea', t: 'Crise ortodoxa ucraniana', d: 'Constantinopla reconhece a Igreja Ortodoxa da Ucrânia; Moscou rompe a comunhão com o Patriarcado Ecumênico.', g: 'consenso' },
+  { a: '2025', n: 2025.9, era: 'contemporanea', t: '1.700 anos de Niceia', d: 'Em 28 de novembro, Leão XIV, o patriarca Bartolomeu e líderes de várias igrejas rezam juntos em İznik, a antiga Niceia.', g: 'consenso' }
+);
+
+CURSO.prompts.push(
+  { tr: 't1', t: 'Revisar um módulo com perguntas', p: 'Estou estudando o módulo "[nome do módulo]" de um curso sobre o cristianismo. Faça 8 perguntas de revisão, de dificuldade crescente, sem dar as respostas. Depois que eu responder, corrija cada uma, aponte o que faltou e indique o que é consenso acadêmico, debate ou ensino de igreja.' },
+  { tr: 't2', t: 'Linha do tempo de um tema', p: 'Monte uma linha do tempo comentada sobre [tema, por exemplo: a relação entre Igreja e Estado] na história do cristianismo, com 10 a 15 marcos. Para cada marco: data, o que aconteceu, por que importa e grau de certeza histórica. Não invente datas; indique quando forem aproximadas.' },
+  { tr: 't3', t: 'Entender uma igreja pelo que ela diz de si', p: 'Quero entender a igreja [nome] a partir de seus próprios documentos. Indique as fontes oficiais (confissão de fé, catecismo, site oficial), resuma suas crenças e práticas principais com as palavras que ela usa, e só depois apresente como outras igrejas e pesquisadores a veem. Não use termos pejorativos.' },
+  { tr: 't4', t: 'Preparar uma entrevista sobre fé', p: 'Vou entrevistar uma pessoa da tradição [tradição] sobre sua experiência de fé para um trabalho. Sugira um roteiro de 10 perguntas abertas e respeitosas, orientações sobre consentimento e privacidade, e cuidados para não julgar nem induzir respostas.' }
+);
 </script>
 
 <script id="motor">

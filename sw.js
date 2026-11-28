@@ -1,5 +1,5 @@
 /* Service worker do curso: permite instalar como app e usar sem internet. */
-const CACHE = 'cristianismo-v1';
+const CACHE = 'cristianismo-v2';
 const ARQUIVOS = [
   './',
   './index.html',
